@@ -7,7 +7,7 @@ class CategoriaService {
     }
 
     nuevaCategoria(categoria) {
-        return axios.post(`http://localhost:8080/api/categorias`, categoria)
+        return axios.post('http://localhost:8080/api/categorias', categoria)
     }
 
 }

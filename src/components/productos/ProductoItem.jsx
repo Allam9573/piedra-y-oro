@@ -1,9 +1,8 @@
 import React from 'react'
 
-export const ProductosPage = () => {
+export const ProductoItem = () => {
     return (
         <>
-        
         </>
     )
 }

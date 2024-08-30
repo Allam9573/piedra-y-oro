@@ -1,4 +1,6 @@
 import React from 'react'
+import { FaFacebook } from "react-icons/fa6";
+
 
 export const Footer = () => {
     return (
@@ -85,8 +87,7 @@ export const Footer = () => {
                     <div class="row pt-2">
                         <div class="col-12">
                             <p class="text-left text-light">
-                                Copyright &copy; 2021 Company Name
-                                | Designed by <a rel="sponsored" href="https://templatemo.com/page/1" target="_blank">TemplateMo</a>
+                                Copyright &copy; 2024 Lionettas
                             </p>
                         </div>
                     </div>

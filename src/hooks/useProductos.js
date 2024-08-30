@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react"
 import ProductoService from "../services/ProductoService"
+import swal from "sweetalert"
+import { useNavigate } from "react-router-dom"
 
 const useProductos = () => {
 
     const [productos, setProductos] = useState([])
+
+    const navigate = useNavigate()
 
     const listarProductos = () => {
         ProductoService.listarProductos()
@@ -12,8 +16,18 @@ const useProductos = () => {
     }
     const agregarProducto = producto => {
         ProductoService.agregarProducto(producto)
-            .then(() => console.log('agregado'))
+            .then(() => {
+                swal("Producto agregado!", "Producto agregado exitosamente!", "success")
+                navigate('/admin/productos');
+            })
             .catch(error => console.log(error))
+    }
+
+    const verProducto = id => {
+        const [producto, setProducto] = useState({})
+        ProductoService.buscarProducto(id)
+            .then(response => setProducto(response.data))
+        return producto
     }
 
     useEffect(() => {
@@ -22,7 +36,8 @@ const useProductos = () => {
 
     return {
         productos,
-        agregarProducto
+        agregarProducto,
+        verProducto
     }
 }
 export { useProductos }

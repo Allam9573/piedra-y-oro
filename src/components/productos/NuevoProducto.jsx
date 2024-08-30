@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useCategorias } from '../../hooks/useCategorias'
 import { useProductos } from '../../hooks/useProductos'
+import { Link } from 'react-router-dom'
 
 export const NuevoProducto = () => {
 
@@ -16,14 +17,14 @@ export const NuevoProducto = () => {
         e.preventDefault()
         agregarProducto({
             nombre,
-            precio: parseInt(precio, 10),
+            precio: parseFloat(precio, 10),
             stock: parseInt(stock, 10),
             categoriaId
         })
     }
     return (
         <>
-            <div className="card w-50 py-3 px-3 shadow mb-2">
+            <div className="card mx-auto w-50 my-5 py-3 px-3 shadow ">
                 <div className="card-title">
                     <h3 className='text-secondary'>Agregar Producto</h3>
                 </div>
@@ -41,7 +42,8 @@ export const NuevoProducto = () => {
                                 ))
                             }
                         </select>
-                        <input type="submit" value="Agregar Categoria" className="btn my-2 btn-primary" />
+                        <input type="submit" value="Agregar Producto" className="btn my-2 btn-primary me-2" />
+                        <Link to={'/admin/productos'} className='btn btn-outline-primary'>Atras</Link>
                     </form>
                 </div>
             </div>

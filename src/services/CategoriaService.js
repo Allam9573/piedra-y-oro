@@ -10,5 +10,21 @@ class CategoriaService {
         return axios.post('http://localhost:8080/api/categorias', categoria)
     }
 
+    buscarCategoria(id) {
+        return axios.get(`http://localhost:8080/api/categorias/${id}`)
+    }
+
+    eliminarCategoria(id) {
+        return axios.delete(`http://localhost:8080/api/categorias/${id}`)
+    }
+
+    listarCategoriasEliminadas() {
+        return axios.get('http://localhost:8080/api/categorias/eliminadas')
+    }
+
+    restaurarCategoria(id) {
+        return axios.get(`http://localhost:8080/api/categorias/restaurar/${id}`)
+    }
+
 }
 export default new CategoriaService();

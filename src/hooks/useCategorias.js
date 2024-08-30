@@ -8,6 +8,8 @@ const useCategorias = () => {
     const navigate = useNavigate()
 
     const [categorias, setCategorias] = useState([])
+    const [categoria, setCategoria] = useState({})
+    const [categoriasEliminadas, setCategoriasEliminadas] = useState([])
 
     const listarCategorias = () => {
         CategoriaService.listarCategorias()
@@ -17,12 +19,43 @@ const useCategorias = () => {
 
     const agregarCategoria = categoria => {
         CategoriaService.nuevaCategoria(categoria)
-            .then(() => {
+            .then(() => {   
                 swal("Categoria agregada!", "Categoria agregada exitosamente!", "success")
-                navigate('/admin');
+                navigate('/admin/categorias');
 
             })
             .catch(() => swal("Error inesperado!", "Ocurrio un error al guardar la categoria", "error"))
+    }
+    const buscarCategoria = id => {
+        CategoriaService.buscarCategoria(id)
+            .then(response => setCategoria(response.data))
+            .catch(error => console.log(error))
+
+        return categoria
+    }
+
+    const eliminarCategoria = id => {
+        CategoriaService.eliminarCategoria(id)
+            .then(() => {
+                swal('Categoria eliminada!', 'Categoria eliminada exitosamente.', 'success')
+                navigate('/admin/categorias')
+            })
+            .catch(error => console.log(error))
+    }
+
+    const listarCategoriasEliminadas = () => {
+        CategoriaService.listarCategoriasEliminadas()
+            .then(response => setCategoriasEliminadas(response.data))
+            .catch(error => console.log(error))
+    }
+
+    const restaurarCategoria = id => {
+        CategoriaService.restaurarCategoria(id)
+            .then(() => {
+                swal('Categoria restaurada!', 'Categoria restaurada exitosamente.', 'success')
+                navigate('/admin/categorias/eliminadas')
+            })
+            .catch(error => console.log(error))
     }
 
     useEffect(() => {
@@ -31,9 +64,14 @@ const useCategorias = () => {
 
     return {
         categorias,
-        agregarCategoria
+        agregarCategoria,
+        buscarCategoria,
+        categoria,
+        eliminarCategoria,
+        categoriasEliminadas,
+        listarCategoriasEliminadas,
+        restaurarCategoria
     }
-
-
 }
+
 export { useCategorias }

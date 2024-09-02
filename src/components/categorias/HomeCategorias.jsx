@@ -1,6 +1,7 @@
 import React from 'react'
 import { useCategorias } from '../../hooks/useCategorias'
 import joya from '../../assets/img/joyas.png'
+import { Link } from 'react-router-dom'
 
 export const HomeCategorias = () => {
     const { categorias } = useCategorias()
@@ -22,7 +23,9 @@ export const HomeCategorias = () => {
                         <div key={idCategoria} class="col-12 col-md-4 p-5 mt-3">
                             <a href="#"><img src={joya} class="w-100" /></a>
                             <h5 class="text-center mt-3 mb-3">{nombre}</h5>
-                            <p class="text-center"><a class="btn btn-success">Ver Mas</a></p>
+                            <p class="text-center">
+                                <Link to={`/categorias/${nombre}`} class="btn btn-success">Ver Mas</Link>
+                            </p>
                         </div>
                     ))
                 }

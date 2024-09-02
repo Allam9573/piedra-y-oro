@@ -26,5 +26,9 @@ class CategoriaService {
         return axios.get(`http://localhost:8080/api/categorias/restaurar/${id}`)
     }
 
+    buscarCategoriaPorNombre(categoria) {
+        return axios.get(`http://localhost:8080/api/categorias/cat/${categoria}`)
+    }
+
 }
 export default new CategoriaService();

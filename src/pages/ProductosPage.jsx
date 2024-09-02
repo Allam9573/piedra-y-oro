@@ -88,7 +88,13 @@ export const ProductosPage = () => {
                                                         <div class="card-body">
                                                             <a href="shop-single.html" class="h3 text-decoration-none">{nombre}</a>
                                                             <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
-                                                                {/* <span className={badgeClass(categoria.nombre)}>{categoria.nombre}</span> */}
+                                                                {
+                                                                    !categoria ?
+                                                                        <>cargando</> :
+                                                                        <>
+                                                                            <span className={badgeClass(categoria.nombre)}>{categoria.nombre}</span>
+                                                                        </>
+                                                                }
                                                                 <li class="pt-2">
                                                                     <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
                                                                     <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>

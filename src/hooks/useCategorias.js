@@ -19,7 +19,7 @@ const useCategorias = () => {
 
     const agregarCategoria = categoria => {
         CategoriaService.nuevaCategoria(categoria)
-            .then(() => {   
+            .then(() => {
                 swal("Categoria agregada!", "Categoria agregada exitosamente!", "success")
                 navigate('/admin/categorias');
 
@@ -57,6 +57,11 @@ const useCategorias = () => {
             })
             .catch(error => console.log(error))
     }
+    const buscarCategoriaPorNombre = categoria => {
+        CategoriaService.buscarCategoriaPorNombre(categoria)
+            .then(response => setCategoria(response.data))
+            .catch(error => console.log(error))
+    }
 
     useEffect(() => {
         listarCategorias()
@@ -70,7 +75,8 @@ const useCategorias = () => {
         eliminarCategoria,
         categoriasEliminadas,
         listarCategoriasEliminadas,
-        restaurarCategoria
+        restaurarCategoria,
+        buscarCategoriaPorNombre
     }
 }
 

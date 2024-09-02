@@ -13,6 +13,7 @@ import { Productos } from "./pages/Productos"
 import { Footer } from "./components/footer/Footer"
 import { Navbar } from "./components/Navbar"
 import { NuevoProducto } from "./components/productos/NuevoProducto"
+import { CategoriaProducto } from "./components/categorias/CategoriaProducto"
 
 const App = () => {
   return (
@@ -20,7 +21,7 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/categorias/:id" element={<Home />} />
+        <Route path="/categorias/:nombre" element={<CategoriaProducto />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/admin/categorias" element={<Categorias />} />
         <Route path="/admin/productos" element={<Productos />} />

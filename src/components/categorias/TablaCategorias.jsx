@@ -12,7 +12,7 @@ export const TablaCategorias = () => {
         <>
             <NuevaCategoria />
             <input type="text" placeholder='Buscar categoria...' className="form-control mb-2" onChange={changeBuscar} />
-            <table class="table table-hover table-striped">
+            <table className="table table-hover table-striped">
                 <thead className='table-dark'>
                     <tr>
                         <th scope="col">Nombre de Categoria</th>

@@ -9,12 +9,13 @@ export const ProductoItem = () => {
     return (
         <>
             {
-                productos.map(({ idProducto, nombre, precio, stock, categoria }) => (
-                    <tr key={idProducto}>
+                productos.map(({ id, nombre, precio, stock, descripcion, categoria }) => (
+                    <tr key={id}>
                         <th scope="row">{nombre}</th>
                         <td>{precio}</td>
                         <td>{stock}</td>
-                        {/* <td>{categoria.nombre}</td> */}
+                        <td>{descripcion}</td>
+                        <td>{categoria.nombre ? categoria.nombre : 'categoria no disponible'}</td>
                         <td>
                             <Link className='btn btn-success me-2'>Editar</Link>
                             <Link className='btn btn-danger'>Eliminar</Link>

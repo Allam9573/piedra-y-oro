@@ -10,18 +10,23 @@ export const NuevoProducto = () => {
     const [stock, setStock] = useState(1)
     const [categoriaId, setCategoriaId] = useState('')
 
+
+
+
     const { categorias } = useCategorias()
     const { agregarProducto } = useProductos()
 
     const onSubmit = e => {
         e.preventDefault()
-        agregarProducto({
+        const nuevoProducto = {
             nombre,
             precio: parseFloat(precio, 10),
             stock: parseInt(stock, 10),
-            categoriaId
-        })
+            categoria: categoriaId
+        }
+        agregarProducto(nuevoProducto)
     }
+
     return (
         <>
             <div className="card mx-auto w-50 my-5 py-3 px-3 shadow ">
@@ -36,15 +41,15 @@ export const NuevoProducto = () => {
                         <select value={categoriaId} onChange={e => setCategoriaId(Number(e.target.value))} className='form-control' id="">
                             <option value="">Selecciona una categoria</option>
                             {
-                                categorias.map(({ idCategoria, nombre }) => (
-                                    <option value={idCategoria} key={idCategoria}>{nombre}</option>
-
+                                categorias.map(({ id, nombre }) => (
+                                    <option value={id} key={id}>{nombre}</option>
                                 ))
                             }
                         </select>
                         <input type="submit" value="Agregar Producto" className="btn my-2 btn-primary me-2" />
                         <Link to={'/admin/productos'} className='btn btn-outline-primary'>Atras</Link>
                     </form>
+
                 </div>
             </div>
         </>

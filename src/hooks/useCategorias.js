@@ -30,7 +30,6 @@ const useCategorias = () => {
         CategoriaService.buscarCategoria(id)
             .then(response => setCategoria(response.data))
             .catch(error => console.log(error))
-
         return categoria
     }
 
@@ -41,6 +40,7 @@ const useCategorias = () => {
                 navigate('/admin/categorias')
             })
             .catch(error => console.log(error))
+
     }
 
     const listarCategoriasEliminadas = () => {

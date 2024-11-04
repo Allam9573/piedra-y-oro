@@ -18,7 +18,7 @@ export const CategoriaProducto = () => {
             <h1 className='text-secondary my-5'>Categoria {categoria.nombre}</h1>
             <div className="row my-5">
                 {
-                    !categoria || !categoria.productos ?
+                    !categoria ?
                         <>Cargando</> :
                         <>
                             {

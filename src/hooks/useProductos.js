@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom"
 
 const useProductos = () => {
 
+    const [producto, setProducto] = useState({})
     const [productos, setProductos] = useState([])
 
     const navigate = useNavigate()
@@ -24,7 +25,6 @@ const useProductos = () => {
     }
 
     const verProducto = id => {
-        const [producto, setProducto] = useState({})
         ProductoService.buscarProducto(id)
             .then(response => setProducto(response.data))
         return producto
@@ -37,7 +37,8 @@ const useProductos = () => {
     return {
         productos,
         agregarProducto,
-        verProducto
+        verProducto,
+        producto
     }
 }
 export { useProductos }

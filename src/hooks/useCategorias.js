@@ -40,7 +40,6 @@ const useCategorias = () => {
                 navigate('/admin/categorias')
             })
             .catch(error => console.log(error))
-
     }
 
     const listarCategoriasEliminadas = () => {

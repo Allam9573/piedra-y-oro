@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { IoBagCheckOutline } from 'react-icons/io5'
 import { MdAddShoppingCart } from 'react-icons/md'
 import { Link } from 'react-router-dom'
+import { MdFavoriteBorder } from "react-icons/md";
+
 //css import
 import '../assets/css/bootstrap.min.css'
 import '../assets/css/templatemo.css'
@@ -10,6 +12,12 @@ import '../assets/css/templatemo.css'
 import '../assets/js/bootstrap.bundle.min.js'
 
 export const Navbar = () => {
+    let quantity = 0
+    if (!localStorage.getItem('cart')) {
+        quantity = 0
+    } else {
+        quantity = JSON.parse(localStorage.getItem('cart')).length
+    }
     return (
         <nav className="navbar navbar-expand-lg navbar-light shadow">
             <div className="container d-flex justify-content-between align-items-center">
@@ -58,13 +66,13 @@ export const Navbar = () => {
                     data-bs-target="#templatemo_search">
                     <i class="fa fa-fw fa-search text-dark mr-2"></i>
                 </a> */}
-                        <a className="nav-icon position-relative text-decoration-none" href="#">
+                        <Link className="nav-icon position-relative text-decoration-none" to={'/my-cart'}>
                             <MdAddShoppingCart />
                             <span
-                                className="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
-                        </a>
+                                className="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-danger text-white">{quantity}</span>
+                        </Link>
                         <a className="nav-icon position-relative text-decoration-none" href="#">
-                            <IoBagCheckOutline />
+                            <MdFavoriteBorder />
                             <span
                                 className="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
                         </a>

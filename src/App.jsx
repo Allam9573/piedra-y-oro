@@ -14,6 +14,7 @@ import { Footer } from "./components/footer/Footer"
 import { Navbar } from "./components/Navbar"
 import { NuevoProducto } from "./components/productos/NuevoProducto"
 import { CategoriaProducto } from "./components/categorias/CategoriaProducto"
+import { Cart } from "./components/cart/Cart"
 
 const App = () => {
   return (
@@ -32,6 +33,7 @@ const App = () => {
         <Route path="/productos" element={<ProductosPage />} />
         <Route path="/productos/:id" element={<ProductoView />} />
         <Route path="/nosotros" element={<AboutPage />} />
+        <Route path="/my-cart" element={<Cart />} />
         <Route path="/*" element={<Error404 />} />
       </Routes>
       <Footer />

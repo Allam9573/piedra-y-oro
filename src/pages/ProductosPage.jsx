@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useProductos } from '../hooks/useProductos'
 import imagen from '../assets/img/foco.jpg'
 import { MdFavoriteBorder } from "react-icons/md";
@@ -10,14 +10,36 @@ import { useCategorias } from '../hooks/useCategorias';
 
 export const ProductosPage = () => {
 
+    const initialState = () => {
+        const localStorageCart = localStorage.getItem('cart')
+        return localStorageCart ? JSON.parse(localStorageCart) : []
+    }
+
     const [busqueda, setBusqueda] = useState('')
 
     const { productos } = useProductos()
     const { categorias } = useCategorias()
 
+    const [cart, setCart] = useState(initialState)
+
     const resultados = productos.filter(producto => producto.nombre.toLowerCase().includes(busqueda.trim().toLowerCase()))
 
     const changeBusqueda = e => setBusqueda(e.target.value)
+
+    useEffect(() => {
+        localStorage.setItem('cart', JSON.stringify(cart))
+    }, [cart])
+
+    const addToCart = producto => {
+        const buscar = cart.findIndex(pro => pro.id === producto.id)
+        if (buscar >= 0) {
+            producto.cantidad += 1
+
+        } else {
+            producto.cantidad = 0
+            setCart([...cart, producto])
+        }
+    }
 
     const badgeClass = categoria => {
         return classNames('badge', {
@@ -36,8 +58,8 @@ export const ProductosPage = () => {
                         <h1 class="h2 pb-4">Categories</h1>
                         <ul class="list-unstyled templatemo-accordion">
                             {
-                                categorias.map(({ idCategoria, nombre }) => (
-                                    <li key={idCategoria} class="pb-3">
+                                categorias.map(({ id, nombre }) => (
+                                    <li key={id} class="pb-3">
                                         <input type="checkbox" name="" id="" />
                                         <span className='ms-2'>{nombre}</span>
                                     </li>
@@ -72,28 +94,27 @@ export const ProductosPage = () => {
                                 resultados.length !== 0 ?
                                     <>
                                         {
-                                            resultados.map(({ idProducto, nombre, precio, categoria }) => (
-                                                <div key={idProducto} class="col-md-4">
+                                            resultados.map(producto => (
+                                                <div key={producto.id} class="col-md-4">
                                                     <div class="card mb-4 product-wap rounded-0">
                                                         <div class="card rounded-0">
-                                                            <img class="card-img rounded-0 img-fluid" src={imagen} />
+                                                            <img class="card-img rounded-0 img-fluid" src={producto.imagen} />
                                                             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                                                 <ul class="list-unstyled">
-                                                                    <li><a class="btn btn-success text-white" href="shop-single.html"><MdFavoriteBorder /></a></li>
-                                                                    <li><Link class="btn btn-success text-white mt-2" to={`/productos/${idProducto}`}><GrView /></Link></li>
-                                                                    <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><MdAddShoppingCart /></a></li>
+                                                                    <li><a class="btn btn-success text-white" ><MdFavoriteBorder /></a></li>
+                                                                    <li><Link class="btn btn-success text-white mt-2" to={`/productos/${producto.id}`}><GrView /></Link></li>
+                                                                    <li><a onClick={() => addToCart(producto)} class="btn btn-success text-white mt-2"><MdAddShoppingCart /></a></li>
                                                                 </ul>
                                                             </div>
                                                         </div>
                                                         <div class="card-body">
-                                                            <a href="shop-single.html" class="h3 text-decoration-none">{nombre}</a>
+                                                            <a href="shop-single.html" class="h3 text-decoration-none">{producto.nombre}</a>
                                                             <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
                                                                 {
-                                                                    !categoria ?
-                                                                        <>cargando</> :
-                                                                        <>
-                                                                            <span className={badgeClass(categoria.nombre)}>{categoria.nombre}</span>
-                                                                        </>
+
+                                                                    <>
+                                                                        <span className={badgeClass(producto.categoria_nombre)}>{producto.categoria_nombre}</span>
+                                                                    </>
                                                                 }
                                                                 <li class="pt-2">
                                                                     <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
@@ -112,7 +133,7 @@ export const ProductosPage = () => {
                                                                     <i class="text-muted fa fa-star"></i>
                                                                 </li>
                                                             </ul>
-                                                            <p class="text-center mb-0">Precio: <span className='fw-bold'>Lps. {precio}</span></p>
+                                                            <p class="text-center mb-0">Precio: <span className='fw-bold'>Lps. {producto.precio}</span></p>
                                                         </div>
                                                     </div>
                                                 </div>

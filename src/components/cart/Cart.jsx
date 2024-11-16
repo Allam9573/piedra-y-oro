@@ -5,7 +5,7 @@ import { FaMoneyBillAlt } from "react-icons/fa";
 import { MdOutlineDeleteOutline } from "react-icons/md";
 import imagen from '../../assets/img/empty-cart.png'
 import classNames from 'classnames';
-
+import '../../assets/css/styles.css'
 
 export const Cart = () => {
 
@@ -16,6 +16,7 @@ export const Cart = () => {
             'bg-success': categoria === 'Ropa Deportiva',
             'bg-warning': categoria === 'Joyeria',
             'bg-danger': categoria === 'Maquillaje',
+            'pink': categoria === 'Ropa Dama',
         }, 'bg-info')
     }
     console.log(cart)
@@ -26,7 +27,8 @@ export const Cart = () => {
                     <div className='text-center my-5'>
                         <h1 className='text-secondary'>Mi Cesta:</h1>
                         <img src={imagen} width={'30%'} alt="" />
-                        <h3 className='text-secondary'>No hay productos en tu cesta.</h3>
+                        <h3 className='text-secondary mb-3'>No hay productos en tu cesta.</h3>
+                        <Link to={'/productos'} className='btn btn-success rounded-pill'>Explorar Productos</Link>
                     </div> :
                     <div className="container py-5">
                         <h1 className='text-secondary mb-4'>Mi Cesta:</h1>

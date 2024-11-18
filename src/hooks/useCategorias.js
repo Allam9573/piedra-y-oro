@@ -24,7 +24,7 @@ const useCategorias = () => {
                 navigate('/admin/categorias');
 
             })
-            .catch(() => swal("Error inesperado!", "Ocurrio un error al guardar la categoria", "error"))
+            .catch(() => swal("Error inesperado!", "Ocurrio un error al guardar la categoria, verifica que los campos tengas datos validos.", "error"))
     }
     const buscarCategoria = id => {
         CategoriaService.buscarCategoria(id)

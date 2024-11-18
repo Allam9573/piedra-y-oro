@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import categories from '../assets/img/categories.png'
 import products from '../assets/img/product.png'
+import promocion from '../assets/img/promocion.png'
 
 export const Admin = () => {
 
@@ -19,6 +20,11 @@ export const Admin = () => {
                         <img src={products} width={'50%'} className='mx-auto mb-3' alt="" />
                         <h3 className='text-secondary'>Productos</h3>
                         <Link to={'/admin/productos'} className='btn btn-primary rounded-pill'>Ver Mas</Link>
+                    </div>
+                    <div className="card shadow p-5 text-center w-25 m-4">
+                        <img src={promocion} width={'50%'} className='mx-auto mb-3' alt="" />
+                        <h3 className='text-secondary'>Campanas y Promociones</h3>
+                        <Link to={''} className='btn btn-primary rounded-pill'>Ver Mas</Link>
                     </div>
                 </div>
             </div>

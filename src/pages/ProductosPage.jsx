@@ -16,11 +16,10 @@ export const ProductosPage = () => {
     }
 
     const [busqueda, setBusqueda] = useState('')
+    const [cart, setCart] = useState(initialState)
 
     const { productos } = useProductos()
     const { categorias } = useCategorias()
-
-    const [cart, setCart] = useState(initialState)
 
     const resultados = productos.filter(producto => producto.nombre.toLowerCase().includes(busqueda.trim().toLowerCase()))
 

@@ -7,9 +7,9 @@ import imagen from '../../assets/img/empty-cart.png'
 import classNames from 'classnames';
 import '../../assets/css/styles.css'
 
-export const Cart = () => {
+export const Cart = ({cart}) => {
 
-    const cart = JSON.parse(localStorage.getItem('cart'))
+
     const [cantidad, setCantidad] = useState(0)
     const badgeClass = categoria => {
         return classNames('badge', {
@@ -23,7 +23,7 @@ export const Cart = () => {
     return (
         <>
             {
-                !cart ?
+                (!cart || cart.length === 0) ?
                     <div className='text-center my-5'>
                         <h1 className='text-secondary'>Mi Cesta:</h1>
                         <img src={imagen} width={'30%'} alt="" />

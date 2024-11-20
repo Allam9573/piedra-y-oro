@@ -15,11 +15,39 @@ import { Navbar } from "./components/Navbar"
 import { NuevoProducto } from "./components/productos/NuevoProducto"
 import { CategoriaProducto } from "./components/categorias/CategoriaProducto"
 import { Cart } from "./components/cart/Cart"
+import { useEffect, useState } from "react"
 
 const App = () => {
+
+  const initialState = () => {
+    try {
+      const localStorageCart = localStorage.getItem('cart')
+      return localStorageCart ? JSON.parse(localStorageCart) : []
+    } catch (error) {
+      return []
+    }
+  }
+
+  const [cart, setCart] = useState(initialState)
+
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart))
+  }, [cart])
+
+  const addToCart = producto => {
+    const buscar = cart.findIndex(pro => pro.id === producto.id)
+    if (buscar >= 0) {
+      producto.cantidad += 1
+
+    } else {
+      producto.cantidad = 0
+      setCart([...cart, producto])
+    }
+  }
+  console.log('renderizando')
   return (
     <BrowserRouter>
-      <Navbar />
+      <Navbar quantity={cart.length} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/categorias/:nombre" element={<CategoriaProducto />} />
@@ -30,10 +58,10 @@ const App = () => {
         <Route path="/admin/eliminar-categoria/:id" element={<EliminarCategoria />} />
         <Route path="/admin/categorias/eliminadas" element={<CategoriasEliminadas />} />
         <Route path="/admin/categorias/restaurar/:id" element={<RestaurarCategoria />} />
-        <Route path="/productos" element={<ProductosPage />} />
+        <Route path="/productos" element={<ProductosPage cart={cart} addToCart={addToCart} />} />
         <Route path="/productos/:id" element={<ProductoView />} />
         <Route path="/nosotros" element={<AboutPage />} />
-        <Route path="/my-cart" element={<Cart />} />
+        <Route path="/my-cart" element={<Cart cart={cart} />} />
         <Route path="/*" element={<Error404 />} />
       </Routes>
       <Footer />

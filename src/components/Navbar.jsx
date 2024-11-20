@@ -11,13 +11,9 @@ import '../assets/css/templatemo.css'
 // javascript import
 import '../assets/js/bootstrap.bundle.min.js'
 
-export const Navbar = () => {
-    let quantity = 0
-    if (!localStorage.getItem('cart')) {
-        quantity = 0
-    } else {
-        quantity = JSON.parse(localStorage.getItem('cart')).length
-    }
+export const Navbar = ({quantity}) => {
+
+ 
     return (
         <nav className="navbar navbar-expand-lg navbar-light shadow">
             <div className="container d-flex justify-content-between align-items-center">

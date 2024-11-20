@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useProductos } from '../hooks/useProductos'
-import imagen from '../assets/img/foco.jpg'
 import { MdFavoriteBorder } from "react-icons/md";
 import { GrView } from "react-icons/gr";
 import { MdAddShoppingCart } from "react-icons/md";
@@ -8,15 +7,9 @@ import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import { useCategorias } from '../hooks/useCategorias';
 
-export const ProductosPage = () => {
-
-    const initialState = () => {
-        const localStorageCart = localStorage.getItem('cart')
-        return localStorageCart ? JSON.parse(localStorageCart) : []
-    }
+export const ProductosPage = ({ cart, addToCart }) => {
 
     const [busqueda, setBusqueda] = useState('')
-    const [cart, setCart] = useState(initialState)
 
     const { productos } = useProductos()
     const { categorias } = useCategorias()
@@ -24,21 +17,6 @@ export const ProductosPage = () => {
     const resultados = productos.filter(producto => producto.nombre.toLowerCase().includes(busqueda.trim().toLowerCase()))
 
     const changeBusqueda = e => setBusqueda(e.target.value)
-
-    useEffect(() => {
-        localStorage.setItem('cart', JSON.stringify(cart))
-    }, [cart])
-
-    const addToCart = producto => {
-        const buscar = cart.findIndex(pro => pro.id === producto.id)
-        if (buscar >= 0) {
-            producto.cantidad += 1
-
-        } else {
-            producto.cantidad = 0
-            setCart([...cart, producto])
-        }
-    }
 
     const badgeClass = categoria => {
         return classNames('badge', {

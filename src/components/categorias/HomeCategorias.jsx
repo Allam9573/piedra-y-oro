@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 
 export const HomeCategorias = () => {
     const { categorias } = useCategorias()
-    console.log(categorias)
     return (
         <section className="container py-5">
             <div className="row text-center pt-3">

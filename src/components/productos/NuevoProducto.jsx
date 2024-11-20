@@ -2,19 +2,18 @@ import React, { useState } from 'react'
 import { useCategorias } from '../../hooks/useCategorias'
 import { useProductos } from '../../hooks/useProductos'
 import { Link } from 'react-router-dom'
+import { useSubcategorias } from '../../hooks/useSubcategorias'
 
 export const NuevoProducto = () => {
 
     const [nombre, setNombre] = useState('')
     const [precio, setPrecio] = useState(0)
     const [stock, setStock] = useState(1)
-    const [categoriaId, setCategoriaId] = useState('')
+    const [subCategoriaId, setSubCategoriaId] = useState('')
 
-
-
-
-    const { categorias } = useCategorias()
+    // const { subcategorias } = useCategorias()
     const { agregarProducto } = useProductos()
+    const { subcategorias } = useSubcategorias()
 
     const onSubmit = e => {
         e.preventDefault()
@@ -22,7 +21,7 @@ export const NuevoProducto = () => {
             nombre,
             precio: parseFloat(precio, 10),
             stock: parseInt(stock, 10),
-            categoria: categoriaId
+            subcategoria: subCategoriaId
         }
         agregarProducto(nuevoProducto)
     }
@@ -38,10 +37,10 @@ export const NuevoProducto = () => {
                         <input type="text" value={nombre} onChange={e => setNombre(e.target.value)} placeholder='Nombre del producto' className="mb-3 form-control" />
                         <input type="text" value={precio} onChange={e => setPrecio(e.target.value)} placeholder='Precio' className="mb-3 form-control" />
                         <input type="text" value={stock} onChange={e => setStock(e.target.value)} placeholder='Stock' className="mb-3 form-control" />
-                        <select value={categoriaId} onChange={e => setCategoriaId(Number(e.target.value))} className='form-control' id="">
-                            <option value="">Selecciona una categoria</option>
+                        <select value={subCategoriaId} onChange={e => setSubCategoriaId(Number(e.target.value))} className='form-control' id="">
+                            <option value="">Selecciona una Subcategoria</option>
                             {
-                                categorias.map(({ id, nombre }) => (
+                                subcategorias.map(({ id, nombre }) => (
                                     <option value={id} key={id}>{nombre}</option>
                                 ))
                             }

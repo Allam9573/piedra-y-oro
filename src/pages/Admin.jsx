@@ -5,7 +5,7 @@ import products from '../assets/img/product.png'
 import promocion from '../assets/img/promocion.png'
 
 export const Admin = () => {
-
+    document.title = 'Lionettas | Panel Administrativo'
     return (
         <div className="container my-5">
             <h1 className='text-secondary'>Panel de Administracion</h1>

@@ -31,4 +31,5 @@ class CategoriaService {
     }
 
 }
+
 export default new CategoriaService();

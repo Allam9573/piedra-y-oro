@@ -5,6 +5,7 @@ import { MdDelete } from "react-icons/md";
 import { MdAddShoppingCart } from "react-icons/md";
 
 export const Favorites = ({ favorites, deleteItem, addToCart }) => {
+    document.title = 'Lioenttas | Lista de deseos'
     return (
         <>
             <h1 className='text-secondary text-center my-5'>Lista de deseos:</h1>

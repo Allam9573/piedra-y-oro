@@ -7,7 +7,9 @@ import imagen from '../../assets/img/empty-cart.png'
 import classNames from 'classnames';
 import '../../assets/css/styles.css'
 
-export const Cart = ({cart, eliminarItemCarrito}) => {
+export const Cart = ({ cart, eliminarItemCarrito }) => {
+
+    document.title = 'Lionettas | Mi Carrito'
 
     const badgeClass = categoria => {
         return classNames('badge', {
@@ -42,7 +44,7 @@ export const Cart = ({cart, eliminarItemCarrito}) => {
                                                         <span style={{ width: '70%' }} className={badgeClass(producto.categoria_nombre)}>{producto.categoria_nombre}</span>
                                                     </div>
                                                 </div>
-                                                <MdOutlineDeleteOutline onClick={()=>eliminarItemCarrito(producto.nombre)} className='text-danger fs-2' />
+                                                <MdOutlineDeleteOutline onClick={() => eliminarItemCarrito(producto.nombre)} className='text-danger fs-2' />
                                             </div>
                                             <hr />
                                             <div className='d-flex'>

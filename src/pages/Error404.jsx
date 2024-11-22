@@ -2,6 +2,7 @@ import React from 'react'
 import imagen from '../assets/img/404.png'
 import { Link } from 'react-router-dom'
 export const Error404 = () => {
+    document.title = 'Lionettas | 404 Error!'
     return (
         <div className="container">
             <div className="card p-5 shadow text-center my-5">

@@ -8,6 +8,7 @@ import classNames from 'classnames';
 import { useCategorias } from '../hooks/useCategorias';
 
 export const ProductosPage = ({ cart, addToCart, addFavorite }) => {
+    document.title='Lionettas | Productos'
 
     const [busqueda, setBusqueda] = useState('')
 

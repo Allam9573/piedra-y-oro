@@ -11,9 +11,9 @@ import '../assets/css/templatemo.css'
 // javascript import
 import '../assets/js/bootstrap.bundle.min.js'
 
-export const Navbar = ({quantity}) => {
+export const Navbar = ({ quantity, quantityFavorites }) => {
 
- 
+
     return (
         <nav className="navbar navbar-expand-lg navbar-light shadow">
             <div className="container d-flex justify-content-between align-items-center">
@@ -64,14 +64,20 @@ export const Navbar = ({quantity}) => {
                 </a> */}
                         <Link className="nav-icon position-relative text-decoration-none" to={'/my-cart'}>
                             <MdAddShoppingCart />
-                            <span
-                                className="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-danger text-white">{quantity}</span>
+                            {
+                                quantity > 0 ?
+                                    <span
+                                        className="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-danger text-white">{quantity}</span>
+                                    :
+                                    <span
+                                        className="position-absolute top-0 left-100 translate-middle badge rounded-pill text-white"></span>
+                            }
                         </Link>
-                        <a className="nav-icon position-relative text-decoration-none" href="#">
+                        <Link className="nav-icon position-relative text-decoration-none" to={'/my-favorites'}>
                             <MdFavoriteBorder />
                             <span
-                                className="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
-                        </a>
+                                className="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">{quantityFavorites}</span>
+                        </Link>
                         {/* <a class="nav-icon position-relative text-decoration-none" href="#">
                     <i class="fa fa-fw fa-user text-dark mr-3"></i>
                     <span

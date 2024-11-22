@@ -3,6 +3,7 @@ import { HomeCategorias } from '../components/categorias/HomeCategorias'
 import { Header } from './Header'
 import { Promociones } from './Promociones'
 import { usePromociones } from '../hooks/usePromociones'
+import '../assets/css/styles.css'
 
 export const Home = () => {
     const { promociones } = usePromociones()

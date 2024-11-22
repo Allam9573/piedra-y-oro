@@ -3,11 +3,11 @@ import axios from "axios";
 class CategoriaService {
 
     listarCategorias() {
-        return axios.get('http://localhost:8000/api/categorias/')
+        return axios.get('https://lionettas-backend.onrender.com/api/categorias/')
     }
 
     nuevaCategoria(categoria) {
-        return axios.post('http://localhost:8000/api/categorias/', categoria)
+        return axios.post('https://lionettas-backend.onrender.com/api/categorias/', categoria)
     }
 
     buscarCategoria(id) {

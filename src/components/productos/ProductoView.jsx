@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { useProductos } from '../../hooks/useProductos'
 import classNames from 'classnames';
 
-export const ProductoView = () => {
+export const ProductoView = ({ addToCart }) => {
 
     const { id } = useParams()
     const { verProducto, producto } = useProductos()
@@ -175,7 +175,7 @@ export const ProductoView = () => {
                                                 <button type="submit" class="btn btn-success btn-lg" name="submit" value="buy">Buy</button>
                                             </div>
                                             <div class="col d-grid">
-                                                <button type="submit" class="btn btn-success btn-lg" name="submit" value="addtocard">Add To Cart</button>
+                                                <button onClick={() => addToCart(producto)} class="btn btn-success btn-lg" name="submit" value="addtocard">Add To Cart</button>
                                             </div>
                                         </div>
                                     </form>

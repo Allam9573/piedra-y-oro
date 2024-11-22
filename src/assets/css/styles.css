@@ -3,6 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
-.pink{
+
+.pink {
     background-color: rgb(187, 0, 178);
+}
+
+.shadow-img {
+    filter: drop-shadow(0, 0, 10px rgba(0, 0, 0.0.8));
 }

@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import { useCategorias } from '../hooks/useCategorias';
 
-export const ProductosPage = ({ cart, addToCart }) => {
+export const ProductosPage = ({ cart, addToCart, addFavorite }) => {
 
     const [busqueda, setBusqueda] = useState('')
 
@@ -25,12 +25,10 @@ export const ProductosPage = ({ cart, addToCart }) => {
             'bg-danger': categoria === 'Maquillaje',
         }, 'bg-info')
     }
-
     return (
         <>
             <div class="container py-5">
                 <div class="row">
-
                     <div class="col-lg-3">
                         <h1 class="h2 pb-4">Categories</h1>
                         <ul class="list-unstyled templatemo-accordion">
@@ -78,7 +76,7 @@ export const ProductosPage = ({ cart, addToCart }) => {
                                                             <img class="card-img rounded-0 img-fluid" src={producto.imagen} />
                                                             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                                                 <ul class="list-unstyled">
-                                                                    <li><a class="btn btn-success text-white" ><MdFavoriteBorder /></a></li>
+                                                                    <li><a onClick={() => addFavorite(producto)} class="btn btn-success text-white" ><MdFavoriteBorder /></a></li>
                                                                     <li><Link class="btn btn-success text-white mt-2" to={`/productos/${producto.id}`}><GrView /></Link></li>
                                                                     <li><a onClick={() => addToCart(producto)} class="btn btn-success text-white mt-2"><MdAddShoppingCart /></a></li>
                                                                 </ul>

@@ -7,10 +7,8 @@ import imagen from '../../assets/img/empty-cart.png'
 import classNames from 'classnames';
 import '../../assets/css/styles.css'
 
-export const Cart = ({cart}) => {
+export const Cart = ({cart, eliminarItemCarrito}) => {
 
-
-    const [cantidad, setCantidad] = useState(0)
     const badgeClass = categoria => {
         return classNames('badge', {
             'bg-success': categoria === 'Ropa Deportiva',
@@ -19,7 +17,6 @@ export const Cart = ({cart}) => {
             'pink': categoria === 'Ropa Dama',
         }, 'bg-info')
     }
-    console.log(cart)
     return (
         <>
             {
@@ -35,21 +32,21 @@ export const Cart = ({cart}) => {
                         <div className="row">
                             <div className="col-8">
                                 {
-                                    cart.map(({ id, nombre, precio, imagen, categoria_nombre }) => (
-                                        <div key={id} className="card shadow mb-3 p-3">
+                                    cart.map(producto => (
+                                        <div key={producto.id} className="card shadow mb-3 p-3">
                                             <div className='d-flex justify-content-between'>
                                                 <div className='d-flex align-items-center'>
-                                                    <img className='me-3' src={imagen} width={'20%'} alt="" />
+                                                    <img className='me-3' src={producto.imagen} width={'20%'} alt="" />
                                                     <div className="d-flex flex-column">
-                                                        <h3 className='text-secondary'>{nombre}</h3>
-                                                        <span style={{ width: '70%' }} className={badgeClass(categoria_nombre)}>{categoria_nombre}</span>
+                                                        <h3 className='text-secondary'>{producto.nombre}</h3>
+                                                        <span style={{ width: '70%' }} className={badgeClass(producto.categoria_nombre)}>{producto.categoria_nombre}</span>
                                                     </div>
                                                 </div>
-                                                <MdOutlineDeleteOutline className='text-danger fs-2' />
+                                                <MdOutlineDeleteOutline onClick={()=>eliminarItemCarrito(producto.nombre)} className='text-danger fs-2' />
                                             </div>
                                             <hr />
                                             <div className='d-flex'>
-                                                <h5 className='text-secondary'>Precio: <span>{`Lps. ${precio}`}</span></h5>
+                                                <h5 className='text-secondary'>Precio: <span>{`Lps. ${producto.precio}`}</span></h5>
                                             </div>
                                         </div>
                                     ))

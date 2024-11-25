@@ -10,8 +10,8 @@ export const NuevoProducto = () => {
     const [precio, setPrecio] = useState(0)
     const [stock, setStock] = useState(1)
     const [subCategoriaId, setSubCategoriaId] = useState('')
+    const [imagenes, setImagenes] = useState([])
 
-    // const { subcategorias } = useCategorias()
     const { agregarProducto } = useProductos()
     const { subcategorias } = useSubcategorias()
 

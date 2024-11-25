@@ -121,65 +121,16 @@ export const ProductoView = ({ addToCart }) => {
                                             <p class="text-muted"><strong>{producto.stock} unidades</strong></p>
                                         </li>
                                     </ul>
-
                                     <h6>Description:</h6>
                                     <p>{producto.descripcion}</p>
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-                                            <h6>Avaliable Color :</h6>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <p class="text-muted"><strong>White / Black</strong></p>
-                                        </li>
-                                    </ul>
-
-                                    <h6>Specification:</h6>
-                                    <ul class="list-unstyled pb-3">
-                                        <li>Lorem ipsum dolor sit</li>
-                                        <li>Amet, consectetur</li>
-                                        <li>Adipiscing elit,set</li>
-                                        <li>Duis aute irure</li>
-                                        <li>Ut enim ad minim</li>
-                                        <li>Dolore magna aliqua</li>
-                                        <li>Excepteur sint</li>
-                                    </ul>
-
-                                    <form action="" method="GET">
-                                        <input type="hidden" name="product-title" value="Activewear" />
-                                        <div class="row">
-                                            <div class="col-auto">
-                                                <ul class="list-inline pb-3">
-                                                    <li class="list-inline-item">Size :
-                                                        <input type="hidden" name="product-size" id="product-size" value="S" />
-                                                    </li>
-                                                    <li class="list-inline-item"><span class="btn btn-success btn-size">S</span></li>
-                                                    <li class="list-inline-item"><span class="btn btn-success btn-size">M</span></li>
-                                                    <li class="list-inline-item"><span class="btn btn-success btn-size">L</span></li>
-                                                    <li class="list-inline-item"><span class="btn btn-success btn-size">XL</span></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-auto">
-                                                <ul class="list-inline pb-3">
-                                                    <li class="list-inline-item text-right">
-                                                        Quantity
-                                                        <input type="hidden" name="product-quanity" id="product-quanity" value="1" />
-                                                    </li>
-                                                    <li class="list-inline-item"><span class="btn btn-success" id="btn-minus">-</span></li>
-                                                    <li class="list-inline-item"><span class="badge bg-secondary" id="var-value">1</span></li>
-                                                    <li class="list-inline-item"><span class="btn btn-success" id="btn-plus">+</span></li>
-                                                </ul>
-                                            </div>
+                                    <div class="row pb-3">
+                                        <div class="col d-grid">
+                                            <button type="submit" class="btn btn-success btn-lg" name="submit" value="buy">Buy</button>
                                         </div>
-                                        <div class="row pb-3">
-                                            <div class="col d-grid">
-                                                <button type="submit" class="btn btn-success btn-lg" name="submit" value="buy">Buy</button>
-                                            </div>
-                                            <div class="col d-grid">
-                                                <button onClick={() => addToCart(producto)} class="btn btn-success btn-lg" name="submit" value="addtocard">Add To Cart</button>
-                                            </div>
+                                        <div class="col d-grid">
+                                            <button onClick={() => addToCart(producto)} class="btn btn-success btn-lg" name="submit" value="addtocard">Add To Cart</button>
                                         </div>
-                                    </form>
-
+                                    </div>
                                 </div>
                             </div>
                         </div>

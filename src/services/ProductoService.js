@@ -9,7 +9,7 @@ class ProductoService {
         return axios.post('http://localhost:8000/api/productos/', producto)
     }
     buscarProducto(id) {
-        return axios.get(`http://localhost:8000/api/productos/${id}/`)
+        return axios.get(`https://lionettas-backend.onrender.com/api/productos/${id}/`)
     }
 
 }

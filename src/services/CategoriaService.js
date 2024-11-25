@@ -7,7 +7,7 @@ class CategoriaService {
     }
 
     nuevaCategoria(categoria) {
-        return axios.post('https://lionettas-backend.onrender.com/api/categorias/', categoria)
+        return axios.post('http://localhost:8000/api/categorias/', categoria)
     }
 
     buscarCategoria(id) {

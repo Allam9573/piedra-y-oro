@@ -54,7 +54,6 @@ const App = () => {
       setCart(updateCart)
     }
   }
-  console.log(favorites)
   return (
     <BrowserRouter>
       <Navbar quantity={cart.length} quantityFavorites={favorites.length} />

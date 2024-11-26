@@ -11,8 +11,12 @@ const useCart = () => {
     }
     const [cart, setCart] = useState(initialCartState)
 
-    useEffect(() => {
+    const addItemToCart = producto => {
 
+    }
+
+    useEffect(() => {
+        localStorage.setItem('cart', JSON.stringify(cart))
     }, [cart])
 
     return {

@@ -10,20 +10,28 @@ export const NuevoProducto = () => {
     const [precio, setPrecio] = useState(0)
     const [stock, setStock] = useState(1)
     const [subCategoriaId, setSubCategoriaId] = useState('')
+    const [imagenes, setImagenes] = useState([])
 
-    // const { subcategorias } = useCategorias()
     const { agregarProducto } = useProductos()
     const { subcategorias } = useSubcategorias()
 
+    const manejarCambioImagenes = (e) => {
+        setImagenes([...e.target.files]);
+    };
+
     const onSubmit = e => {
         e.preventDefault()
-        const nuevoProducto = {
-            nombre,
-            precio: parseFloat(precio, 10),
-            stock: parseInt(stock, 10),
-            subcategoria: subCategoriaId
+        const formData = new FormData()
+        formData.append('nombre', nombre)
+        formData.append('precio', parseFloat(precio, 10))
+        formData.append('stock', parseInt(stock, 10))
+        formData.append('subcategoria', subCategoriaId)
+
+        for (let i = 0; i < imagenes.length; i++) {
+            formData.append("imagenes", imagenes[i]);
         }
-        agregarProducto(nuevoProducto)
+
+        agregarProducto(formData)
     }
 
     return (
@@ -37,7 +45,7 @@ export const NuevoProducto = () => {
                         <input type="text" value={nombre} onChange={e => setNombre(e.target.value)} placeholder='Nombre del producto' className="mb-3 form-control" />
                         <input type="text" value={precio} onChange={e => setPrecio(e.target.value)} placeholder='Precio' className="mb-3 form-control" />
                         <input type="text" value={stock} onChange={e => setStock(e.target.value)} placeholder='Stock' className="mb-3 form-control" />
-                        <select value={subCategoriaId} onChange={e => setSubCategoriaId(Number(e.target.value))} className='form-control' id="">
+                        <select value={subCategoriaId} onChange={e => setSubCategoriaId(Number(e.target.value))} className='mb-3 form-control' id="">
                             <option value="">Selecciona una Subcategoria</option>
                             {
                                 subcategorias.map(({ id, nombre }) => (
@@ -45,6 +53,12 @@ export const NuevoProducto = () => {
                                 ))
                             }
                         </select>
+                        <input
+                            type="file"
+                            multiple
+                            className='form-control'
+                            onChange={manejarCambioImagenes}
+                        />
                         <input type="submit" value="Agregar Producto" className="btn my-2 btn-primary me-2" />
                         <Link to={'/admin/productos'} className='btn btn-outline-primary'>Atras</Link>
                     </form>

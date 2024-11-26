@@ -8,8 +8,6 @@ export const TablaProductos = () => {
 
     const { productos } = useProductos()
 
-    console.log(productos)
-
     return (
         <>
             <table class="table">
@@ -19,7 +17,7 @@ export const TablaProductos = () => {
                         <th scope="col">Precio</th>
                         <th scope="col">Stock</th>
                         <th scope="col">Descripcion</th>
-                        <th scope="col">Categoria</th>
+                        <th scope="col">Sub-Categoria</th>
                         <th scope="col">Acciones</th>
                     </tr>
                 </thead>

@@ -15,13 +15,14 @@ const useProductos = () => {
             .then(response => setProductos(response.data))
             .catch(error => console.log(error))
     }
-    const agregarProducto = producto => {
-        ProductoService.agregarProducto(producto)
+    const agregarProducto = productoFormData => {
+        ProductoService.agregarProducto(productoFormData)
             .then(() => {
                 swal("Producto agregado!", "Producto agregado exitosamente!", "success")
                 navigate('/admin/productos');
             })
             .catch(error => console.log(error))
+        console.log(productoFormData)
     }
 
     const verProducto = id => {

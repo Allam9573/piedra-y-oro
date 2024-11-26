@@ -18,6 +18,7 @@ import { Cart } from "./components/cart/Cart"
 import { useEffect, useState } from "react"
 import { useFavorites } from "./hooks/useFavorites"
 import { Favorites } from "./components/Favorites"
+import { ProductoEliminar } from "./components/productos/ProductoEliminar"
 
 const App = () => {
 
@@ -69,6 +70,7 @@ const App = () => {
         <Route path="/admin/categorias/restaurar/:id" element={<RestaurarCategoria />} />
         <Route path="/productos" element={<ProductosPage cart={cart} addToCart={addToCart} addFavorite={addFavorite} />} />
         <Route path="/productos/:id" element={<ProductoView addToCart={addToCart} />} />
+        <Route path="/admin/productos/eliminar/:id" element={<ProductoEliminar />} />
         <Route path="/nosotros" element={<AboutPage />} />
         <Route path="/my-cart" element={<Cart cart={cart} eliminarItemCarrito={eliminarItemCarrito} />} />
         <Route path="/my-favorites" element={<Favorites favorites={favorites} deleteItem={deleteItem} addToCart={addToCart} />} />

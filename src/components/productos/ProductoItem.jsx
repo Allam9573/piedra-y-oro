@@ -13,10 +13,10 @@ export const ProductoItem = () => {
                         <td>{precio}</td>
                         <td>{stock}</td>
                         <td>{descripcion}</td>
-                        <td>{subcategoria_nombre ? subcategoria_nombre : 'categoria no disponible'}</td>
+                        <td>{subcategoria_nombre ? subcategoria_nombre : 'Subcategoria no disponible'}</td>
                         <td>
                             <Link className='btn btn-success me-2'>Editar</Link>
-                            <Link className='btn btn-danger'>Eliminar</Link>
+                            <Link to={`/admin/productos/eliminar/${id}`} className='btn btn-danger'>Eliminar</Link>
                         </td>
                     </tr>
                 ))

@@ -74,11 +74,9 @@ export const ProductosPage = ({ cart, addToCart, addFavorite }) => {
                                             resultados.map(producto => (
                                                 <div key={producto.id} class="col-md-4">
                                                     <div class="card mb-4 product-wap rounded-0">
-                                                        {
-                                                            console.log(producto.imagenes[0].imagen)
-                                                        }
+                                                       
                                                         <div class="card rounded-0">
-                                                            <img class="card-img rounded-0 img-fluid" src={producto.imagenes} />
+                                                            <img class="card-img rounded-0 img-fluid" src="" />
                                                             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                                                 <ul class="list-unstyled">
                                                                     <li><a onClick={() => addFavorite(producto)} class="btn btn-success text-white" ><MdFavoriteBorder /></a></li>

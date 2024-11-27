@@ -3,7 +3,10 @@ import axios from "axios";
 class SubcategoriaService {
 
     subcategorias() {
-        return axios.get('http://localhost:8000/api/subcategorias/')
+        return axios.get('https://lionettas-backend.onrender.com/api/subcategorias/')
+    }
+    nuevaSubcategorias(subcategoria) {
+        return axios.post('https://lionettas-backend.onrender.com/api/subcategorias/', subcategoria)
     }
 }
 

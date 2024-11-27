@@ -7,6 +7,7 @@ const useProductos = () => {
 
     const [producto, setProducto] = useState({})
     const [productos, setProductos] = useState([])
+    const [firstImagen, setFirstImagen] = useState('')
 
     const navigate = useNavigate()
 
@@ -41,7 +42,7 @@ const useProductos = () => {
                             });
                             navigate('/admin/productos');
                         })
-                        .catch(error =>{
+                        .catch(error => {
                             swal("Hubo un error al eliminar el producto", {
                                 icon: "success",
                             });

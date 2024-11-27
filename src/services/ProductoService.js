@@ -3,10 +3,10 @@ import axios from "axios";
 class ProductoService {
 
     listarProductos() {
-        return axios.get('http://localhost:8000/api/productos/')
+        return axios.get('https://lionettas-backend.onrender.com/api/productos/')
     }
     agregarProducto(producto) {
-        return axios.post('http://localhost:8000/api/productos/', producto, {
+        return axios.post('https://lionettas-backend.onrender.com/api/productos/', producto, {
             headers: {
                 'Content-Type': 'multipart/form-data',
             },

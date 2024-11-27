@@ -57,6 +57,7 @@ export const ProductoView = ({ addToCart }) => {
                                                                         producto.imagenes.map(imagen => {
                                                                             return (
                                                                                 <img
+                                                                                    style={{ maxHeight: '100%' }}
                                                                                     onClick={() => setFirstImage(imagen.imagen)}
                                                                                     key={imagen} class="card-img img-fluid mx-2"
                                                                                     src={imagen.imagen} alt="Product Image 1" />
@@ -65,7 +66,7 @@ export const ProductoView = ({ addToCart }) => {
                                                                     }
                                                                 </> :
                                                                 <>
-
+                                                                    fe
                                                                 </>
                                                         }
                                                     </a>

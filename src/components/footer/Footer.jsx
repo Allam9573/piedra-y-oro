@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaFacebook } from "react-icons/fa6";
-
+import { FaInstagram } from "react-icons/fa";
 
 export const Footer = () => {
     return (
@@ -57,26 +57,20 @@ export const Footer = () => {
                         <div class="w-100 my-3 border-top border-light"></div>
                     </div>
                     <div class="col-auto me-auto">
-                        <ul class="list-inline text-left footer-icons">
-                            <li class="list-inline-item border border-light rounded-circle text-center">
-                                <a rel="nofollow" class="text-light text-decoration-none" target="_blank" href="http://fb.com/templatemo"><i class="fab fa-facebook-f fa-lg fa-fw"></i></a>
+                        <ul class="list-inline text-left">
+                            <li class="list-inline-item">
+                                <a rel="nofollow" class="text-light text-decoration-none" target="_blank" href="http://fb.com/templatemo"><FaFacebook className='fs-3' /></a>
                             </li>
                             <li class="list-inline-item border border-light rounded-circle text-center">
-                                <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
-                            </li>
-                            <li class="list-inline-item border border-light rounded-circle text-center">
-                                <a class="text-light text-decoration-none" target="_blank" href="https://twitter.com/"><i class="fab fa-twitter fa-lg fa-fw"></i></a>
-                            </li>
-                            <li class="list-inline-item border border-light rounded-circle text-center">
-                                <a class="text-light text-decoration-none" target="_blank" href="https://www.linkedin.com/"><i class="fab fa-linkedin fa-lg fa-fw"></i></a>
+                                <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/"><FaInstagram className='fs-3' /></a>
                             </li>
                         </ul>
                     </div>
                     <div class="col-auto">
                         <label class="sr-only" htmlFor="subscribeEmail">Email address</label>
                         <div class="input-group mb-2">
-                            <input type="text" class="form-control bg-dark border-light" id="subscribeEmail" placeholder="Email address"/>
-                                <div class="input-group-text btn-success text-light">Subscribe</div>
+                            <input type="text" class="form-control bg-dark border-light" id="subscribeEmail" placeholder="Email address" />
+                            <div class="input-group-text btn-success text-light">Subscribe</div>
                         </div>
                     </div>
                 </div>
@@ -87,7 +81,7 @@ export const Footer = () => {
                     <div class="row pt-2">
                         <div class="col-12">
                             <p class="text-left text-light">
-                                Copyright &copy; 2024 Lionettas
+                                Copyright &copy; 2025 Lionettas
                             </p>
                         </div>
                     </div>

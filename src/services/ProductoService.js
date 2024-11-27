@@ -3,17 +3,21 @@ import axios from "axios";
 class ProductoService {
 
     listarProductos() {
-        return axios.get('https://lionettas-backend.onrender.com/api/productos/')
+        return axios.get('http://localhost:8000/api/productos/')
     }
     agregarProducto(producto) {
-        return axios.post('https://lionettas-backend.onrender.com/api/productos/', producto, {
+        return axios.post('http://localhost:8000/api/productos/', producto, {
             headers: {
-                'Content-Type': 'multipart/form-data', // Axios ajustará esto automáticamente si usas FormData.
+                'Content-Type': 'multipart/form-data',
             },
         })
     }
     buscarProducto(id) {
-        return axios.get(`https://lionettas-backend.onrender.com/api/productos/${id}/`)
+        return axios.get(`http://localhost:8000/api/productos/${id}/`)
+    }
+
+    eliminarProducto(id) {
+        return axios.delete(`http://localhost:8000/api/productos/${id}/`)
     }
 
 }

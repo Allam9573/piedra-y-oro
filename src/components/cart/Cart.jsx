@@ -1,16 +1,35 @@
 import React, { useState } from 'react'
-import { useProductos } from '../../hooks/useProductos'
 import { Link } from 'react-router-dom'
-import { FaMoneyBillAlt } from "react-icons/fa";
 import { MdOutlineDeleteOutline } from "react-icons/md";
 import imagen from '../../assets/img/empty-cart.png'
 import classNames from 'classnames';
 import '../../assets/css/styles.css'
 
-export const Cart = ({ cart, eliminarItemCarrito }) => {
+export const Cart = ({ cart, eliminarItemCarrito, incrementar, decrementar }) => {
 
     document.title = 'Lionettas | Mi Carrito'
+    const [cantidad, setCantidad] = useState(0)
+    const [cliente, setCliente] = useState('')
 
+    const handlePay = () => {
+        const telefono = '+50432675530'
+        const mensaje = cart.map(
+            (producto) =>
+                `Producto: ${producto.nombre}\nCantidad: ${producto.cantidad}`
+        )
+            .join('\n\n')
+        const mensajeCompleto = `Hola, mi nombre es ${cliente}, me interesa realizar el siguiente pedido:\n\n ${mensaje}`
+        const url = `https://wa.me/${telefono}?text=${encodeURIComponent(
+            mensajeCompleto
+        )}`;
+        window.open(url, "_blank");
+    }
+
+    const changeCantidad = e => {
+        setCantidad(e.target.value)
+    }
+
+    const cartTotal = () => cart.reduce((total, item) => total + (item.precio * item.cantidad), 0)
     const badgeClass = categoria => {
         return classNames('badge', {
             'bg-success': categoria === 'Ropa Deportiva',
@@ -19,6 +38,7 @@ export const Cart = ({ cart, eliminarItemCarrito }) => {
             'pink': categoria === 'Ropa Dama',
         }, 'bg-info')
     }
+    console.log(cart)
     return (
         <>
             {
@@ -47,8 +67,15 @@ export const Cart = ({ cart, eliminarItemCarrito }) => {
                                                 <MdOutlineDeleteOutline onClick={() => eliminarItemCarrito(producto.nombre)} className='text-danger fs-2' />
                                             </div>
                                             <hr />
-                                            <div className='d-flex'>
+                                            <div className='d-flex justify-content-between'>
                                                 <h5 className='text-secondary'>Precio: <span>{`Lps. ${producto.precio}`}</span></h5>
+                                                <div className='d-flex align-items-center'>
+                                                    <h5 className='text-secondary me-2'>Cantidad:</h5>
+                                                    <button onClick={() => { incrementar(producto.id) }} className='btn btn-success'>+</button>
+                                                    <input type="text" name="" value={producto.cantidad} id="" className="form-control w-25" />
+                                                    <button className='btn btn-danger'>-</button>
+                                                </div>
+                                                <h5>Total: Lps. 324</h5>
                                             </div>
                                         </div>
                                     ))
@@ -60,8 +87,17 @@ export const Cart = ({ cart, eliminarItemCarrito }) => {
                                     <h5 className='text-secondary mb-3'>Subtotal: <span>{'Lps. 999.99'}</span></h5>
                                     <h5 className='text-secondary'>Descuento: <span>{'Lps. 0.00'}</span></h5>
                                     <hr />
-                                    <h3 className='mb-3'>Total: <span>{'Lps. 999.99'}</span></h3>
-                                    <button className='btn btn-danger'>Pagar</button>
+                                    <h3 className='mb-3'>Total: Lps. <span>{cartTotal()}</span></h3>
+                                    <h5>Ingrese un nombre para indentificacion:</h5>
+                                    <input
+                                        type="text"
+                                        placeholder='Tu nombre aqui...'
+                                        className="form-control mb-3"
+                                        value={cliente}
+                                        onChange={e => setCliente(e.target.value)}
+                                    />
+
+                                    <button onClick={() => handlePay()} className='btn btn-danger'>Pagar</button>
                                 </div>
                             </div>
                         </div>

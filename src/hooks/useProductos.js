@@ -25,6 +25,31 @@ const useProductos = () => {
         console.log(productoFormData)
     }
 
+    const eliminarProducto = id => {
+        swal({
+            title: "Estas seguro que deseas eliminar este producto?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    ProductoService.eliminarProducto(id)
+                        .then(() => {
+                            swal("Producto eliminado exitosamente!", {
+                                icon: "success",
+                            });
+                            navigate('/admin/productos');
+                        })
+                        .catch(error =>{
+                            swal("Hubo un error al eliminar el producto", {
+                                icon: "success",
+                            });
+                        })
+                }
+            });
+    }
+
     const verProducto = id => {
         ProductoService.buscarProducto(id)
             .then(response => setProducto(response.data))
@@ -39,7 +64,8 @@ const useProductos = () => {
         productos,
         agregarProducto,
         verProducto,
-        producto
+        producto,
+        eliminarProducto
     }
 }
 export { useProductos }

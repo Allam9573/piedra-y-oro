@@ -33,7 +33,6 @@ export const NuevoProducto = () => {
 
         agregarProducto(formData)
     }
-
     return (
         <>
             <div className="card mx-auto w-50 my-5 py-3 px-3 shadow ">

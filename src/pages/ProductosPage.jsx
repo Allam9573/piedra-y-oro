@@ -8,7 +8,7 @@ import classNames from 'classnames';
 import { useCategorias } from '../hooks/useCategorias';
 
 export const ProductosPage = ({ cart, addToCart, addFavorite }) => {
-    document.title='Lionettas | Productos'
+    document.title = 'Lionettas | Productos'
 
     const [busqueda, setBusqueda] = useState('')
 
@@ -74,7 +74,7 @@ export const ProductosPage = ({ cart, addToCart, addFavorite }) => {
                                             resultados.map(producto => (
                                                 <div key={producto.id} class="col-md-4">
                                                     <div class="card mb-4 product-wap rounded-0">
-                                                       
+
                                                         <div class="card rounded-0">
                                                             <img class="card-img rounded-0 img-fluid" src="" />
                                                             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">

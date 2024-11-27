@@ -15,46 +15,16 @@ import { Navbar } from "./components/Navbar"
 import { NuevoProducto } from "./components/productos/NuevoProducto"
 import { CategoriaProducto } from "./components/categorias/CategoriaProducto"
 import { Cart } from "./components/cart/Cart"
-import { useEffect, useState } from "react"
 import { useFavorites } from "./hooks/useFavorites"
 import { Favorites } from "./components/Favorites"
 import { ProductoEliminar } from "./components/productos/ProductoEliminar"
+import { useCart } from "./hooks/useCart"
 
 const App = () => {
 
   const { favorites, addFavorite, deleteItem } = useFavorites()
+  const { addToCart, cart, eliminarItemCarrito, incrementar, decrementar } = useCart()
 
-  const initialState = () => {
-    try {
-      const localStorageCart = localStorage.getItem('cart')
-      return localStorageCart ? JSON.parse(localStorageCart) : []
-    } catch (error) {
-      return []
-    }
-  }
-
-  const [cart, setCart] = useState(initialState)
-
-  useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart))
-  }, [cart])
-
-  const addToCart = producto => {
-    const buscar = cart.findIndex(pro => pro.id === producto.id)
-    if (buscar >= 0) {
-      producto.cantidad += 1
-    } else {
-      producto.cantidad = 1
-      setCart([...cart, producto])
-    }
-  }
-  const eliminarItemCarrito = nombreProducto => {
-    const confirmDelete = window.confirm(`¿Estás seguro de que quieres eliminar el producto "${nombreProducto}"?`);
-    if (confirmDelete) {
-      const updateCart = cart.filter(productos => productos.nombre !== nombreProducto)
-      setCart(updateCart)
-    }
-  }
   return (
     <BrowserRouter>
       <Navbar quantity={cart.length} quantityFavorites={favorites.length} />
@@ -72,7 +42,9 @@ const App = () => {
         <Route path="/productos/:id" element={<ProductoView addToCart={addToCart} />} />
         <Route path="/admin/productos/eliminar/:id" element={<ProductoEliminar />} />
         <Route path="/nosotros" element={<AboutPage />} />
-        <Route path="/my-cart" element={<Cart cart={cart} eliminarItemCarrito={eliminarItemCarrito} />} />
+        <Route
+          path="/my-cart"
+          element={<Cart cart={cart} eliminarItemCarrito={eliminarItemCarrito} incrementar={incrementar} decrementar={decrementar} />} />
         <Route path="/my-favorites" element={<Favorites favorites={favorites} deleteItem={deleteItem} addToCart={addToCart} />} />
         <Route path="/*" element={<Error404 />} />
       </Routes>

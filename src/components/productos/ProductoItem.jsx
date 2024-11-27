@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 
 export const ProductoItem = () => {
     const { productos } = useProductos()
+    const { eliminarProducto } = useProductos()
     return (
         <>
             {
@@ -16,7 +17,7 @@ export const ProductoItem = () => {
                         <td>{subcategoria_nombre ? subcategoria_nombre : 'Subcategoria no disponible'}</td>
                         <td>
                             <Link className='btn btn-success me-2'>Editar</Link>
-                            <Link to={`/admin/productos/eliminar/${id}`} className='btn btn-danger'>Eliminar</Link>
+                            <button onClick={()=>eliminarProducto(id)} className='btn btn-danger'>Eliminar</button>
                         </td>
                     </tr>
                 ))

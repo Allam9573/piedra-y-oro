@@ -26,6 +26,11 @@ export const Admin = () => {
                         <h3 className='text-secondary'>Campanas y Promociones</h3>
                         <Link to={''} className='btn btn-success rounded-pill'>Ver Mas</Link>
                     </div>
+                    <div className="card shadow p-5 text-center w-25 m-4">
+                        <img src={promocion} width={'50%'} className='mx-auto mb-3' alt="" />
+                        <h3 className='text-secondary'>Nueva Venta</h3>
+                        <Link to={'/admin/crear-venta'} className='btn btn-success rounded-pill'>Crear Venta</Link>
+                    </div>
                 </div>
             </div>
         </div>

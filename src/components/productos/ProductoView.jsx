@@ -11,14 +11,20 @@ export const ProductoView = ({ addToCart }) => {
 
     const { id } = useParams()
     const { verProducto, producto } = useProductos()
-    const primeraImagen = producto.imagenes && producto.imagenes[0] ? producto.imagenes[0].imagen : null;
-
-    const [firstImage, setFirstImage] = useState(primeraImagen)
+    // const primeraImagen = producto.imagenes.length > 0 ? producto.imagenes[0] : ''
+    console.log(producto)
+    const [firstImage, setFirstImage] = useState('')
 
 
     useEffect(() => {
         verProducto(id)
     }, [])
+
+    useEffect(() => {
+        if (producto && producto.imagenes && producto.imagenes.length > 0) {
+            setFirstImage(producto.imagenes[0].imagen); // Establece la primera imagen al cargar el producto
+        }
+    }, [producto]);
 
     const badgeClass = categoria => {
         return classNames('badge', {
@@ -88,7 +94,11 @@ export const ProductoView = ({ addToCart }) => {
                             <div class="card shadow">
                                 <div class="card-body">
                                     <h1 class="h2">{producto.nombre}</h1>
-                                    <p class="h3 py-2">Precio: Lps. {producto.precio}</p>
+                                    <p class="h3 py-2">Precio: {new Intl.NumberFormat('es-HN', {
+                                        style: 'currency',
+                                        currency: 'HNL',
+                                        minimumFractionDigits: 2,
+                                    }).format(producto.precio)}</p>
                                     <span className={badgeClass(producto.categoria_nombre)}>{producto.categoria_nombre}</span>
 
                                     <ul class="list-inline">
@@ -99,7 +109,7 @@ export const ProductoView = ({ addToCart }) => {
                                             <p class="text-muted"><strong>{producto.stock} unidades</strong></p>
                                         </li>
                                     </ul>
-                                    <h6>Description:</h6>
+                                    <h6>Descripcion:</h6>
                                     <p>{producto.descripcion}</p>
                                     <div class="row pb-3">
                                         <div class="col d-grid">

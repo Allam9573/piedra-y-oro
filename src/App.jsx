@@ -19,6 +19,7 @@ import { useFavorites } from "./hooks/useFavorites"
 import { Favorites } from "./components/Favorites"
 import { ProductoEliminar } from "./components/productos/ProductoEliminar"
 import { useCart } from "./hooks/useCart"
+import { NuevaVenta } from "./components/ventas/NuevaVenta"
 
 const App = () => {
 
@@ -31,16 +32,17 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/categorias/:nombre" element={<CategoriaProducto />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/admin/categorias" element={<Categorias />} />
+        {/* <Route path="/admin" element={<Admin />} /> */}
+        {/* <Route path="/admin/categorias" element={<Categorias />} />
         <Route path="/admin/productos" element={<Productos />} />
+        <Route path="/admin/crear-venta" element={<NuevaVenta />} />
         <Route path="/admin/productos/nuevo-producto" element={<NuevoProducto />} />
         <Route path="/admin/eliminar-categoria/:id" element={<EliminarCategoria />} />
         <Route path="/admin/categorias/eliminadas" element={<CategoriasEliminadas />} />
-        <Route path="/admin/categorias/restaurar/:id" element={<RestaurarCategoria />} />
+        <Route path="/admin/categorias/restaurar/:id" element={<RestaurarCategoria />} /> */}
         <Route path="/productos" element={<ProductosPage cart={cart} addToCart={addToCart} addFavorite={addFavorite} />} />
         <Route path="/productos/:id" element={<ProductoView addToCart={addToCart} />} />
-        <Route path="/admin/productos/eliminar/:id" element={<ProductoEliminar />} />
+        {/* <Route path="/admin/productos/eliminar/:id" element={<ProductoEliminar />} /> */}
         <Route path="/nosotros" element={<AboutPage />} />
         <Route
           path="/my-cart"

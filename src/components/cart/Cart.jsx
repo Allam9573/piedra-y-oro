@@ -4,6 +4,7 @@ import { MdOutlineDeleteOutline } from "react-icons/md";
 import imagen from '../../assets/img/empty-cart.png'
 import classNames from 'classnames';
 import '../../assets/css/styles.css'
+import { TiShoppingCart } from "react-icons/ti";
 
 export const Cart = ({ cart, eliminarItemCarrito, incrementar, decrementar }) => {
 
@@ -50,7 +51,7 @@ export const Cart = ({ cart, eliminarItemCarrito, incrementar, decrementar }) =>
                         <Link to={'/productos'} className='btn btn-success rounded-pill'>Explorar Productos</Link>
                     </div> :
                     <div className="container py-5">
-                        <h1 className='text-secondary mb-4'>Mi Cesta:</h1>
+                        <h1 className='text-secondary mb-4'>Mi Cesta: <TiShoppingCart className='fs-1' /> </h1>
                         <div className="row">
                             <div className="col-8">
                                 {
@@ -58,7 +59,7 @@ export const Cart = ({ cart, eliminarItemCarrito, incrementar, decrementar }) =>
                                         <div key={producto.id} className="card shadow mb-3 p-3">
                                             <div className='d-flex justify-content-between'>
                                                 <div className='d-flex align-items-center'>
-                                                    <img className='me-3' src={producto.imagen} width={'20%'} alt="" />
+                                                    <img className='me-3' style={{ width: '100px' }} src={producto.imagenes.length > 0 ? producto.imagenes[0].imagen : ''} width={'20%'} alt="" />
                                                     <div className="d-flex flex-column">
                                                         <h3 className='text-secondary'>{producto.nombre}</h3>
                                                         <span style={{ width: '70%' }} className={badgeClass(producto.categoria_nombre)}>{producto.categoria_nombre}</span>
@@ -84,11 +85,19 @@ export const Cart = ({ cart, eliminarItemCarrito, incrementar, decrementar }) =>
                             <div className="col-4">
                                 <div className="card shadow p-3">
                                     <h2 className='mb-3'>Informacion de compra</h2>
-                                    <h5 className='text-secondary mb-3'>Subtotal: <span>{'Lps. 999.99'}</span></h5>
+                                    <h5 className='text-secondary mb-3'>Subtotal: <span>{new Intl.NumberFormat('es-HN', {
+                                        style: 'currency',
+                                        currency: 'HNL',
+                                        minimumFractionDigits: 2,
+                                    }).format(cartTotal())}</span></h5>
                                     <h5 className='text-secondary'>Descuento: <span>{'Lps. 0.00'}</span></h5>
                                     <hr />
-                                    <h3 className='mb-3'>Total: Lps. <span>{cartTotal()}</span></h3>
-                                    <h5>Ingrese un nombre para indentificacion:</h5>
+                                    <h3 className='mb-3'>Total: Lps. <span>{new Intl.NumberFormat('es-HN', {
+                                        style: 'currency',
+                                        currency: 'HNL',
+                                        minimumFractionDigits: 2,
+                                    }).format(cartTotal())}</span></h3>
+                                    <h5>Ingrese un nombre para identificacion:</h5>
                                     <input
                                         type="text"
                                         placeholder='Tu nombre aqui...'

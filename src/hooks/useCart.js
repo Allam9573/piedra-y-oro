@@ -30,7 +30,7 @@ const useCart = () => {
             if (item.id === id) {
                 return {
                     ...item,
-                    cantidad: item.cantidad - 1
+                    cantidad: item.cantidad > 1 ? item.cantidad - 1 : 1
                 }
             }
             return item
@@ -38,7 +38,16 @@ const useCart = () => {
         setCart(updateCart)
     }
     const incrementar = id => {
-        alert(id)
+        const updateCart = cart.map(item => {
+            if (item.id === id) {
+                return {
+                    ...item,
+                    cantidad: item.cantidad + 1
+                }
+            }
+            return item
+        })
+        setCart(updateCart)
     }
 
     const eliminarItemCarrito = nombreProducto => {

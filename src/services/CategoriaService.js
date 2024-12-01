@@ -3,8 +3,8 @@ import axios from "axios";
 class CategoriaService {
 
     listarCategorias() {
-        return axios.get('http://localhost:8000/api/categorias/')
-        // return axios.get('https://lionettas-backend.onrender.com/api/categorias/')
+        // return axios.get('http://localhost:8000/api/categorias/')
+        return axios.get('https://lionettas-backend.onrender.com/api/categorias/')
     }
 
     nuevaCategoria(categoria) {

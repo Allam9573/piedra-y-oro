@@ -7,7 +7,7 @@ import '../assets/css/styles.css'
 
 export const Home = () => {
     document.title = 'Lionettas | Home'
-    const { promociones } = usePromociones()
+    const { promociones = [] } = usePromociones()
     const header = promociones.length !== 0 ? <Promociones promociones={promociones} /> : <Header />
     return (
         <>

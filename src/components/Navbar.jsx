@@ -41,9 +41,9 @@ export const Navbar = ({ quantity, quantityFavorites }) => {
                             <li className="nav-item">
                                 <Link className="nav-link" to={'/nosotros'}>Nosotros</Link>
                             </li>
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <a className="nav-link" href="contact.html">Contacto</a>
-                            </li>
+                            </li> */}
                             {/* <li className="nav-item">
                                 <Link className="nav-link" to={'/admin'}>Admin</Link>
                             </li> */}

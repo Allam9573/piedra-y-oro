@@ -1,7 +1,7 @@
 import { usePromociones } from '../hooks/usePromociones'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-
+import '../assets/css/promociones.css'
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -19,12 +19,12 @@ export const Promociones = ({ promociones }) => {
             navigation
             pagination={{ clickable: true }}
             scrollbar={{ draggable: true }}
-            className='vh-25'
+            className='promociones-container'
         >
             {
                 promociones.map(promocion => (
-                    <SwiperSlide key={promocion.id} className='text-center vh-25'>
-                        <img src={promocion.imagen} width={'100%'} alt="" />
+                    <SwiperSlide key={promocion.id} className='d-flex justify-content-center align-items-center'>
+                        <img src={promocion.imagen} className='' alt="" />
                     </SwiperSlide>
                 ))
             }

@@ -31,13 +31,13 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
             subcategoriasSeleccionadas.includes(producto.subcategoria_nombre);
         return coincideBusqueda && coincideSubcategoria;
     });
-    const badgeClass = subcategoria => {
-        return classNames('badge', {
-            'bg-success': subcategoria === 'Ropa Deportiva',
-            'bg-warning': subcategoria === 'Joyeria',
-            'bg-danger': subcategoria === 'Maquillaje',
-        }, 'bg-success')
-    }
+    // const badgeClass = subcategoria => {
+    //     return classNames('badge', {
+    //         'bg-success': subcategoria === 'Ropa Deportiva',
+    //         'bg-warning': subcategoria === 'Joyeria',
+    //         'bg-danger': subcategoria === 'Maquillaje',
+    //     }, 'bg-success')
+    // }
     return (
         <div className="container py-5">
             <div className="row">
@@ -77,8 +77,8 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
                                 <div key={producto.id} className="col-md-4">
                                     <div className="card mb-4 product-wap rounded-0">
                                         <div className="card rounded-0">
-                                            {/* Mostrar solo la primera imagen */}
                                             <img
+                                                
                                                 className="card-img rounded-0 img-fluid"
                                                 src={producto.imagenes.length > 0 ? producto.imagenes[0].imagen : "placeholder.jpg"}
                                                 alt={producto.nombre}
@@ -105,6 +105,7 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
                                         </div>
                                         <div className="card-body">
                                             <h3 className="text-decoration-none">{producto.nombre}</h3>
+                                            <span className='badge bg-success'>{producto.subcategoria_nombre}</span>
                                             <p className="text-center mb-0">
                                                 Precio: <span className="fw-bold"> {new Intl.NumberFormat('es-HN', {
                                                     style: 'currency',

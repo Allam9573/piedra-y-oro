@@ -2,6 +2,7 @@ import React from 'react'
 import { useCategorias } from '../../hooks/useCategorias'
 import joya from '../../assets/img/joyas.png'
 import ninos from '../../assets/img/ninos.png'
+import cruz from '../../assets/img/cruz.png'
 import { Link } from 'react-router-dom'
 import '../../assets/css/styles.css'
 
@@ -18,23 +19,43 @@ export const HomeCategorias = () => {
                     </p> */}
                 </div>
             </div>
-            <div className="row">
-         
-                        <div className="col-12 text-center col-md-4 p-5 mt-3">
-                            <a href="#"><img src={joya} className="w-75" /></a>
-                            <h5 className="text-center mt-3 mb-3">Joyeria</h5>
-                            <p className="text-center">
-                                <Link className="btn btn-success">Ver Mas</Link>
-                            </p>
-                        </div>
-                        <div className="col-12 text-center col-md-4 p-5 mt-3">
-                            <a href="#"><img src={ninos} className="w-75 shadow-img" /></a>
-                            <h5 className="text-center mt-3 mb-3">Ninos</h5>
-                            <p className="text-center">
-                                <Link className="btn btn-success">Ver Mas</Link>
-                            </p>
-                        </div>
+            <div className="container">
+                <div className="row">
+                    {/* Joyeria */}
+                    <div className="col-12 col-md-4 text-center p-3">
+                        <a href="#">
+                            <img src={joya} className="img-fluid w-75" alt="Joyeria" />
+                        </a>
+                        <h5 className="mt-3 mb-3">Joyeria</h5>
+                        <p>
+                            <Link to="/productos" className="btn btn-success">Ver Más</Link>
+                        </p>
+                    </div>
+
+                    {/* Niños */}
+                    <div className="col-12 col-md-4 text-center p-3">
+                        <a href="#">
+                            <img src={ninos} className="img-fluid w-75" alt="Niños" />
+                        </a>
+                        <h5 className="mt-3 mb-3">Niños</h5>
+                        <p>
+                            <Link to="/productos" className="btn btn-success">Ver Más</Link>
+                        </p>
+                    </div>
+
+                    {/* Religión */}
+                    <div className="col-12 col-md-4 text-center p-3">
+                        <a href="#">
+                            <img src={cruz} className="img-fluid w-75" alt="Religión" />
+                        </a>
+                        <h5 className="mt-3 mb-3">Religión</h5>
+                        <p>
+                            <Link to="/productos" className="btn btn-success">Ver Más</Link>
+                        </p>
+                    </div>
+                </div>
             </div>
+
         </section>
     )
 }

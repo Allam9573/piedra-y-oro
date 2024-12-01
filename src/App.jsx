@@ -20,7 +20,7 @@ import { Favorites } from "./components/Favorites"
 import { ProductoEliminar } from "./components/productos/ProductoEliminar"
 import { useCart } from "./hooks/useCart"
 import { NuevaVenta } from "./components/ventas/NuevaVenta"
-
+import './assets/css/whatsapp-icon.css'
 const App = () => {
 
   const { favorites, addFavorite, deleteItem } = useFavorites()
@@ -51,6 +51,9 @@ const App = () => {
         <Route path="/*" element={<Error404 />} />
       </Routes>
       <Footer />
+      <a href="https://wa.me/1234567890" target="_blank" class="whatsapp-btn">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+      </a>
     </BrowserRouter>
   )
 }

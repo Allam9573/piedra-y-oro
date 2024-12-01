@@ -21,6 +21,7 @@ import { ProductoEliminar } from "./components/productos/ProductoEliminar"
 import { useCart } from "./hooks/useCart"
 import { NuevaVenta } from "./components/ventas/NuevaVenta"
 import './assets/css/whatsapp-icon.css'
+import { Sign } from "./components/Sign"
 const App = () => {
 
   const { favorites, addFavorite, deleteItem } = useFavorites()
@@ -31,6 +32,7 @@ const App = () => {
       <Navbar quantity={cart.length} quantityFavorites={favorites.length} />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/sign" element={<Sign />} />
         <Route path="/categorias/:nombre" element={<CategoriaProducto />} />
         {/* <Route path="/admin" element={<Admin />} /> */}
         {/* <Route path="/admin/categorias" element={<Categorias />} />

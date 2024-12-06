@@ -4,7 +4,7 @@ class CategoriaService {
 
     listarCategorias() {
         // return axios.get('http://localhost:8000/api/categorias/')
-        return axios.get('https://lionettas-backend.onrender.com/api/categorias/')
+        return axios.get('https://lionettas-backend-production.up.railway.app/api/categorias/')
     }
 
     nuevaCategoria(categoria) {

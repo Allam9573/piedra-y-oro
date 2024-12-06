@@ -44,7 +44,7 @@ export const NuevaCategoria = () => {
                                 <select className="form-control">
                                     <option value="">Seleccione la categoria perteneciente</option>
                                     {
-                                        categorias.map(categoria =>(
+                                        categorias.map(categoria => (
                                             <option value="" key={categoria.id}>{categoria.nombre}</option>
                                         ))
                                     }

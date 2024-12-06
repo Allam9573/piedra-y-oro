@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { useCategorias } from '../../hooks/useCategorias'
-import imagen from '../../assets/img/brand_01.png'
 
 export const CategoriaProducto = () => {
 

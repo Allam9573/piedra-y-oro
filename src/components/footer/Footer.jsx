@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaFacebook } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
+import logo_blanco from '../../assets/img/logo_blanco.png'
 
 export const Footer = () => {
     return (
@@ -9,15 +10,15 @@ export const Footer = () => {
                 <div class="row">
 
                     <div class="col-md-4 pt-5">
-                        <h2 class="h2 text-success border-bottom pb-3 border-light logo">Lionettas</h2>
+                       <img src={logo_blanco} width={'60%'} alt="" />
                         <ul class="list-unstyled text-light footer-link-list">
                             <li>
                                 <i class="fas fa-map-marker-alt fa-fw"></i>
-                                123 Consectetur at ligula 10660
+
                             </li>
                             <li>
                                 <i class="fa fa-phone fa-fw"></i>
-                                <a class="text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
+                                <a class="text-decoration-none" href="https://wa.me/+50494969595">Tel: +504 9496-9595</a>
                             </li>
                             <li>
                                 <i class="fa fa-envelope fa-fw"></i>
@@ -87,7 +88,6 @@ export const Footer = () => {
                     </div>
                 </div>
             </div>
-
         </footer>
     )
 }

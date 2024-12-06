@@ -9,11 +9,10 @@ import { TiShoppingCart } from "react-icons/ti";
 export const Cart = ({ cart, eliminarItemCarrito, incrementar, decrementar }) => {
 
     document.title = 'Lionettas | Mi Carrito'
-    const [cantidad, setCantidad] = useState(0)
     const [cliente, setCliente] = useState('')
 
     const handlePay = () => {
-        const telefono = '+50432675530'
+        const telefono = '+50494969595'
         const mensaje = cart.map(
             (producto) =>
                 `Producto: ${producto.nombre}\nCantidad: ${producto.cantidad}`

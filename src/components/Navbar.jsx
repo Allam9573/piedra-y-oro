@@ -3,6 +3,7 @@ import { IoBagCheckOutline } from 'react-icons/io5'
 import { MdAddShoppingCart } from 'react-icons/md'
 import { Link } from 'react-router-dom'
 import { MdFavoriteBorder } from "react-icons/md";
+import logo from '../assets/img/logo_lionettas.png'
 
 //css import
 import '../assets/css/bootstrap.min.css'
@@ -19,7 +20,7 @@ export const Navbar = ({ quantity, quantityFavorites }) => {
             <div className="container d-flex justify-content-between align-items-center">
 
                 <Link className="navbar-brand text-success logo h1 align-self-center" to={'/'} >
-                    Lionettas
+                    <img src={logo} width={'35%'} alt="" />
                 </Link>
 
                 <button className="navbar-toggler border-0" type="button" data-bs-toggle="collapse"

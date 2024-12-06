@@ -32,6 +32,7 @@ const App = () => {
       <Navbar quantity={cart.length} quantityFavorites={favorites.length} />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/sign" element={<Sign />} />
         <Route path="/categorias/:nombre" element={<CategoriaProducto />} />
         {/* <Route path="/admin" element={<Admin />} /> */}
         {/* <Route path="/admin/categorias" element={<Categorias />} />

@@ -7,7 +7,7 @@ export const Sign = () => {
     const [password, setPassword] = useState('')
 
     const api = usuario => {
-        return axios.post(`https://lionettas-backend.onrender.com/api/usuarios/`, usuario)
+        return axios.post(`https://lionettas-backend-production.up.railway.app/api/usuarios/`, usuario)
     }
     const OnSubmit = e => {
         e.preventDefault()

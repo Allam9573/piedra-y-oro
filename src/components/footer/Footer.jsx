@@ -10,7 +10,7 @@ export const Footer = () => {
                 <div class="row">
 
                     <div class="col-md-4 pt-5">
-                       <img src={logo_blanco} width={'60%'} alt="" />
+                        <img src={logo_blanco} width={'60%'} alt="" />
                         <ul class="list-unstyled text-light footer-link-list">
                             <li>
                                 <i class="fas fa-map-marker-alt fa-fw"></i>
@@ -82,7 +82,7 @@ export const Footer = () => {
                     <div class="row pt-2">
                         <div class="col-12">
                             <p class="text-left text-light">
-                                Copyright &copy; 2025 Lionettas
+                                Copyright &copy; 2025 Lionettas | Todos los derechos reservados
                             </p>
                         </div>
                     </div>

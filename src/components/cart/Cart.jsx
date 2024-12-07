@@ -71,9 +71,9 @@ export const Cart = ({ cart, eliminarItemCarrito, incrementar, decrementar }) =>
                                                 }).format(producto.precio)}</span></h5>
                                                 <div className='d-flex align-items-center'>
                                                     <h5 className='text-secondary me-2'>Cantidad:</h5>
-                                                    <button onClick={() => { incrementar(producto.id) }} className='btn btn-success'>+</button>
-                                                    <input type="text" name="" value={producto.cantidad} className="form-control w-25" readOnly />
                                                     <button onClick={() => decrementar(producto.id)} className='btn btn-danger'>-</button>
+                                                    <input type="text" name="" value={producto.cantidad} className="form-control w-25" readOnly />
+                                                    <button onClick={() => { incrementar(producto.id) }} className='btn btn-success'>+</button>
                                                 </div>
                                                 <h5>Total: {new Intl.NumberFormat('es-HN', {
                                                     style: 'currency',

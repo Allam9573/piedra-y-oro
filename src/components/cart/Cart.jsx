@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { MdOutlineDeleteOutline } from "react-icons/md";
 import imagen from '../../assets/img/empty-cart.png'
@@ -9,13 +9,16 @@ import { TiShoppingCart } from "react-icons/ti";
 export const Cart = ({ cart, eliminarItemCarrito, incrementar, decrementar }) => {
 
     document.title = 'Lionettas | Mi Carrito'
+
     const [cliente, setCliente] = useState('')
+    const [selectLugar, setSelectLugar] = useState('Tegucigalpa')
+    const [valorEnvio, setValorEnvio] = useState(0)
 
     const handlePay = () => {
         const telefono = '+50494969595'
         const mensaje = cart.map(
             (producto) =>
-                `Producto: ${producto.nombre}\nCantidad: ${producto.cantidad}`
+                `Producto: ${producto.nombre}\nCantidad: ${producto.cantidad}\nLugar compra: ${selectLugar}\nValor envio: L. ${valorEnvio}\n`
         )
             .join('\n\n')
         const mensajeCompleto = `Hola, mi nombre es ${cliente}, me interesa realizar el siguiente pedido:\n\n ${mensaje}Total a Pagar: L. ${cartTotal()}`
@@ -25,7 +28,7 @@ export const Cart = ({ cart, eliminarItemCarrito, incrementar, decrementar }) =>
         window.open(url, "_blank");
     }
 
-    const cartTotal = () => cart.reduce((total, item) => total + (item.precio * item.cantidad), 0)
+    const cartTotal = () => cart.reduce((total, item) => total + (item.precio * item.cantidad + valorEnvio), 0)
     const badgeClass = categoria => {
         return classNames('badge', {
             'bg-success': categoria === 'Ropa Deportiva',
@@ -34,7 +37,16 @@ export const Cart = ({ cart, eliminarItemCarrito, incrementar, decrementar }) =>
             'pink': categoria === 'Ropa Dama',
         }, 'bg-info')
     }
-    console.log(cart)
+    const changeLugar = e => {
+        setSelectLugar(e.target.value)
+        console.log(e.target.value)
+        // selectLugar('Tegucigalpa') ? setValorEnvio(80) : setValorEnvio(120)
+    }
+
+    useEffect(() => {
+        setValorEnvio(selectLugar === 'Tegucigalpa' ? 80 : 120)
+    }, [selectLugar])
+
     return (
         <>
             {
@@ -93,7 +105,14 @@ export const Cart = ({ cart, eliminarItemCarrito, incrementar, decrementar }) =>
                                         currency: 'HNL',
                                         minimumFractionDigits: 2,
                                     }).format(cartTotal())}</span></h5>
-                                    <h5 className='text-secondary'>Descuento: <span>{'Lps. 0.00'}</span></h5>
+                                    <h5 className='text-secondary mb-3'>Descuento: <span>{'Lps. 0.00'}</span></h5>
+                                    <label className='mb-2' htmlFor="">Selecciona el lugar de donde compras
+                                        <select className='form-control' value={selectLugar} onChange={e => changeLugar(e)}>
+                                            <option value="Tegucigalpa">Tegucigalpa (Lps. 80.00)</option>
+                                            <option value="Interior del pais">Interior del pais (Lps. 120.00)</option>
+                                        </select>
+                                    </label>
+                                    <span>Valor del envio: L. {valorEnvio} </span>
                                     <hr />
                                     <h3 className='mb-3'>Total: Lps. <span>{new Intl.NumberFormat('es-HN', {
                                         style: 'currency',
@@ -109,7 +128,7 @@ export const Cart = ({ cart, eliminarItemCarrito, incrementar, decrementar }) =>
                                         onChange={e => setCliente(e.target.value)}
                                     />
 
-                                    <button onClick={() => handlePay()} className='btn btn-danger w-100'>Pagar</button>
+                                    <button disabled={cliente.length === 0} onClick={() => handlePay()} className='btn btn-danger w-100'>Pagar</button>
                                 </div>
                             </div>
                         </div>

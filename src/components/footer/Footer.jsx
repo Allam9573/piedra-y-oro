@@ -2,56 +2,80 @@ import React from 'react'
 import { FaFacebook } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import logo_blanco from '../../assets/img/logo_blanco.png'
+import { useFooter } from '../../hooks/useFooter';
 
 export const Footer = () => {
+    const { itemsAtencionCliente, itemsAcercaDe, itemsPreguntas, itemsConectar } = useFooter()
     return (
         <footer class="bg-dark" id="tempaltemo_footer">
             <div class="container">
+                <div class="col-md-4 pt-5">
+                    <img src={logo_blanco} width={'60%'} alt="" />
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt fa-fw"></i>
+
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-fw"></i>
+                            <a class="text-decoration-none" href="https://wa.me/+50494969595">Tel: +504 9496-9595</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope fa-fw"></i>
+                            <a class="text-decoration-none" href="mailto:info@company.com">info@company.com</a>
+                        </li>
+                    </ul>
+                </div>
                 <div class="row">
 
-                    <div class="col-md-4 pt-5">
-                        <img src={logo_blanco} width={'60%'} alt="" />
+                    <div class="col-12 col-sm-6 col-md-3 pt-5">
+                        <h2 class="h2 text-light border-bottom pb-3 border-light">Atencion al Cliente</h2>
                         <ul class="list-unstyled text-light footer-link-list">
-                            <li>
-                                <i class="fas fa-map-marker-alt fa-fw"></i>
-
-                            </li>
-                            <li>
-                                <i class="fa fa-phone fa-fw"></i>
-                                <a class="text-decoration-none" href="https://wa.me/+50494969595">Tel: +504 9496-9595</a>
-                            </li>
-                            <li>
-                                <i class="fa fa-envelope fa-fw"></i>
-                                <a class="text-decoration-none" href="mailto:info@company.com">info@company.com</a>
-                            </li>
+                            {
+                                itemsAtencionCliente.map(item => (
+                                    <li key={item.id}><a class="text-decoration-none" href="#">{item.descripcion}</a></li>
+                                ))
+                            }
                         </ul>
                     </div>
 
-                    <div class="col-md-4 pt-5">
-                        <h2 class="h2 text-light border-bottom pb-3 border-light">Products</h2>
+
+                    <div class="col-12 col-sm-6 col-md-3 pt-5">
+                        <h2 class="h2 text-light border-bottom pb-3 border-light">Acerca de</h2>
                         <ul class="list-unstyled text-light footer-link-list">
-                            <li><a class="text-decoration-none" href="#">Luxury</a></li>
-                            <li><a class="text-decoration-none" href="#">Sport Wear</a></li>
-                            <li><a class="text-decoration-none" href="#">Men's Shoes</a></li>
-                            <li><a class="text-decoration-none" href="#">Women's Shoes</a></li>
-                            <li><a class="text-decoration-none" href="#">Popular Dress</a></li>
-                            <li><a class="text-decoration-none" href="#">Gym Accessories</a></li>
-                            <li><a class="text-decoration-none" href="#">Sport Shoes</a></li>
+                            {
+                                itemsAcercaDe.map(item => (
+                                    <li key={item.id}><a class="text-decoration-none" href="#">{item.descripcion}</a></li>
+                                ))
+                            }
                         </ul>
                     </div>
 
-                    <div class="col-md-4 pt-5">
-                        <h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
+
+                    <div class="col-12 col-sm-6 col-md-3 pt-5">
+                        <h2 class="h2 text-light border-bottom pb-3 border-light">Preguntas</h2>
                         <ul class="list-unstyled text-light footer-link-list">
-                            <li><a class="text-decoration-none" href="#">Home</a></li>
-                            <li><a class="text-decoration-none" href="#">About Us</a></li>
-                            <li><a class="text-decoration-none" href="#">Shop Locations</a></li>
-                            <li><a class="text-decoration-none" href="#">FAQs</a></li>
-                            <li><a class="text-decoration-none" href="#">Contact</a></li>
+                            {
+                                itemsPreguntas.map(item => (
+                                    <li key={item.id}><a class="text-decoration-none" href="#">{item.descripcion}</a></li>
+                                ))
+                            }
+                        </ul>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-3 pt-5">
+                        <h2 class="h2 text-light border-bottom pb-3 border-light">Conectar</h2>
+                        <ul class="list-unstyled text-light footer-link-list">
+                        {
+                                itemsConectar.map(item => (
+                                    <li key={item.id}><a class="text-decoration-none" href="#">{item.descripcion}</a></li>
+                                ))
+                            }
                         </ul>
                     </div>
 
                 </div>
+
 
                 <div class="row text-light mb-4">
                     <div class="col-12 mb-3">

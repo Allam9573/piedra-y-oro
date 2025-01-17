@@ -29,7 +29,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      {/* <Navbar quantity={cart.length} quantityFavorites={favorites.length} /> */}
+      <Navbar quantity={cart.length} quantityFavorites={favorites.length} />
       <Routes>
         <Route path="/" element={<Placeholder />} />
         <Route path="/categorias/:nombre" element={<CategoriaProducto />} />

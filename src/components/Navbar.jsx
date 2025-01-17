@@ -33,7 +33,7 @@ export const Navbar = ({ quantity, quantityFavorites }) => {
                     id="templatemo_main_nav">
                     <div className="flex-fill">
                         <ul className="nav navbar-nav d-flex justify-content-between mx-lg-auto">
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <Link className="nav-link" to={'/'} >Inicio</Link>
                             </li>
                             <li className="nav-item">
@@ -41,12 +41,6 @@ export const Navbar = ({ quantity, quantityFavorites }) => {
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to={'/nosotros'}>Nosotros</Link>
-                            </li>
-                            {/* <li className="nav-item">
-                                <a className="nav-link" href="contact.html">Contacto</a>
-                            </li> */}
-                            {/* <li className="nav-item">
-                                <Link className="nav-link" to={'/admin'}>Admin</Link>
                             </li> */}
                         </ul>
                     </div>
@@ -63,7 +57,7 @@ export const Navbar = ({ quantity, quantityFavorites }) => {
                     data-bs-target="#templatemo_search">
                     <i class="fa fa-fw fa-search text-dark mr-2"></i>
                 </a> */}
-                        <Link className="nav-icon position-relative text-decoration-none" to={'/my-cart'}>
+                        {/* <Link className="nav-icon position-relative text-decoration-none" to={'/my-cart'}>
                             <MdAddShoppingCart />
                             {
                                 quantity > 0 ?
@@ -78,7 +72,7 @@ export const Navbar = ({ quantity, quantityFavorites }) => {
                             <MdFavoriteBorder />
                             <span
                                 className="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">{quantityFavorites}</span>
-                        </Link>
+                        </Link> */}
                         {/* <a class="nav-icon position-relative text-decoration-none" href="#">
                     <i class="fa fa-fw fa-user text-dark mr-3"></i>
                     <span

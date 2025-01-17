@@ -26,6 +26,7 @@ const useCategorias = () => {
             })
             .catch(() => swal("Error al guardar!", "Ocurrio un error al guardar la categoria, verifica que el campo a guardar tenga un dato valido.", "error"))
     }
+
     const buscarCategoria = id => {
         CategoriaService.buscarCategoria(id)
             .then(response => setCategoria(response.data))

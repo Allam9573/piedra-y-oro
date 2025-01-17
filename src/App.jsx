@@ -21,6 +21,7 @@ import { ProductoEliminar } from "./components/productos/ProductoEliminar"
 import { useCart } from "./hooks/useCart"
 import { NuevaVenta } from "./components/ventas/NuevaVenta"
 import './assets/css/whatsapp-icon.css'
+import { Placeholder } from "./pages/Placeholder"
 const App = () => {
 
   const { favorites, addFavorite, deleteItem } = useFavorites()
@@ -28,9 +29,9 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <Navbar quantity={cart.length} quantityFavorites={favorites.length} />
+      {/* <Navbar quantity={cart.length} quantityFavorites={favorites.length} /> */}
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Placeholder />} />
         <Route path="/categorias/:nombre" element={<CategoriaProducto />} />
         {/* <Route path="/admin" element={<Admin />} /> */}
         {/* <Route path="/admin/categorias" element={<Categorias />} />
@@ -50,10 +51,10 @@ const App = () => {
         <Route path="/my-favorites" element={<Favorites favorites={favorites} deleteItem={deleteItem} addToCart={addToCart} />} />
         <Route path="/*" element={<Error404 />} />
       </Routes>
-      <Footer />
-      <a href="https://wa.me/+50494969595" target="_blank" class="whatsapp-btn">
+      {/* <Footer /> */}
+      {/* <a href="https://wa.me/+50494969595" target="_blank" class="whatsapp-btn">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
-      </a>
+      </a> */}
     </BrowserRouter>
   )
 }

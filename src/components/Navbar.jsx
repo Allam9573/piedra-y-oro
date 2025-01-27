@@ -33,7 +33,7 @@ export const Navbar = ({ quantity, quantityFavorites }) => {
                     id="templatemo_main_nav">
                     <div className="flex-fill">
                         <ul className="nav navbar-nav d-flex justify-content-between mx-lg-auto">
-                            {/* <li className="nav-item">
+                            <li className="nav-item">
                                 <Link className="nav-link" to={'/'} >Inicio</Link>
                             </li>
                             <li className="nav-item">
@@ -41,7 +41,7 @@ export const Navbar = ({ quantity, quantityFavorites }) => {
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to={'/nosotros'}>Nosotros</Link>
-                            </li> */}
+                            </li>
                         </ul>
                     </div>
                     <div className="navbar align-self-center d-flex">

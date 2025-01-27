@@ -11,8 +11,8 @@ export const Home = () => {
     const header = promociones.length !== 0 ? <Promociones promociones={promociones} /> : <Header />
     return (
         <>
-            {/* {header} */}
-            {/* <HomeCategorias /> */}
+            {header}
+            <HomeCategorias />
         </>
     )
 }

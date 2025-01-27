@@ -31,22 +31,22 @@ const App = () => {
     <BrowserRouter>
       <Navbar quantity={cart.length} quantityFavorites={favorites.length} />
       <Routes>
-        <Route path="/" element={<Placeholder />} />
-        {/* <Route path="/categorias/:nombre" element={<CategoriaProducto />} /> */}
-        {/* <Route path="/productos" element={<ProductosPage cart={cart} addToCart={addToCart} addFavorite={addFavorite} />} /> */}
-        {/* <Route path="/productos/:id" element={<ProductoView addToCart={addToCart} />} /> */}
-        {/* <Route path="/admin/productos/eliminar/:id" element={<ProductoEliminar />} /> */}
-        {/* <Route path="/nosotros" element={<AboutPage />} /> */}
-        {/* <Route
+        <Route path="/" element={<Home />} />
+        <Route path="/categorias/:nombre" element={<CategoriaProducto />} />
+        <Route path="/productos" element={<ProductosPage cart={cart} addToCart={addToCart} addFavorite={addFavorite} />} />
+        <Route path="/productos/:id" element={<ProductoView addToCart={addToCart} />} />
+        <Route path="/admin/productos/eliminar/:id" element={<ProductoEliminar />} />
+        <Route path="/nosotros" element={<AboutPage />} />
+        <Route
           path="/my-cart"
           element={<Cart cart={cart} eliminarItemCarrito={eliminarItemCarrito} incrementar={incrementar} decrementar={decrementar} />} />
-        <Route path="/my-favorites" element={<Favorites favorites={favorites} deleteItem={deleteItem} addToCart={addToCart} />} /> */}
+        <Route path="/my-favorites" element={<Favorites favorites={favorites} deleteItem={deleteItem} addToCart={addToCart} />} />
         <Route path="/*" element={<Error404 />} />
       </Routes>
-      {/* <Footer /> */}
-      {/* <a href="https://wa.me/+50494969595" target="_blank" class="whatsapp-btn">
+      <Footer />
+      <a href="https://wa.me/+50494969595" target="_blank" class="whatsapp-btn">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
-      </a> */}
+      </a>
     </BrowserRouter>
   )
 }

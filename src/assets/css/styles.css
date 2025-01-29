@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/bodar');
+
 * {
     margin: 0;
     padding: 0;
@@ -10,4 +12,10 @@
 
 .shadow-img {
     filter: drop-shadow(0, 0, 10px rgba(0, 0, 0.0.8));
+}
+.title{
+    font-family: 'bodar';
+    /* font-size: 3rem; */
+    font-weight: lighter;
+    letter-spacing: 7px;
 }

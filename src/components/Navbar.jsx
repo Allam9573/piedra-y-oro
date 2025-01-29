@@ -13,11 +13,9 @@ import '../assets/css/templatemo.css'
 import '../assets/js/bootstrap.bundle.min.js'
 
 export const Navbar = ({ quantity, quantityFavorites }) => {
-
-
     return (
-        <nav className="navbar navbar-expand-lg navbar-light shadow">
-            <div className="container d-flex justify-content-between align-items-center">
+        <nav className="navbar navbar-expand-lg navbar-light shadow" style={{ backgroundColor: "#E7D7C9", position:'fixed', top:0, width:"100%" }}>
+            <div className="container d-flex justify-content-center align-items-center">
 
                 <Link className="navbar-brand text-success logo h1 align-self-center" to={'/'} >
                     <img src={logo} className="img-fluid" style={{ maxWidth: '35%' }} alt="Logo" />
@@ -57,7 +55,7 @@ export const Navbar = ({ quantity, quantityFavorites }) => {
                     data-bs-target="#templatemo_search">
                     <i class="fa fa-fw fa-search text-dark mr-2"></i>
                 </a> */}
-                        {/* <Link className="nav-icon position-relative text-decoration-none" to={'/my-cart'}>
+                        <Link className="nav-icon position-relative text-decoration-none" to={'/my-cart'}>
                             <MdAddShoppingCart />
                             {
                                 quantity > 0 ?
@@ -70,14 +68,18 @@ export const Navbar = ({ quantity, quantityFavorites }) => {
                         </Link>
                         <Link className="nav-icon position-relative text-decoration-none" to={'/my-favorites'}>
                             <MdFavoriteBorder />
-                            <span
-                                className="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">{quantityFavorites}</span>
-                        </Link> */}
-                        {/* <a class="nav-icon position-relative text-decoration-none" href="#">
-                    <i class="fa fa-fw fa-user text-dark mr-3"></i>
-                    <span
-                        class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">+99</span>
-                </a> */}
+                            {
+                                quantityFavorites > 0 ?
+                                    <span
+                                        className="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-danger text-white">{quantity}</span>
+                                    :
+                                    <span
+                                        className="position-absolute top-0 left-100 translate-middle badge rounded-pill text-white"></span>
+                            }
+                        </Link>
+                        <a class="nav-icon position-relative text-decoration-none" href="#">
+                            <i class="fa fa-fw fa-user text-dark mr-3"></i>
+                        </a>
                     </div>
                 </div>
 

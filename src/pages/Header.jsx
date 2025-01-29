@@ -1,15 +1,17 @@
 import React from 'react'
 import imagen from '../assets/img/ecommerce.png'
 import { Link } from 'react-router-dom'
+import '../assets/css/styles.css'
 
 export const Header = () => {
     return (
-        <div className='vh-100 container d-flex flex-row align-items-center justify-content-around'>
-            <div className='text-center'>
-                <h2 className='mb-5 text-success display-5 mx-5'>Encuentra el look perfecto, sin salir de casa.</h2>
-                <Link to={'/productos'} className='btn btn-success rounded-pill'>Ver Mas</Link>
+        <div className='vh-100 w-100 row'>
+            <div className="col-6 text-center d-flex justify-content-center align-items-center" style={{ backgroundColor: '#C7D0CF' }}>
+                <h2 className='title'>Lionettas</h2>
             </div>
-            <img src={imagen} width={'50%'} alt="" />
+            <div className="col-6 text-center" style={{ backgroundColor: '#EDE9E3' }}>
+
+            </div>
         </div>
     )
 }

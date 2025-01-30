@@ -18,7 +18,7 @@ export const Navbar = ({ quantity, quantityFavorites }) => {
             <div className="container d-flex justify-content-center align-items-center">
 
                 <Link className="navbar-brand text-success logo h1 align-self-center" to={'/'} >
-                    <img src={logo} className="img-fluid" style={{ maxWidth: '35%' }} alt="Logo" />
+                    <img src={logo} className="img-fluid" style={{ maxWidth: '15%' }} alt="Logo" />
                 </Link>
 
                 <button className="navbar-toggler border-0" type="button" data-bs-toggle="collapse"

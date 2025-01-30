@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 .pink {
@@ -13,9 +14,38 @@
 .shadow-img {
     filter: drop-shadow(0, 0, 10px rgba(0, 0, 0.0.8));
 }
-.title{
+
+.title {
     font-family: 'bodar';
-    /* font-size: 3rem; */
+    font-size: 3em;
     font-weight: lighter;
     letter-spacing: 7px;
+    /* margin: 0 auto; */
+}
+
+.title-promocion {
+    font-size: 2.5em !important;
+    font-weight: lighter;
+    color: white;
+    /* margin: 0 auto; */
+}
+
+.descripcion-promocion {
+    /* margin: 0 auto; */
+}
+
+.btn-call {
+    background-color: #E7D7C9;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+    border: 1px solid #E7D7C9;
+    transition: 0.5s;
+    /* margin: 0 auto; */
+}
+.btn-call:hover{
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
 }

@@ -23,7 +23,6 @@ const useProductos = () => {
                 navigate('/admin/productos');
             })
             .catch(error => console.log(error))
-        console.log(productoFormData)
     }
 
     const eliminarProducto = id => {

@@ -7,7 +7,7 @@ import { useFooter } from '../../hooks/useFooter';
 export const Footer = () => {
     const { itemsAtencionCliente, itemsAcercaDe, itemsPreguntas, itemsConectar } = useFooter()
     return (
-        <footer class="bg-dark" id="tempaltemo_footer">
+        <footer class="" style={{backgroundColor:'#343A36'}} id="tempaltemo_footer">
             <div class="container">
                 <div class="col-md-4 pt-5">
                     <img src={logo_blanco} width={'60%'} alt="" />
@@ -29,48 +29,36 @@ export const Footer = () => {
                 <div class="row">
 
                     <div class="col-12 col-sm-6 col-md-3 pt-5">
-                        <h2 class="h2 text-light border-bottom pb-3 border-light">Atencion al Cliente</h2>
+                        <h2 class="h5 text-light border-bottom pb-3 border-light">Siguenos</h2>
                         <ul class="list-unstyled text-light footer-link-list">
-                            {
-                                itemsAtencionCliente.map(item => (
-                                    <li key={item.id}><a class="text-decoration-none" href="#">{item.descripcion}</a></li>
-                                ))
-                            }
+                            <li class="list-inline-item">
+                                <a rel="nofollow" class="text-light text-decoration-none" target="_blank" href="https://www.facebook.com/share/1FGKwQ98qn/?mibextid=wwXIfr"><FaFacebook className='fs-3' /></a>
+                            </li>
+                            <li class="list-inline-item border border-light rounded-circle text-center">
+                                <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/lionettasjoyeria?igsh=c3hjZHBhNWh4MmNn&utm_source=qr"><FaInstagram className='fs-3' /></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3 pt-5">
+                        <h5 class="h5 text-light border-bottom pb-3 border-light">Contactanos</h5>
+                        <ul class="list-unstyled text-light footer-link-list">
+                            <h5 class="h5 text-light pb-3 border-light">Quienes Somos</h5>
+                            <h5 class="h5 text-light pb-3 border-light">Preguntas Frecuentes</h5>
                         </ul>
                     </div>
 
 
-                    <div class="col-12 col-sm-6 col-md-3 pt-5">
-                        <h2 class="h2 text-light border-bottom pb-3 border-light">Acerca de</h2>
-                        <ul class="list-unstyled text-light footer-link-list">
-                            {
-                                itemsAcercaDe.map(item => (
-                                    <li key={item.id}><a class="text-decoration-none" href="#">{item.descripcion}</a></li>
-                                ))
-                            }
-                        </ul>
-                    </div>
 
 
                     <div class="col-12 col-sm-6 col-md-3 pt-5">
-                        <h2 class="h2 text-light border-bottom pb-3 border-light">Preguntas</h2>
+                        <h2 class="h2 text-light pb-3 border-light">Registrate</h2>
                         <ul class="list-unstyled text-light footer-link-list">
-                            {
-                                itemsPreguntas.map(item => (
-                                    <li key={item.id}><a class="text-decoration-none" href="#">{item.descripcion}</a></li>
-                                ))
-                            }
-                        </ul>
-                    </div>
+                            <form action="">
+                                <input type="text" placeholder='Nombre' className="form-control mb-3" />
+                                <input type="text" placeholder='Telefono' className="form-control mb-3" />
+                                <input type="submit" value="Registrar" className='btn text-white w-100' style={{backgroundColor:'#938E87'}} />
+                            </form>
 
-                    <div class="col-12 col-sm-6 col-md-3 pt-5">
-                        <h2 class="h2 text-light border-bottom pb-3 border-light">Conectar</h2>
-                        <ul class="list-unstyled text-light footer-link-list">
-                        {
-                                itemsConectar.map(item => (
-                                    <li key={item.id}><a class="text-decoration-none" href="#">{item.descripcion}</a></li>
-                                ))
-                            }
                         </ul>
                     </div>
 
@@ -81,7 +69,7 @@ export const Footer = () => {
                     <div class="col-12 mb-3">
                         <div class="w-100 my-3 border-top border-light"></div>
                     </div>
-                    <div class="col-auto me-auto">
+                    {/* <div class="col-auto me-auto">
                         <ul class="list-inline text-left">
                             <li class="list-inline-item">
                                 <a rel="nofollow" class="text-light text-decoration-none" target="_blank" href="https://www.facebook.com/share/1FGKwQ98qn/?mibextid=wwXIfr"><FaFacebook className='fs-3' /></a>
@@ -90,7 +78,7 @@ export const Footer = () => {
                                 <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/lionettasjoyeria?igsh=c3hjZHBhNWh4MmNn&utm_source=qr"><FaInstagram className='fs-3' /></a>
                             </li>
                         </ul>
-                    </div>
+                    </div> */}
                     {/* <div class="col-auto">
                         <label class="sr-only" htmlFor="subscribeEmail">Email address</label>
                         <div class="input-group mb-2">

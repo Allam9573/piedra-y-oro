@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useProductos } from '../hooks/useProductos';
 import { useSubcategorias } from '../hooks/useSubcategorias';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import { MdAddShoppingCart, MdFavoriteBorder } from 'react-icons/md';
 import { GrView } from 'react-icons/gr';
 import classNames from 'classnames';
@@ -14,6 +14,18 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
     const { productos } = useProductos();
     const { subcategorias } = useSubcategorias();
 
+    const location = useLocation();
+    const params = new URLSearchParams(location.search);
+    const categoriaSeleccionada = params.get("categoria");
+
+
+    // Aplicar filtro automáticamente al cargar
+    useEffect(() => {
+        if (categoriaSeleccionada) {
+            setSubcategoriasSeleccionadas([categoriaSeleccionada]);
+        }
+    }, [categoriaSeleccionada]);
+
     const handleSubcategoriaChange = (nombreSubcategoria) => {
         setSubcategoriasSeleccionadas((prevSeleccionadas) =>
             prevSeleccionadas.includes(nombreSubcategoria)
@@ -21,6 +33,7 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
                 : [...prevSeleccionadas, nombreSubcategoria]
         );
     };
+
 
     const resultados = productos.filter((producto) => {
         const coincideBusqueda = producto.nombre
@@ -31,13 +44,7 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
             subcategoriasSeleccionadas.includes(producto.subcategoria_nombre);
         return coincideBusqueda && coincideSubcategoria;
     });
-    // const badgeClass = subcategoria => {
-    //     return classNames('badge', {
-    //         'bg-success': subcategoria === 'Ropa Deportiva',
-    //         'bg-warning': subcategoria === 'Joyeria',
-    //         'bg-danger': subcategoria === 'Maquillaje',
-    //     }, 'bg-success')
-    // }
+
     return (
         <div className="container py-5">
             <div className="row">
@@ -78,25 +85,26 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
                                     <div className="card mb-4 product-wap rounded-0">
                                         <div className="card rounded-0">
                                             <img
-                                                
+
                                                 className="card-img rounded-0 img-fluid"
+                                                style={{ objectFit: 'cover', width: '100%', height: '200px' }}
                                                 src={producto.imagenes.length > 0 ? producto.imagenes[0].imagen : "placeholder.jpg"}
                                                 alt={producto.nombre}
                                             />
                                             <div className="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                                 <ul className="list-unstyled">
                                                     <li>
-                                                        <a onClick={() => addFavorite(producto)} className="btn btn-success text-white">
+                                                        <a style={{ backgroundColor: '#938E87' }} onClick={() => addFavorite(producto)} className="btn text-white">
                                                             <MdFavoriteBorder />
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <Link className="btn btn-success text-white mt-2" to={`/productos/${producto.id}`}>
+                                                        <Link style={{ backgroundColor: '#938E87' }} className="btn text-white mt-2" to={`/productos/${producto.id}`}>
                                                             <GrView />
                                                         </Link>
                                                     </li>
                                                     <li>
-                                                        <a onClick={() => addToCart(producto)} className="btn btn-success text-white mt-2">
+                                                        <a onClick={() => addToCart(producto)} style={{ backgroundColor: '#938E87' }} className="btn text-white mt-2">
                                                             <MdAddShoppingCart />
                                                         </a>
                                                     </li>
@@ -105,7 +113,7 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
                                         </div>
                                         <div className="card-body">
                                             <h3 className="text-decoration-none">{producto.nombre}</h3>
-                                            <span className='badge bg-success'>{producto.subcategoria_nombre}</span>
+                                            <span style={{ backgroundColor: '#938E87' }} className='badge'>{producto.subcategoria_nombre}</span>
                                             <p className="text-center mb-0">
                                                 Precio: <span className="fw-bold"> {new Intl.NumberFormat('es-HN', {
                                                     style: 'currency',
@@ -121,8 +129,6 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
                             <h2>Sin resultados</h2>
                         )}
                     </div>
-
-
                 </div>
             </div>
         </div>

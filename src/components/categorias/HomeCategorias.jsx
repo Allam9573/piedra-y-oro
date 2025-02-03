@@ -5,53 +5,47 @@ import ninos from '../../assets/img/ninos.png'
 import cruz from '../../assets/img/cruz.png'
 import { Link } from 'react-router-dom'
 import '../../assets/css/styles.css'
+import anillo from '../../assets/img/anillo.jpeg'
+import pulsera from '../../assets/img/pulsera1.jpeg'
 
 export const HomeCategorias = () => {
-    const { categorias } = useCategorias()
     return (
         <section className="container py-5">
-            <div className="row text-center pt-3">
+            <div className="row text-center py-3">
                 <div className="col-lg-6 m-auto">
-                    <h1 className="h1">Categorias</h1>
-                    {/* <p>
-                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                        deserunt mollit anim id est laborum.
-                    </p> */}
+                    <h1 className="h1" style={{ color: '#C7D0CF' }}>Comprar por Categorias</h1>
                 </div>
             </div>
             <div className="container">
                 <div className="row">
                     {/* Joyeria */}
-                    <div className="col-12 col-md-4 text-center p-3">
-                        <a href="#">
-                            <img src={joya} className="img-fluid w-75" alt="Joyeria" />
-                        </a>
-                        <h5 className="mt-3 mb-3">Joyeria</h5>
-                        <p>
-                            <Link to="/productos" className="btn btn-success">Ver Más</Link>
-                        </p>
+                    <div className="col-3 col-md-3 text-center p-3">
+                        <div className='position-relative h-100 w-100'>
+                            <img src={pulsera} className='img-fluid' alt="" />
+                            <Link to={`/productos?categoria=Pulseras`} style={{ backgroundColor: '#E7D7C9' }} className='btn position-absolute top-50 start-50 translate-middle'>Pulseras</Link>
+                        </div>
                     </div>
 
                     {/* Niños */}
-                    <div className="col-12 col-md-4 text-center p-3">
-                        <a href="#">
-                            <img src={ninos} className="img-fluid w-75" alt="Niños" />
-                        </a>
-                        <h5 className="mt-3 mb-3">Niños</h5>
-                        <p>
-                            <Link to="/productos" className="btn btn-success">Ver Más</Link>
-                        </p>
+                    <div className="col-3 col-md-3 text-center p-3">
+                        <div className='position-relative h-100 w-100 bg-primary'>
+                            <img src={anillo} className='img-fluid' alt="" />
+                            <Link to={`/productos?categoria=Aretes`} style={{ backgroundColor: '#E7D7C9' }} className='btn position-absolute top-50 start-50 translate-middle'>Aretes</Link>
+                        </div>
                     </div>
 
                     {/* Religión */}
-                    <div className="col-12 col-md-4 text-center p-3">
-                        <a href="#">
-                            <img src={cruz} className="img-fluid w-75" alt="Religión" />
-                        </a>
-                        <h5 className="mt-3 mb-3">Religión</h5>
-                        <p>
-                            <Link to="/productos" className="btn btn-success">Ver Más</Link>
-                        </p>
+                    <div className="col-3 col-md-3 text-center p-3">
+                        <div className='position-relative h-100 w-100 bg-primary'>
+                            <img src={anillo} className='img-fluid' alt="" />
+                            <Link to={`/productos?categoria=Cadenas`} style={{ backgroundColor: '#E7D7C9' }} className='btn position-absolute top-50 start-50 translate-middle'>Cadenas</Link>
+                        </div>
+                    </div>
+                    <div className="col-3 col-md-3 text-center p-3">
+                        <div className='position-relative h-100 w-100 bg-primary'>
+                            <img src={anillo} className='img-fluid' alt="" />
+                            <Link to={`/productos?categoria=Anillos`} style={{ backgroundColor: '#E7D7C9' }} className='btn position-absolute top-50 start-50 translate-middle'>Anillos</Link>
+                        </div>
                     </div>
                 </div>
             </div>

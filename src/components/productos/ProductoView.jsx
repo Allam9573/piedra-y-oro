@@ -63,7 +63,7 @@ export const ProductoView = ({ addToCart }) => {
                                                                         producto.imagenes.map(imagen => {
                                                                             return (
                                                                                 <img
-                                                                                    style={{ maxHeight: '100%', objectFit:'contain' }}
+                                                                                    style={{ maxHeight: '100%', objectFit: 'contain' }}
                                                                                     onClick={() => setFirstImage(imagen.imagen)}
                                                                                     key={imagen} class="card-img img-fluid mx-2"
                                                                                     src={imagen.imagen} alt="Product Image 1" />
@@ -113,10 +113,10 @@ export const ProductoView = ({ addToCart }) => {
                                     <p>{producto.descripcion}</p>
                                     <div class="row pb-3">
                                         <div class="col d-grid">
-                                            <Link to={'/productos'} class="btn btn-success btn-lg" name="submit" value="buy">Atras</Link>
+                                            <Link style={{ backgroundColor: '#938E87' }} to={'/productos'} class="text-white btn btn-lg" name="submit" value="buy">Atras</Link>
                                         </div>
                                         <div class="col d-grid">
-                                            <button onClick={() => addToCart(producto)} class="btn btn-success btn-lg" name="submit" value="addtocard">Agregar al Carrito</button>
+                                            <button style={{ backgroundColor: '#938E87' }} onClick={() => addToCart(producto)} class="btn text-white btn-lg" name="submit" value="addtocard">Agregar al Carrito</button>
                                         </div>
                                     </div>
                                 </div>

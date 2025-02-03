@@ -34,7 +34,7 @@ export const Footer = () => {
                             <li class="list-inline-item">
                                 <a rel="nofollow" class="text-light text-decoration-none" target="_blank" href="https://www.facebook.com/share/1FGKwQ98qn/?mibextid=wwXIfr"><FaFacebook className='fs-3' /></a>
                             </li>
-                            <li class="list-inline-item border border-light rounded-circle text-center">
+                            <li class="list-inline-item">
                                 <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/lionettasjoyeria?igsh=c3hjZHBhNWh4MmNn&utm_source=qr"><FaInstagram className='fs-3' /></a>
                             </li>
                         </ul>

@@ -11,8 +11,8 @@ export const HomeAnillos = () => {
                 {
                     anillos.map(anillo => (
                         <div key={anillo.id}>
-                            <h2 className='h1' style={{ color: "#E7D7C9" }}>{anillo.titulo}</h2>
-                            <h3 style={{ color: '#C7D0CF' }} className='mx-5 text-start'>{anillo.descripcion}</h3>
+                            <h2 className='h1 mb-3' style={{ color: "#E7D7C9" }}>{anillo.titulo}</h2>
+                            <h3 style={{ color: '#C7D0CF' }} className='mx-5 text-start mb-5'>{anillo.descripcion}</h3>
                         </div>
                     ))
                 }

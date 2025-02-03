@@ -114,7 +114,7 @@ export const Cart = ({ cart, eliminarItemCarrito, incrementar, decrementar }) =>
                                     </label>
                                     <span>Valor del envio: L. {valorEnvio} </span>
                                     <hr />
-                                    <h3 className='mb-3'>Total: Lps. <span>{new Intl.NumberFormat('es-HN', {
+                                    <h3 className='mb-3'>Total: <span>{new Intl.NumberFormat('es-HN', {
                                         style: 'currency',
                                         currency: 'HNL',
                                         minimumFractionDigits: 2,

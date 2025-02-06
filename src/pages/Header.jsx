@@ -10,22 +10,31 @@ export const Header = () => {
     const { promociones } = usePromociones();
 
     return (
-        <div className='vh-100 w-100 row'>
-            <div className="col-6 text-center px-5 py-auto flex-column d-flex justify-content-center align-items-start" style={{ backgroundColor: '#C7D0CF' }}>
-                <img src={logo} style={{width:'50%'}} className='mb-3' alt="" />
-                {
-                    promociones.map(promocion => (
-                        <div key={promocion.id} className='text-start'>
-                            <p className='title-promocion mt-5'>{promocion.titulo}</p>
-                            <p className='descripcion-promocion mb-5'>{promocion.descripcion}</p>
-                            <Link to={'/productos'} className='btn-call mt-5'>Inspirate</Link>
-                        </div>
-                    ))
-                }
+        <div className="container-fluid min-vh-100 d-flex align-items-center">
+        <div className="row w-100 flex-column-reverse flex-lg-row">
+            
+            {/* Sección de Promociones (Texto) - Primero en móviles, segundo en escritorio */}
+            <div className="col-12 col-lg-6 text-start d-flex flex-column justify-content-center align-items-center px-4 px-lg-5 py-4" 
+                style={{ backgroundColor: '#C7D0CF' }}>
+                
+                <img src={logo} className="mb-3 img-fluid w-50 w-md-25" alt="Logo" />
+                
+                {promociones.map((promocion) => (
+                    <div key={promocion.id} className="text-start w-100">
+                        <p className="title-promocion mt-4">{promocion.titulo}</p>
+                        <p className="descripcion-promocion mb-4">{promocion.descripcion}</p>
+                        <Link to="/productos" className="btn-call mt-3">Inspirate</Link>
+                    </div>
+                ))}
             </div>
-            <div className="h-100 col-6 text-center">
-                <img className='h-100 vw-100 img-fluid' src={anillo} alt="" />
+    
+            {/* Sección de Imagen - Segundo en móviles, primero en escritorio */}
+            <div className="col-12 col-lg-6 text-center">
+                <img className="img-fluid w-100 object-fit-cover" src={anillo} alt="Anillo" />
             </div>
+    
         </div>
+    </div>
+    
     )
 }

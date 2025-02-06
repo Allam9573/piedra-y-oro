@@ -6,9 +6,8 @@ import { useFooter } from '../../hooks/useFooter';
 import { Link } from 'react-router-dom';
 
 export const Footer = () => {
-    const { itemsAtencionCliente, itemsAcercaDe, itemsPreguntas, itemsConectar } = useFooter()
     return (
-        <footer class="" style={{backgroundColor:'#343A36'}} id="tempaltemo_footer">
+        <footer class="" style={{ backgroundColor: '#343A36' }} id="tempaltemo_footer">
             <div class="container">
                 <div class="col-md-4 pt-5">
                     <img src={logo_blanco} width={'60%'} alt="" />
@@ -23,7 +22,7 @@ export const Footer = () => {
                         </li>
                         <li>
                             <i class="fa fa-envelope fa-fw"></i>
-                            <a class="text-decoration-none" href="mailto:info@company.com">lionettashn@gmail.com</a>
+                            <a class="text-decoration-none" href="mailto:lionettashn@gmail.com">lionettashn@gmail.com</a>
                         </li>
                     </ul>
                 </div>
@@ -56,7 +55,7 @@ export const Footer = () => {
                             <form action="">
                                 <input type="text" placeholder='Nombre' className="form-control mb-3" />
                                 <input type="text" placeholder='Telefono' className="form-control mb-3" />
-                                <input type="submit" value="Registrar" className='btn text-white w-100' style={{backgroundColor:'#938E87'}} />
+                                <input type="submit" value="Registrar" className='btn text-white w-100' style={{ backgroundColor: '#938E87' }} />
                             </form>
 
                         </ul>

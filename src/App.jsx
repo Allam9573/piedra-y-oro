@@ -22,6 +22,7 @@ import { useCart } from "./hooks/useCart"
 import { NuevaVenta } from "./components/ventas/NuevaVenta"
 import './assets/css/whatsapp-icon.css'
 import { Placeholder } from "./pages/Placeholder"
+import { FAQ } from "./pages/FAQ"
 const App = () => {
 
   const { favorites, addFavorite, deleteItem } = useFavorites()
@@ -37,6 +38,7 @@ const App = () => {
         <Route path="/productos/:id" element={<ProductoView addToCart={addToCart} />} />
         <Route path="/admin/productos/eliminar/:id" element={<ProductoEliminar />} />
         <Route path="/nosotros" element={<AboutPage />} />
+        <Route path="/preguntas-frecuentes" element={<FAQ />} />
         <Route
           path="/my-cart"
           element={<Cart cart={cart} eliminarItemCarrito={eliminarItemCarrito} incrementar={incrementar} decrementar={decrementar} />} />

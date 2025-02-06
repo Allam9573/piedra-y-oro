@@ -3,6 +3,7 @@ import { FaFacebook } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import logo_blanco from '../../assets/img/logo_blanco.png'
 import { useFooter } from '../../hooks/useFooter';
+import { Link } from 'react-router-dom';
 
 export const Footer = () => {
     const { itemsAtencionCliente, itemsAcercaDe, itemsPreguntas, itemsConectar } = useFooter()
@@ -42,7 +43,7 @@ export const Footer = () => {
                     <div class="col-12 col-sm-6 col-md-3 pt-5">
                         <ul class="list-unstyled text-light footer-link-list">
                             <h5 class="h5 text-light pb-3 border-light">Quienes Somos</h5>
-                            <h5 class="h5 text-light pb-3 border-light">Preguntas Frecuentes</h5>
+                            <Link to={'/preguntas-frecuentes'}><h5 class="h5 text-light pb-3 border-light">Preguntas Frecuentes</h5></Link>
                         </ul>
                     </div>
 

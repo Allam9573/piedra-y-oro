@@ -15,7 +15,7 @@ export const Favorites = ({ favorites, deleteItem, addToCart }) => {
         <div className="text-center my-5">
             <img src={imagen} className="img-fluid" style={{ maxWidth: '200px' }} alt="No hay productos" />
             <h3 className="text-secondary mb-3">No hay productos en tu lista de deseos.</h3>
-            <Link to="/productos" className="btn btn-success rounded-pill">Explorar Productos</Link>
+            <Link to="/productos" className="btn btn-outline-success rounded-pill">Explorar Productos</Link>
         </div>
     ) : (
         <div className="container">

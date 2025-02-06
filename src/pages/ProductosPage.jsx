@@ -19,7 +19,7 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
     const categoriaSeleccionada = params.get("categoria");
 
 
-    // Aplicar filtro automáticamente al cargar
+   // Aplicar filtro automáticamente al cargar
     useEffect(() => {
         if (categoriaSeleccionada) {
             setSubcategoriasSeleccionadas([categoriaSeleccionada]);

@@ -55,7 +55,7 @@ export const Cart = ({ cart, eliminarItemCarrito, incrementar, decrementar }) =>
                         <h1 className='text-secondary'>Mi Cesta:</h1>
                         <img src={imagen} width={'30%'} alt="" />
                         <h3 className='text-secondary mb-3'>No hay productos en tu cesta.</h3>
-                        <Link to={'/productos'} className='btn btn-success rounded-pill'>Explorar Productos</Link>
+                        <Link to={'/productos'} className='btn btn-outline-success rounded-pill'>Explorar Productos</Link>
                     </div> :
                     <div className="container py-5">
                         <h1 className='text-secondary mb-4 text-center'>Mi Cesta: <TiShoppingCart className='fs-1' /> </h1>

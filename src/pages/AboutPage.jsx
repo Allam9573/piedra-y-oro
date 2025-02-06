@@ -5,7 +5,7 @@ import { AboutServices } from '../components/about/AboutServices'
 import { AboutBrands } from '../components/about/AboutBrands'
 
 export const AboutPage = () => {
-    document.title='Lionettas | Nosotros'
+    document.title = 'Lionettas | Nosotros'
 
     return (
         <>

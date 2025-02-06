@@ -9,11 +9,12 @@ export const AboutHero = () => {
                     <div class="col-md-8 text-white">
                         <h1>Quienes Somos</h1>
                         <p>
-                            En Lionettas, estamos comenzando con la misión de ofrecer productos que llenen de significado y estilo tu vida. Nuestro catálogo incluye artículos religiosos, productos para niños llenos de alegría y joyería para resaltar tu belleza única.
+                            Somos una joyería hondureña dedicada a empoderar a las mujeres a través de nuestros diseños, inspirados en la belleza única y radiante de la feminidad. Queremos transmitir sensaciones que perduren, ofreciendo piezas que no solo resalten tu estilo, sino también tu esencia.
 
-                            Cada artículo ha sido seleccionado con dedicación para acompañarte en tus momentos más especiales. Aunque somos una tienda en línea naciente, estamos comprometidos con ofrecerte una experiencia de compra sencilla y cercana.
+                            Además de nuestras colecciones modernas y sofisticadas, también ofrecemos piezas artesanales diseñadas para acompañarte en los momentos más importantes de la vida de tus seres queridos, como medallas de cuna o bendiciones de hogar. Estas joyas especiales son creaciones llenas de significado, pensadas para celebrar las etapas más significativas y memorables.
 
-                            Gracias por confiar en nosotros desde el inicio. ¡Crecemos contigo y para ti!
+                            Nuestras colecciones están pensadas para adaptarse a cada ocasión, con diseños versátiles, modernos y elegantes. Cada pieza es elaborada con un estilo propio y distintivo, logrando joyas únicas para mujeres modernas que aprecian la calidad y saben lo que quieren.
+
                         </p>
                     </div>
                     <div class="col-md-4">

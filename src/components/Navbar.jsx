@@ -56,7 +56,7 @@ export const Navbar = ({ quantity, quantityFavorites }) => {
                     <i class="fa fa-fw fa-search text-dark mr-2"></i>
                 </a> */}
                         <Link className="nav-icon position-relative text-decoration-none" to={'/my-cart'}>
-                            <MdAddShoppingCart />
+                            <MdAddShoppingCart className='fs-3' />
                             {
                                 quantity > 0 ?
                                     <span
@@ -67,11 +67,11 @@ export const Navbar = ({ quantity, quantityFavorites }) => {
                             }
                         </Link>
                         <Link className="nav-icon position-relative text-decoration-none" to={'/my-favorites'}>
-                            <MdFavoriteBorder />
+                            <MdFavoriteBorder className='fs-3' />
                             {
                                 quantityFavorites > 0 ?
                                     <span
-                                        className="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-danger text-white">{quantity}</span>
+                                        className="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-danger text-white">{quantityFavorites}</span>
                                     :
                                     <span
                                         className="position-absolute top-0 left-100 translate-middle badge rounded-pill text-white"></span>

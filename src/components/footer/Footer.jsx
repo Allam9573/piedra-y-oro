@@ -40,7 +40,6 @@ export const Footer = () => {
                         </ul>
                     </div>
                     <div class="col-12 col-sm-6 col-md-3 pt-5">
-                        <h5 class="h5 text-light border-bottom pb-3 border-light">Contactanos</h5>
                         <ul class="list-unstyled text-light footer-link-list">
                             <h5 class="h5 text-light pb-3 border-light">Quienes Somos</h5>
                             <h5 class="h5 text-light pb-3 border-light">Preguntas Frecuentes</h5>

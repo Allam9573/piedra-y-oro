@@ -11,12 +11,12 @@ export const HomeAnillos = () => {
                 {
                     anillos.map(anillo => (
                         <div key={anillo.id}>
-                            <h2 className='h1 mb-3' style={{ color: "#E7D7C9" }}>{anillo.titulo}</h2>
+                            <h2 className='title' style={{ color: "#E7D7C9" }}>{anillo.titulo}</h2>
                             <h3 style={{ color: '#C7D0CF' }} className='mx-5 text-start mb-5'>{anillo.descripcion}</h3>
                         </div>
                     ))
                 }
-                <Link to={`/productos?categoria=Anillos`} style={{ backgroundColor: '#E7D7C9' }} className='btn btn-lg'>Comprar Ahora</Link>
+                <Link to={`/productos?categoria=Anillos`} style={{ backgroundColor: '#E7D7C9' }} className='btn p-4 fs-4 btn-lg'>Comprar Ahora</Link>
             </div>
             <div className="h-100 col-6 text-center">
                 <img className='h-100 vw-100 img-fluid' src={anillosImage} alt="" />

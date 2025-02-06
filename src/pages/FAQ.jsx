@@ -8,7 +8,7 @@ export const FAQ = () => {
 
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="faq1-heading">
-                        <button class="accordion-button" style={{color:'#938E87'}} type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                        <button class="accordion-button" style={{ color: '#938E87' }} type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
                             ¿Cuál es el tiempo estimado de entrega?
                         </button>
                     </h2>
@@ -21,7 +21,7 @@ export const FAQ = () => {
 
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="faq2-heading">
-                        <button class="accordion-button collapsed" style={{color:'#938E87'}}  type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                        <button class="accordion-button collapsed" style={{ color: '#938E87' }} type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
                             ¿Cuál es el método de pago aceptado?
                         </button>
                     </h2>
@@ -34,7 +34,7 @@ export const FAQ = () => {
 
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="faq3-heading">
-                        <button style={{color:'#938E87'}}  class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                        <button style={{ color: '#938E87' }} class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
                             ¿Cómo puedo comunicarme con el servicio al cliente si tengo alguna duda o inconveniente?
                         </button>
                     </h2>
@@ -46,9 +46,8 @@ export const FAQ = () => {
                 </div>
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="faq4-heading">
-                        <button style={{color:'#938E87'}}  class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                        <button style={{ color: '#938E87' }} class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
                             ¿Cómo puedo cuidar mis joyas para que duren más tiempo?
-
                         </button>
                     </h2>
                     <div id="faq4" class="accordion-collapse collapse" aria-labelledby="faq4-heading" data-bs-parent="#faqAccordion">

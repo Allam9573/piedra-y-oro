@@ -23,7 +23,7 @@ export const Footer = () => {
                         </li>
                         <li>
                             <i class="fa fa-envelope fa-fw"></i>
-                            <a class="text-decoration-none" href="mailto:info@company.com">info@company.com</a>
+                            <a class="text-decoration-none" href="mailto:info@company.com">lionettashn@gmail.com</a>
                         </li>
                     </ul>
                 </div>

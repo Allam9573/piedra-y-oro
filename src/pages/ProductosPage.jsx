@@ -70,7 +70,7 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
                     <div className="row">
                         <div className="col-md-6 pb-4">
                             <input
-                                type="text"
+                                type="search"
                                 placeholder="Buscar un producto..."
                                 value={busqueda}
                                 onChange={(e) => setBusqueda(e.target.value)}

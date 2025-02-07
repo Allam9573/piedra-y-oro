@@ -24,7 +24,6 @@ export const CategoriaItem = ({ buscar }) => {
               resultados.map(({ id, nombre }) => (
                 <tr key={id}>
                   <th scope="row">{nombre}</th>
-              
                   <td>
                     <Link className='btn btn-success me-2'>Editar</Link>
                     <Link to={`/admin/eliminar-categoria/${id}`} className='btn btn-danger'>Eliminar</Link>

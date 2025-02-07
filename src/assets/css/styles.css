@@ -52,3 +52,23 @@
 .text-brown{
     color: #938E87;
 }
+.swiper-slide {
+    height: 100vh !important; /* Ocupa toda la pantalla */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper-pagination {
+    position: absolute !important;
+    bottom: 10px !important;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+@media (max-width: 768px) {
+    .swiper-pagination {
+        bottom: 5px !important; /* Ajuste para móviles */
+    }
+}

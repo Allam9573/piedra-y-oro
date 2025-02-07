@@ -42,7 +42,7 @@ export const Footer = () => {
                     <div class="col-12 col-sm-6 col-md-3 pt-5">
                         <ul class="list-unstyled text-light footer-link-list">
                             <h5 class="h5 text-light pb-3 border-light">Quienes Somos</h5>
-                            <Link to={'/preguntas-frecuentes'}><h5 class="h5 text-light pb-3 border-light">Preguntas Frecuentes</h5></Link>
+                            <Link className='text-decoration-none' to={'/preguntas-frecuentes'}><h5 class="h5 text-light pb-3 border-light">Preguntas Frecuentes</h5></Link>
                         </ul>
                     </div>
 

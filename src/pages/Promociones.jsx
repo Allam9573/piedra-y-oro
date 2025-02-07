@@ -15,8 +15,6 @@ export const Promociones = ({ promociones }) => {
                 modules={[Navigation, Pagination, Scrollbar, A11y]}
                 spaceBetween={50}
                 slidesPerView={1}
-                // onSlideChange={() => console.log('slide change')}
-                // onSwiper={}
                 navigation
                 pagination={{ clickable: true }}
                 scrollbar={{ draggable: true }}

@@ -14,7 +14,7 @@ import '../assets/js/bootstrap.bundle.min.js'
 
 export const Navbar = ({ quantity, quantityFavorites }) => {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light shadow" style={{ backgroundColor: "#E7D7C9", width: "100%" }}>
+        <nav className="navbar fixed-top navbar-expand-lg navbar-light shadow" style={{ backgroundColor: "#E7D7C9", width: "100%" }}>
             <div className="container d-flex justify-content-center align-items-center">
 
                 <Link className="navbar-brand text-success logo h1 align-self-center" to={'/'} >

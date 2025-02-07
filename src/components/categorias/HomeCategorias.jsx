@@ -22,22 +22,22 @@ export const HomeCategorias = () => {
     const [hovered, setHovered] = useState({});
     const categories = [
         {
-            name: "PULSERAS",
+            name: "Pulseras",
             image1: pulsera1,
             image2: pulsera2
         },
         {
-            name: "ARETES",
+            name: "Aretes",
             image1: arete1,
             image2: arete2
         },
         {
-            name: "CADENAS",
+            name: "Cadenas",
             image1: cadena1,
             image2: cadena2
         },
         {
-            name: "ANILLOS",
+            name: "Anillos",
             image1: anillo1,
             image2: anillo2
         },
@@ -59,7 +59,7 @@ export const HomeCategorias = () => {
                             className="img-fluid rounded category-image"
                         />
                         <div className="position-absolute top-50 start-50 translate-middle bg-light px-4 py-2 fw-bold category-button">
-                            {category.name}
+                           <Link to={`/productos?categoria=${category.name}`} className='text-decoration-none text-dark'> {category.name}</Link>
                         </div>
                     </div>
                 ))}

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { MdOutlineDeleteOutline } from "react-icons/md";
 import imagen from '../../assets/img/empty-cart.png'
 import classNames from 'classnames';
@@ -13,6 +13,7 @@ export const Cart = ({ cart, eliminarItemCarrito, incrementar, decrementar }) =>
     const [cliente, setCliente] = useState('')
     const [selectLugar, setSelectLugar] = useState('Tegucigalpa')
     const [valorEnvio, setValorEnvio] = useState(0)
+    const { pathname } = useLocation();
 
     const handlePay = () => {
         const telefono = '+50494969595'
@@ -40,12 +41,12 @@ export const Cart = ({ cart, eliminarItemCarrito, incrementar, decrementar }) =>
     const changeLugar = e => {
         setSelectLugar(e.target.value)
         console.log(e.target.value)
-        // selectLugar('Tegucigalpa') ? setValorEnvio(80) : setValorEnvio(120)
     }
 
     useEffect(() => {
         setValorEnvio(selectLugar === 'Tegucigalpa' ? 80 : 120)
-    }, [selectLugar])
+        scrollTo(0, 0)
+    }, [selectLugar, pathname])
 
     return (
         <>

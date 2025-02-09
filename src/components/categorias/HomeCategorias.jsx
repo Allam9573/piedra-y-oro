@@ -58,8 +58,8 @@ export const HomeCategorias = () => {
                             alt={category.name}
                             className="img-fluid rounded category-image"
                         />
-                        <div className="position-absolute top-50 start-50 translate-middle bg-light px-4 py-2 fw-bold category-button">
-                           <Link to={`/productos?categoria=${category.name}`} className='text-decoration-none text-dark'> {category.name}</Link>
+                        <div className="position-absolute top-50 start-50 translate-middle px-4 py-2 fw-bold category-button">
+                           <Link to={`/productos?categoria=${category.name}`} className='btn-outline-call'> {category.name}</Link>
                         </div>
                     </div>
                 ))}

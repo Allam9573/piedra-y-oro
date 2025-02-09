@@ -28,7 +28,7 @@ export const Header = () => {
                 <SwiperSlide key={index} className="d-flex align-items-center justify-content-center">
                     <div className=" min-vh-100 d-flex align-items-center">
                         <div className="row w-100 flex-column-reverse flex-lg-row g-0">
-                            <div className="col-12 col-lg-6 text-start d-flex flex-column justify-content-center align-items-center px-4 px-lg-5 py-4" style={{ backgroundColor: "#C7D0CF" }}>
+                            <div className="col-12 col-lg-6 text-start d-flex flex-column justify-content-center align-items-start px-4 px-lg-5 py-4" style={{ backgroundColor: "#C7D0CF" }}>
                                 <img src={logo} className="mb-3 img-fluid w-50 w-md-25" alt="Logo" />
                                 <div className="text-start w-100">
                                     <p className="title-promocion mt-4">{promo.titulo}</p>

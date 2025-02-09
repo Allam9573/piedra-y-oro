@@ -30,15 +30,15 @@ export const Navbar = ({ quantity, quantityFavorites }) => {
                 <div className="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
                     id="templatemo_main_nav">
                     <div className="flex-fill">
-                        <ul className="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <ul className="nav navbar-nav d-flex justify-content-between align-items-center  mx-lg-auto">
                             <li className="nav-item">
-                                <Link className="nav-link" to={'/'} >Inicio</Link>
+                                <Link className="link" to={'/'} >Inicio</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to={'/productos'}>Productos</Link>
+                                <Link className="link" to={'/productos'}>Productos</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to={'/nosotros'}>Nosotros</Link>
+                                <Link className="link" to={'/nosotros'}>Nosotros</Link>
                             </li>
                         </ul>
                     </div>
@@ -56,7 +56,7 @@ export const Navbar = ({ quantity, quantityFavorites }) => {
                     <i class="fa fa-fw fa-search text-dark mr-2"></i>
                 </a> */}
                         <Link className="nav-icon position-relative text-decoration-none" to={'/my-cart'}>
-                            <MdAddShoppingCart className='fs-3' />
+                            <MdAddShoppingCart className='fs-3 link' />
                             {
                                 quantity > 0 ?
                                     <span
@@ -67,7 +67,7 @@ export const Navbar = ({ quantity, quantityFavorites }) => {
                             }
                         </Link>
                         <Link className="nav-icon position-relative text-decoration-none" to={'/my-favorites'}>
-                            <MdFavoriteBorder className='fs-3' />
+                            <MdFavoriteBorder className='fs-3 link' />
                             {
                                 quantityFavorites > 0 ?
                                     <span

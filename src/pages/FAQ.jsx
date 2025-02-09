@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useLocation } from 'react-router-dom';
 
 export const FAQ = () => {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
     return (
         <div class="container my-5">
             <h2 class="text-center h1 mb-4 text-brown fw-bold ">Preguntas Frecuentes</h2>
@@ -12,7 +18,7 @@ export const FAQ = () => {
                             ¿Cuál es el tiempo estimado de entrega?
                         </button>
                     </h2>
-                    <div id="faq1" class="accordion-collapse collapse show" aria-labelledby="faq1-heading" data-bs-parent="#faqAccordion">
+                    <div id="faq1" class="accordion-collapse collapse" aria-labelledby="faq1-heading" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
                             Dentro del área urbana de Tegucigalpa, la entrega se efectuará el mismo día si el pedido se procesa antes de las 12 del mediodía. En caso contrario, la entrega se realizará al siguiente día hábil. Para los envíos fuera de Tegucigalpa, el tiempo estimado de entrega es de 2 a 3 días hábiles.
                         </div>

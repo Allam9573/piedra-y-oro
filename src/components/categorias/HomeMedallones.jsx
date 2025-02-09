@@ -17,11 +17,11 @@ export const HomeMedallones = () => {
                 </div>
 
                 {/* Sección de Texto */}
-                <div className="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center text-center text-lg-start p-4 p-lg-5">
+                <div className="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-start text-center text-lg-start p-4 p-lg-5">
                     {medallones.map((medallon) => (
                         <div key={medallon.id} className="mb-4">
                             <h2 className="title" style={{ color: '#E7D7C9' }}>{medallon.titulo}</h2>
-                            <h3 style={{ color: '#C7D0CF' }} className="mx-5 text-start">{medallon.descripcion}</h3>
+                            <h3 style={{ color: '#C7D0CF' }} className="text-start">{medallon.descripcion}</h3>
                         </div>
                     ))}
                     

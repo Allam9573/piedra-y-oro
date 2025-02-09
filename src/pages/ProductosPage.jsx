@@ -13,18 +13,20 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
     const [subcategoriasSeleccionadas, setSubcategoriasSeleccionadas] = useState([]);
     const { productos } = useProductos();
     const { subcategorias } = useSubcategorias();
+    const { pathname } = useLocation()
 
     const location = useLocation();
     const params = new URLSearchParams(location.search);
     const categoriaSeleccionada = params.get("categoria");
 
 
-   // Aplicar filtro automáticamente al cargar
+    // Aplicar filtro automáticamente al cargar
     useEffect(() => {
         if (categoriaSeleccionada) {
             setSubcategoriasSeleccionadas([categoriaSeleccionada]);
         }
-    }, [categoriaSeleccionada]);
+        scrollTo(0, 0)
+    }, [categoriaSeleccionada, pathname]);
 
     const handleSubcategoriaChange = (nombreSubcategoria) => {
         setSubcategoriasSeleccionadas((prevSeleccionadas) =>

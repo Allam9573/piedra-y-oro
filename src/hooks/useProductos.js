@@ -7,7 +7,6 @@ const useProductos = () => {
 
     const [producto, setProducto] = useState({})
     const [productos, setProductos] = useState([])
-    const [firstImagen, setFirstImagen] = useState('')
 
     const navigate = useNavigate()
 

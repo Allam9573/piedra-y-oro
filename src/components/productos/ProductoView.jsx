@@ -72,7 +72,7 @@ export const ProductoView = ({ addToCart }) => {
                                                                     }
                                                                 </> :
                                                                 <>
-                                                                    fe
+                                                                    Producto sin imagen
                                                                 </>
                                                         }
                                                     </a>

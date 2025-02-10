@@ -19,6 +19,8 @@ export const Footer = () => {
             numero_telefonico: telefono
         }
         addCliente(nuevoCliente)
+        setNombre('')
+        setTelefono('')
     }
 
     return (

@@ -14,7 +14,6 @@ export const AboutHero = () => {
                             Además de nuestras colecciones modernas y sofisticadas, también ofrecemos piezas artesanales diseñadas para acompañarte en los momentos más importantes de la vida de tus seres queridos, como medallas de cuna o bendiciones de hogar. Estas joyas especiales son creaciones llenas de significado, pensadas para celebrar las etapas más significativas y memorables.
                             <br /><br />
                             Nuestras colecciones están pensadas para adaptarse a cada ocasión, con diseños versátiles, modernos y elegantes. Cada pieza es elaborada con un estilo propio y distintivo, logrando joyas únicas para mujeres modernas que aprecian la calidad y saben lo que quieren.
-
                         </p>
                     </div>
                     <div class="col-md-4">

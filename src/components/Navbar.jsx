@@ -16,17 +16,14 @@ export const Navbar = ({ quantity, quantityFavorites }) => {
     return (
         <nav className="navbar fixed-top navbar-expand-lg navbar-light shadow" style={{ backgroundColor: "#E7D7C9", width: "100%" }}>
             <div className="container d-flex justify-content-center align-items-center">
-
                 <Link className="navbar-brand text-success logo h1 align-self-center" to={'/'} >
                     <img src={logo} className="img-fluid" style={{ maxWidth: '15%' }} alt="Logo" />
                 </Link>
-
                 <button className="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
                     data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-
                 <div className="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
                     id="templatemo_main_nav">
                     <div className="flex-fill">

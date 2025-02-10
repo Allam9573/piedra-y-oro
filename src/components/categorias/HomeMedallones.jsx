@@ -7,16 +7,13 @@ export const HomeMedallones = () => {
     return (
         <div className="container-fluid min-vh-100 d-flex align-items-center">
             <div className="row w-100 flex-column-reverse flex-lg-row">
-                {/* Sección de Imagen */}
                 <div className="col-12 col-lg-6 text-center">
-                    <img 
+                    <img
                         className="img-fluid w-100 object-fit-cover"
-                        src={medallon} 
-                        alt="Medallón" 
+                        src={medallon}
+                        alt="Medallón"
                     />
                 </div>
-
-                {/* Sección de Texto */}
                 <div className="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-start text-center text-lg-start p-4 p-lg-5">
                     {medallones.map((medallon) => (
                         <div key={medallon.id} className="mb-4">
@@ -24,9 +21,7 @@ export const HomeMedallones = () => {
                             <h3 style={{ color: '#C7D0CF' }} className="text-start">{medallon.descripcion}</h3>
                         </div>
                     ))}
-                    
-                    {/* Botón de Comprar Ahora */}
-                    <Link 
+                    <Link
                         to="/productos?categoria=Medallones"
                         style={{ backgroundColor: '#E7D7C9' }}
                         className="btn p-4 fs-4 btn-lg"

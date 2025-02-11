@@ -5,7 +5,11 @@ const useRegistroClientes = () => {
     const addCliente = cliente => {
         RegistroClientesService.addCliente(cliente)
             .then(() => {
-                swal("Registro exitoso!", "Registro exitoso!", "success")
+                swal({
+                    title: "Gracias por registrarte con nosotros!",
+                    icon: "success",
+                    button: "Listo",
+                });
             })
             .catch(error => console.log(error))
     }

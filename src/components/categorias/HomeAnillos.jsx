@@ -8,7 +8,7 @@ export const HomeAnillos = () => {
     return (
 
         <div className="row con mt-5 mx-0 px-0 w-100 flex-column-reverse flex-lg-row align-items-center text-center text-lg-start">
-            <div className="col-12 col-lg-6 ps-5 d-flex flex-column justify-content-center align-items-center align-items-lg-start">
+            <div className="col-12 col-lg-6 px-5 d-flex flex-column justify-content-center align-items-center align-items-lg-start">
                 {anillos.map(anillo => (
                     <div key={anillo.id}>
                         <h2 className="title" style={{ color: "#E7D7C9" }}>{anillo.titulo}</h2>

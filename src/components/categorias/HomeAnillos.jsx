@@ -15,7 +15,7 @@ export const HomeAnillos = () => {
                         <h3 className="mb-5 fs-5  fs-lg-3" style={{ color: '#C7D0CF' }}>{anillo.descripcion}</h3>
                     </div>
                 ))}
-                <Link to={`/productos?categoria=Anillos`} style={{ backgroundColor: '#E7D7C9' }} className="btn mb-3 p-2 p-lg-4 fs-4 btn-lg">
+                <Link to={`/productos?categoria=Anillos`} style={{ backgroundColor: '#E7D7C9' }} className="btn mb-5 mb-lg-3 p-2 p-lg-4 fs-4 btn-lg">
                     Comprar Ahora
                 </Link>
             </div>

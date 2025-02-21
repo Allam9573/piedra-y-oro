@@ -19,10 +19,18 @@ export const Cart = ({ cart, eliminarItemCarrito, incrementar, decrementar }) =>
         const telefono = '+50494969595'
         const mensaje = cart.map(
             (producto) =>
-                `Producto: ${producto.nombre}\nCantidad: ${producto.cantidad}\nLugar compra: ${selectLugar}\nValor envio: L. ${valorEnvio}\n`
+                `Producto: ${producto.nombre}\nCantidad: ${producto.cantidad}\nLugar compra: ${selectLugar}\n\n`
         )
-            .join('\n\n')
-        const mensajeCompleto = `Hola, mi nombre es ${cliente}, me interesa realizar el siguiente pedido:\n\n ${mensaje}Total a Pagar: L. ${cartTotal()}`
+            .join('')
+        const mensajeCompleto = `Hola, mi nombre es ${cliente}, me interesa realizar el siguiente pedido:\n\n ${mensaje}Valor de envio: ${new Intl.NumberFormat('es-HN', {
+            style: 'currency',
+            currency: 'HNL',
+            minimumFractionDigits: 2,
+        }).format(valorEnvio)}\n\nTotal a Pagar: ${new Intl.NumberFormat('es-HN', {
+            style: 'currency',
+            currency: 'HNL',
+            minimumFractionDigits: 2,
+        }).format(cartTotal())}`
         const url = `https://wa.me/${telefono}?text=${encodeURIComponent(
             mensajeCompleto
         )}`;
@@ -40,7 +48,6 @@ export const Cart = ({ cart, eliminarItemCarrito, incrementar, decrementar }) =>
     }
     const changeLugar = e => {
         setSelectLugar(e.target.value)
-        console.log(e.target.value)
     }
 
     useEffect(() => {

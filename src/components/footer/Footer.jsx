@@ -66,7 +66,7 @@ export const Footer = () => {
                             <form onSubmit={SubmitCliente}>
                                 <input type="text" value={nombre} onChange={e => setNombre(e.target.value)} placeholder='Nombre' className="form-control mb-3" />
                                 <input type="text" value={telefono} onChange={e => setTelefono(e.target.value)} placeholder='Telefono' className="form-control mb-3" />
-                                <input type="submit" value="Registrar" className='btn text-white w-100' style={{ backgroundColor: '#938E87' }} />
+                                <input disabled={nombre.length === 0 || telefono.length === 0} type="submit" value="Registrar" className='btn text-white w-100' style={{ backgroundColor: '#938E87' }} />
                             </form>
                         </ul>
                     </div>

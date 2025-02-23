@@ -16,9 +16,7 @@ export const Favorites = ({ favorites, deleteItem, addToCart }) => {
     return (
         <>
             <h1 className="text-secondary text-center my-5">Lista de deseos:</h1>
-            <div className="alert w-50 mx-auto alert-danger">
-                <h6 className='text-center'>Los productos que marques como favoritos, seran removidos automaticamente en un plazo de 3 dias</h6>
-            </div>
+
             {
                 favorites.length === 0 ? (
                     <div className="text-center my-5">
@@ -28,10 +26,17 @@ export const Favorites = ({ favorites, deleteItem, addToCart }) => {
                     </div>
                 ) : (
                     <div className="container">
+                        <div className="col-12 col-lg-6 mx-auto">
+                            <div className="alert alert-danger mx-3">
+                                <h6 className='text-center'>Los productos que marques como favoritos, seran removidos automaticamente en un plazo de 3 dias</h6>
+                            </div>
+                        </div>
                         <div className="row">
+
                             {
                                 favorites.map(producto => (
                                     <div className="col-12 col-sm-6 col-md-4 col-lg-3 my-3">
+
                                         <div className="card shadow h-100">
                                             <img
                                                 src={producto.imagenes.length > 0 ? producto.imagenes[0].imagen : ''}

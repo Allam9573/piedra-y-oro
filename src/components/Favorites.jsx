@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { MdDelete } from "react-icons/md";
 import { MdAddShoppingCart } from "react-icons/md";
 import { GrView } from 'react-icons/gr';
+import { useFavorites } from '../hooks/useFavorites';
 
 export const Favorites = ({ favorites, deleteItem, addToCart }) => {
     document.title = 'Lioenttas | Lista de deseos'
@@ -15,6 +16,9 @@ export const Favorites = ({ favorites, deleteItem, addToCart }) => {
     return (
         <>
             <h1 className="text-secondary text-center my-5">Lista de deseos:</h1>
+            <div className="alert w-50 mx-auto alert-danger">
+                <h6 className='text-center'>Los productos que marques como favoritos, seran removidos automaticamente en un plazo de 3 dias</h6>
+            </div>
             {
                 favorites.length === 0 ? (
                     <div className="text-center my-5">
@@ -64,7 +68,6 @@ export const Favorites = ({ favorites, deleteItem, addToCart }) => {
                     </div>
                 )
             }
-
         </>
     )
 }

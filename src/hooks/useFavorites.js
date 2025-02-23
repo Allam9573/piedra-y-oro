@@ -1,43 +1,56 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+
+const EXPIRATION_TIME = 1000 * 60 * 60 * 24 * 3;
 
 const useFavorites = () => {
-
+    const notifyAdd = (producto) => toast.success(`"${producto.nombre}" agregado a favoritos!`);
     const initialStateFavorites = () => {
-
         try {
-            const localFavorites = localStorage.getItem('favorites')
-            return localFavorites ? JSON.parse(localFavorites) : []
+            const localData = localStorage.getItem("favorites");
+            if (!localData) return [];
+
+            const { items, timestamp } = JSON.parse(localData);
+
+            if (Date.now() - timestamp > EXPIRATION_TIME) {
+                localStorage.removeItem("favorites");
+                return [];
+            }
+
+            return items;
         } catch (error) {
-            return []
+            return [];
         }
-    }
+    };
 
-    const [favorites, setFavorites] = useState(initialStateFavorites)
+    const [favorites, setFavorites] = useState(initialStateFavorites);
 
-    const addFavorite = producto => {
-        const buscar = favorites.findIndex(pro => pro.id === producto.id)
-        if (buscar >= 0) {
-            return
-        } else {
-            setFavorites([...favorites, producto])
-        }
-    }
+    const addFavorite = (producto) => {
+        if (favorites.some((pro) => pro.id === producto.id)) return;
 
-    const deleteItem = producto => {
-        const confirmDelete = window.confirm(`Seguro que deseas eliminar "${producto.nombre}" de tu lista de deseos?`)
+        setFavorites([...favorites, producto]);
+        notifyAdd(producto)
+    };
+
+    const deleteItem = (producto) => {
+        const confirmDelete = window.confirm(`¿Seguro que deseas eliminar "${producto.nombre}" de tu lista de deseos?`);
         if (confirmDelete) {
-            setFavorites(favorites.filter(productos => productos.nombre !== producto.nombre))
+            setFavorites(favorites.filter((p) => p.id !== producto.id));
         }
-    }
+    };
 
     useEffect(() => {
-        localStorage.setItem('favorites', JSON.stringify(favorites))
-    }, [favorites])
+        if (favorites.length > 0) {
+            localStorage.setItem("favorites", JSON.stringify({
+                items: favorites,
+                timestamp: Date.now()
+            }));
+        }
+    }, [favorites]);
 
-    return {
-        favorites,
-        addFavorite,
-        deleteItem
-    }
-}
-export { useFavorites }
+
+
+    return { favorites, addFavorite, deleteItem };
+};
+
+export { useFavorites };

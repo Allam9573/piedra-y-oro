@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
+import { ToastContainer, toast } from 'react-toastify';
 
 const useCart = () => {
+    const notifyAdd = (producto) => toast.success(`"${producto.nombre}" agregado al carrito de compras!`);
 
     const initialCartState = () => {
         try {
@@ -22,6 +24,8 @@ const useCart = () => {
         } else {
             producto.cantidad = 1
             setCart([...cart, producto])
+            notifyAdd(producto)
+
         }
     }
 
@@ -58,6 +62,10 @@ const useCart = () => {
         }
     }
 
+    const vaciarCarrito = () => {
+        localStorage.removeItem("cart");
+    };
+
     useEffect(() => {
         localStorage.setItem('cart', JSON.stringify(cart))
     }, [cart])
@@ -67,7 +75,8 @@ const useCart = () => {
         addToCart,
         eliminarItemCarrito,
         decrementar,
-        incrementar
+        incrementar,
+        vaciarCarrito
     }
 }
 export { useCart }

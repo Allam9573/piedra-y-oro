@@ -23,6 +23,7 @@ import { NuevaVenta } from "./components/ventas/NuevaVenta"
 import './assets/css/whatsapp-icon.css'
 import { Placeholder } from "./pages/Placeholder"
 import { FAQ } from "./pages/FAQ"
+import { ToastContainer } from "react-toastify";
 const App = () => {
 
   const { favorites, addFavorite, deleteItem } = useFavorites()
@@ -49,6 +50,7 @@ const App = () => {
       <a href="https://wa.me/+50494969595" target="_blank" class="whatsapp-btn">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
       </a>
+      <ToastContainer/>
     </BrowserRouter>
   )
 }

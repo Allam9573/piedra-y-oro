@@ -61,12 +61,14 @@ export const Footer = () => {
                         </ul>
                     </div>
                     <div class="col-12 col-sm-6 col-md-3 pt-5">
-                        <h2 class="h2 text-light pb-3 border-light">Registrate</h2>
+                        <h6 class="h6 text-light pb-3 border-light">
+                            Unete a nuestra comunidad y mantente al dia con las ultimas noticias y promociones!
+                            </h6>
                         <ul class="list-unstyled text-light footer-link-list">
                             <form onSubmit={SubmitCliente}>
                                 <input type="text" value={nombre} onChange={e => setNombre(e.target.value)} placeholder='Nombre' className="form-control mb-3" />
                                 <input type="text" value={telefono} onChange={e => setTelefono(e.target.value)} placeholder='Telefono' className="form-control mb-3" />
-                                <input disabled={nombre.length === 0 || telefono.length === 0} type="submit" value="Registrar" className='btn text-white w-100' style={{ backgroundColor: '#938E87' }} />
+                                <input disabled={nombre.length === 0 || telefono.length === 0} type="submit" value="Unete!" className='btn text-white w-100' style={{ backgroundColor: '#938E87' }} />
                             </form>
                         </ul>
                     </div>

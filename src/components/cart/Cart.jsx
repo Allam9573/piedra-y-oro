@@ -5,6 +5,7 @@ import imagen from '../../assets/img/empty-cart.png'
 import classNames from 'classnames';
 import '../../assets/css/styles.css'
 import { TiShoppingCart } from "react-icons/ti";
+import { useCart } from '../../hooks/useCart';
 
 export const Cart = ({ cart, eliminarItemCarrito, incrementar, decrementar }) => {
 
@@ -14,12 +15,13 @@ export const Cart = ({ cart, eliminarItemCarrito, incrementar, decrementar }) =>
     const [selectLugar, setSelectLugar] = useState('Tegucigalpa')
     const [valorEnvio, setValorEnvio] = useState(0)
     const { pathname } = useLocation();
+    const { vaciarCarrito } = useCart();
 
     const handlePay = () => {
         const telefono = '+50494969595'
         const mensaje = cart.map(
             (producto) =>
-                `Producto: ${producto.nombre}\nCantidad: ${producto.cantidad}\nLugar compra: ${selectLugar}\n\n`
+                `Producto: ${producto.nombre}\nCodigo Producto: ${producto.codigo_producto}\nCantidad: ${producto.cantidad}\nLugar compra: ${selectLugar}\n\n`
         )
             .join('')
         const mensajeCompleto = `Hola, mi nombre es ${cliente}, me interesa realizar el siguiente pedido:\n\n ${mensaje}Valor de envio: ${new Intl.NumberFormat('es-HN', {
@@ -35,6 +37,7 @@ export const Cart = ({ cart, eliminarItemCarrito, incrementar, decrementar }) =>
             mensajeCompleto
         )}`;
         window.open(url, "_blank");
+        vaciarCarrito()
     }
 
     const cartTotal = () => cart.reduce((total, item) => total + (item.precio * item.cantidad + valorEnvio), 0)
@@ -135,7 +138,6 @@ export const Cart = ({ cart, eliminarItemCarrito, incrementar, decrementar }) =>
                                         value={cliente}
                                         onChange={e => setCliente(e.target.value)}
                                     />
-
                                     <button disabled={cliente.length === 0} onClick={() => handlePay()} className='btn btn-danger w-100'>Pagar</button>
                                 </div>
                             </div>
@@ -143,6 +145,5 @@ export const Cart = ({ cart, eliminarItemCarrito, incrementar, decrementar }) =>
                     </div>
             }
         </>
-
     )
 }

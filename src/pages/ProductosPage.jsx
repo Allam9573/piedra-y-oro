@@ -4,7 +4,7 @@ import { useSubcategorias } from '../hooks/useSubcategorias';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import { MdAddShoppingCart, MdFavoriteBorder } from 'react-icons/md';
 import { GrView } from 'react-icons/gr';
-import classNames from 'classnames';
+import { ToastContainer, toast } from 'react-toastify';
 
 export const ProductosPage = ({ addToCart, addFavorite }) => {
     document.title = 'Lionettas | Productos';
@@ -19,6 +19,7 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
     const params = new URLSearchParams(location.search);
     const categoriaSeleccionada = params.get("categoria");
 
+    const notify = () => toast("Wow so easy!");
 
     // Aplicar filtro automáticamente al cargar
     useEffect(() => {

@@ -2,8 +2,11 @@ import React from 'react'
 import medallon from '../../assets/img/image2.png'
 import { Link } from 'react-router-dom'
 import { useHomeCategorias } from '../../hooks/useHomeCategorias'
+
 export const HomeMedallones = () => {
+
     const { medallones } = useHomeCategorias()
+
     return (
         <div className="row w-100 mx-0 px-0 flex-lg-row">
             <div className="col-12 mx-0 px-0 col-lg-6 text-center">
@@ -14,7 +17,7 @@ export const HomeMedallones = () => {
                     style={{ objectFit: 'cover' }}
                 />
             </div>
-            <div className="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-start text-center text-lg-start p-4 p-lg-5">
+            <div className="col-12 col-lg-6 px-5 d-flex flex-column justify-content-center align-items-start text-center text-lg-start p-4 p-lg-5">
                 {medallones.map((medallon) => (
                     <div key={medallon.id} className="mb-4">
                         <h2 className="title" style={{ color: '#E7D7C9' }}>{medallon.titulo}</h2>

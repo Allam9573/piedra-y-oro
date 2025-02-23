@@ -2,11 +2,11 @@
 
 lionettashn@gmail.com - goldecanadaGDC - goldecanadaGDC@ggmail.com
 
-*tiempo de tres dias para eliminar favoritos
+*tiempo de tres dias para eliminar favoritos(ok)
 *el precio de envio aparecera solo al final del mensaje(ok)
+al pagar limpiar carrito de compras(ok)
 *ver productos por campana
 *agregar codigo unico a productos(10 digitos)
 aparicion modal de registro al bajar por categorias
 cambio de texto en el formulario de registro
 en vista telefono ajustar imagen al ancho de pantalla, centrar el texto y disminuir fuente a titulo
-al pagar limpiar carrito de compras

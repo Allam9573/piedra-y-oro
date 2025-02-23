@@ -6,12 +6,28 @@ const useCart = () => {
 
     const initialCartState = () => {
         try {
-            const localStorageCart = localStorage.getItem('cart')
-            return localStorageCart ? JSON.parse(localStorageCart) : []
+            const localData = localStorage.getItem("cart");
+            if (!localData) return [];
+    
+            const parsedData = JSON.parse(localData);
+            if (!parsedData || !parsedData.items) return [];
+    
+            const { items, timestamp } = parsedData;
+    
+            if (!Array.isArray(items)) return []; // Evita errores si no es un array
+    
+            if (Date.now() - timestamp > EXPIRATION_TIME) {
+                localStorage.removeItem("cart");
+                return [];
+            }
+    
+            return items;
         } catch (error) {
-            return []
+            console.error("Error al leer carrito:", error);
+            return [];
         }
-    }
+    };
+    
     const [cart, setCart] = useState(initialCartState)
 
 

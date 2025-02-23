@@ -10,7 +10,12 @@ const useFavorites = () => {
             const localData = localStorage.getItem("favorites");
             if (!localData) return [];
 
-            const { items, timestamp } = JSON.parse(localData);
+            const parsedData = JSON.parse(localData);
+            if (!parsedData || !parsedData.items) return [];
+
+            const { items, timestamp } = parsedData;
+
+            if (!Array.isArray(items)) return [];
 
             if (Date.now() - timestamp > EXPIRATION_TIME) {
                 localStorage.removeItem("favorites");
@@ -19,9 +24,11 @@ const useFavorites = () => {
 
             return items;
         } catch (error) {
+            console.error("Error al leer favorites:", error);
             return [];
         }
     };
+
 
     const [favorites, setFavorites] = useState(initialStateFavorites);
 

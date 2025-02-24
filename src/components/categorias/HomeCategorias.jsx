@@ -18,12 +18,16 @@ import arete2 from '../../assets/img/categorias/arete2.jpg'
 import pulsera1 from '../../assets/img/categorias/pulsera1.jpg'
 import pulsera2 from '../../assets/img/categorias/pulsera2.jpg'
 import '../../assets/js/register'
+import arito from '../../assets/img/arito.jpg'
 import logo from '../../assets/img/logo_lionettas.png'
 import { useRegistroClientes } from '../../hooks/useRegistroClientes'
+import '../../assets/js/bootstrap.bundle.min.js';
+import '../../assets/css/bootstrap.min.css';
+import { Carousel } from 'react-bootstrap';
 
 export const HomeCategorias = () => {
     const [hovered, setHovered] = useState({});
-
+    const carouselRef = useRef(null);
     const targetRef = useRef(null);
     const modalRef = useRef(null);
     const [modal, setModal] = useState(null);
@@ -32,12 +36,20 @@ export const HomeCategorias = () => {
 
     const { addCliente } = useRegistroClientes()
 
-    useEffect(() => {
-        if (modalRef.current && window.bootstrap) {
-            setModal(new window.bootstrap.Modal(modalRef.current));
-        }
-    }, []);
+    // useEffect(() => {
+    //     if (modalRef.current && window.bootstrap) {
+    //         setModal(new window.bootstrap.Modal(modalRef.current));
+    //     }
+    // }, []);
 
+
+    useEffect(() => {
+        const carousel = new window.bootstrap.Carousel(carouselRef.current);
+        return () => {
+            // Limpieza opcional: destruye el carrusel si es necesario
+            // carousel.dispose();
+        };
+    }, []);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -95,27 +107,66 @@ export const HomeCategorias = () => {
         setTelefono('')
     }
     return (
-        <div ref={targetRef} className="container text-center py-5" id=''>
-            <h2 className="mb-4">Comprar por categoría</h2>
-            <div className="row">
-                {categories.map((category, index) => (
-                    <div
-                        key={index}
-                        className="col-12 col-md-6 col-lg-3 position-relative category-card"
-                        onMouseEnter={() => setHovered(index)}
-                        onMouseLeave={() => setHovered(null)}
-                    >
-                        <img
-                            src={hovered === index ? category.image2 : category.image1}
-                            alt={category.name}
-                            className="img-fluid rounded category-image"
-                        />
-                        <div className="position-absolute top-50 start-50 translate-middle px-4 py-2 fw-bold category-button">
-                            <Link to={`/productos?categoria=${category.name}`} className='btn-outline-call'> {category.name}</Link>
+        <div ref={targetRef} className="px-0 mx-0 text-center" id=''>
+            <h2 className="title-categories">Comprar por categoría</h2>
+            <div className="desktop-only">
+                <div className="row px-0 mx-0">
+                    {categories.map((category, index) => (
+                        <div
+                            key={index}
+                            className="col-12 p-0 col-md-6 col-lg-3 position-relative category-card"
+                            onMouseEnter={() => setHovered(index)}
+                            onMouseLeave={() => setHovered(null)}
+                            style={{ height: '500px' }}
+                        >
+                            <img
+                                src={hovered === index ? category.image2 : category.image1}
+                                alt={category.name}
+                                className=""
+                                style={{ objectFit: 'cover', height: '100%', width: '100%' }}
+                            />
+                            <div className="position-absolute top-50 start-50 translate-middle px-4 py-2 fw-bold category-button">
+                                <Link to={`/productos?categoria=${category.name}`} className='btn-outline-call'> {category.name}</Link>
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
+            <div className="mobile-only" style={{height:'auto'}}>
+                <div id="categoriasCarousel" className="carousel container-carousel slide" data-bs-ride="carousel">
+                    <div className="carousel-inner">
+                        {categories.map((category, index) => (
+                            <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
+                                <div className="position-relative category-card" >
+                                    <img
+                                        src={category.image1}
+                                        alt={category.name}
+                                        className="d-block w-100 object-fit-cover"
+                                        style={{ objectFit: 'cover' }}
+                                    />
+                                    <div className="position-absolute top-50 start-50 translate-middle px-4 py-2 fw-bold category-button">
+                                        <Link to={`/productos?categoria=${category.name}`} className="btn-outline-call">
+                                            {category.name}
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                    <button className="carousel-control-prev" type="button" data-bs-target="#categoriasCarousel" data-bs-slide="prev">
+                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span className="visually-hidden">Previous</span>
+                    </button>
+                    <button className="carousel-control-next" type="button" data-bs-target="#categoriasCarousel" data-bs-slide="next">
+                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span className="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
+            {/* <div className="card bg-danger w-25">
+                <img src={pulsera1} alt="" />
+            </div> */}
             <div className="modal fade" id="registerModal" tabIndex="-1" aria-hidden="true" ref={modalRef}>
                 <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">

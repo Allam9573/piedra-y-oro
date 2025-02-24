@@ -7,6 +7,6 @@ lionettashn@gmail.com - goldecanadaGDC - goldecanadaGDC@ggmail.com
 al pagar limpiar carrito de compras(ok)
 *agregar codigo unico a productos(10 digitos)(ok)
 cambio de texto en el formulario de registro(ok)
+aparicion modal de registro al bajar por categorias(ok)
+en vista telefono ajustar imagen al ancho de pantalla, centrar el texto y disminuir fuente a titulo(ok)
 *ver productos por campana
-aparicion modal de registro al bajar por categorias
-en vista telefono ajustar imagen al ancho de pantalla, centrar el texto y disminuir fuente a titulo

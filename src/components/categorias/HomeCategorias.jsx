@@ -23,7 +23,6 @@ import logo from '../../assets/img/logo_lionettas.png'
 import { useRegistroClientes } from '../../hooks/useRegistroClientes'
 import '../../assets/js/bootstrap.bundle.min.js';
 import '../../assets/css/bootstrap.min.css';
-import { Carousel } from 'react-bootstrap';
 
 export const HomeCategorias = () => {
     const [hovered, setHovered] = useState({});

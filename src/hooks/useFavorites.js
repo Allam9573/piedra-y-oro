@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 const EXPIRATION_TIME = 1000 * 60 * 60 * 24 * 3;
 

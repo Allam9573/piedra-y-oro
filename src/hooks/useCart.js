@@ -8,26 +8,26 @@ const useCart = () => {
         try {
             const localData = localStorage.getItem("cart");
             if (!localData) return [];
-    
+
             const parsedData = JSON.parse(localData);
             if (!parsedData || !parsedData.items) return [];
-    
+
             const { items, timestamp } = parsedData;
-    
+
             if (!Array.isArray(items)) return []; // Evita errores si no es un array
-    
+
             if (Date.now() - timestamp > EXPIRATION_TIME) {
                 localStorage.removeItem("cart");
                 return [];
             }
-    
+
             return items;
         } catch (error) {
             console.error("Error al leer carrito:", error);
             return [];
         }
     };
-    
+
     const [cart, setCart] = useState(initialCartState)
 
 
@@ -41,7 +41,6 @@ const useCart = () => {
             producto.cantidad = 1
             setCart([...cart, producto])
             notifyAdd(producto)
-
         }
     }
 

@@ -7,7 +7,7 @@ export const HomeAnillos = () => {
     const { anillos } = useHomeCategorias()
     return (
 
-        <div className="row con mt-5 mx-0 px-0 w-100 flex-column-reverse flex-lg-row align-items-center text-center text-lg-start">
+        <div id='puntoRegistro' className="row con mt-5 mx-0 px-0 w-100 flex-column-reverse flex-lg-row align-items-center text-center text-lg-start">
             <div className="col-12 col-lg-6 px-5 d-flex flex-column justify-content-center align-items-center align-items-lg-start">
                 {anillos.map(anillo => (
                     <div key={anillo.id}>
@@ -22,6 +22,7 @@ export const HomeAnillos = () => {
             <div className="col-12 mx-0 px-0 col-lg-6">
                 <img className="img-fluid w-100 image" style={{ objectFit: "cover" }} src={anillosImage} alt="Anillo" />
             </div>
+            <script src="../../assets/js/register"></script>
         </div>
     )
 }

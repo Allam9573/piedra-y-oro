@@ -35,20 +35,12 @@ export const HomeCategorias = () => {
 
     const { addCliente } = useRegistroClientes()
 
-    // useEffect(() => {
-    //     if (modalRef.current && window.bootstrap) {
-    //         setModal(new window.bootstrap.Modal(modalRef.current));
-    //     }
-    // }, []);
-
-
     useEffect(() => {
-        const carousel = new window.bootstrap.Carousel(carouselRef.current);
-        return () => {
-            // Limpieza opcional: destruye el carrusel si es necesario
-            // carousel.dispose();
-        };
+        if (modalRef.current && window.bootstrap) {
+            setModal(new window.bootstrap.Modal(modalRef.current));
+        }
     }, []);
+
 
     useEffect(() => {
         const observer = new IntersectionObserver(

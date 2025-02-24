@@ -124,6 +124,12 @@ body {
     transform: scale(1.1);
 }
 
+.modal {
+    position: fixed !important;
+    z-index: 1050 !important;
+  }
+  
+
 
 @media (max-width: 768px) {
     .swiper-pagination {

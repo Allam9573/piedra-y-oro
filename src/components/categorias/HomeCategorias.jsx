@@ -19,6 +19,7 @@ import pulsera1 from '../../assets/img/categorias/pulsera1.jpg'
 import pulsera2 from '../../assets/img/categorias/pulsera2.jpg'
 import '../../assets/js/register'
 import logo from '../../assets/img/logo_lionettas.png'
+import { useRegistroClientes } from '../../hooks/useRegistroClientes'
 
 export const HomeCategorias = () => {
     const [hovered, setHovered] = useState({});
@@ -26,23 +27,29 @@ export const HomeCategorias = () => {
     const targetRef = useRef(null);
     const modalRef = useRef(null);
     const [modal, setModal] = useState(null);
+    const [nombre, setNombre] = useState('')
+    const [telefono, setTelefono] = useState('')
+
+    const { addCliente } = useRegistroClientes()
 
     useEffect(() => {
         if (modalRef.current && window.bootstrap) {
-          setModal(new window.bootstrap.Modal(modalRef.current));
+            setModal(new window.bootstrap.Modal(modalRef.current));
         }
-      }, []);
-      
+    }, []);
+
 
     useEffect(() => {
         const observer = new IntersectionObserver(
+
             ([entry]) => {
+                console.log(entry.isIntersecting);
                 if (entry.isIntersecting && modal) {
                     modal.show();
-                    observer.disconnect(); // Evita que se muestre varias veces
+                    observer.disconnect();
                 }
             },
-            { threshold: 1.0 }
+            { threshold: 0.5 }
         );
 
         if (targetRef.current) {
@@ -77,6 +84,16 @@ export const HomeCategorias = () => {
             image2: anillo2
         },
     ];
+    const SubmitCliente = e => {
+        e.preventDefault()
+        const nuevoCliente = {
+            nombre_cliente: nombre,
+            numero_telefonico: telefono
+        }
+        addCliente(nuevoCliente)
+        setNombre('')
+        setTelefono('')
+    }
     return (
         <div ref={targetRef} className="container text-center py-5" id=''>
             <h2 className="mb-4">Comprar por categoría</h2>
@@ -109,14 +126,14 @@ export const HomeCategorias = () => {
                         <div className="modal-body">
                             <img src={logo} width={'15%'} className='mb-3' alt="" />
                             <p className='text-secondary'>¡Únete ahora a nuestra comunidad para gozar de un 10% de descuento en tu primer compra!</p>
-                            <form>
-                                <input type="text" placeholder='Nombre' className="form-control mb-3" />
-                                <input type="text" placeholder='Telefono' className="form-control mb-3" />
+                            <form onSubmit={SubmitCliente}>
+                                <input type="text" value={nombre} onChange={e => setNombre(e.target.value)} placeholder='Nombre' className="form-control mb-3" />
+                                <input type="text" value={telefono} onChange={e => setTelefono(e.target.value)} placeholder='Telefono' className="form-control mb-3" />
                                 <div className="modal-footer">
                                     <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">
                                         No, gracias
                                     </button>
-                                    <button type="button" style={{backgroundColor: '#938E87'}} className="btn text-white">
+                                    <button  disabled={nombre.length === 0 || telefono.length === 0} type="submit" style={{ backgroundColor: '#938E87' }} className="btn text-white">
                                         Unirme!
                                     </button>
                                 </div>

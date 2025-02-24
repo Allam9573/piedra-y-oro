@@ -145,6 +145,7 @@ body {
     box-shadow: 0 8px 8px 0 rgb(220, 220, 220);
     transition: 0.8s;
 }
+
 .container-carousel {
     max-width: 100%;
     max-height: 350px;
@@ -154,25 +155,25 @@ body {
     max-height: 350px;
     object-fit: cover;
 }
-.mobile-only{
 
-}
-.desktop-only{
+.mobile-only {}
 
-}
-.container-carousel{
-}
+.desktop-only {}
+
+.container-carousel {}
+
 @media (min-width:769px) {
-    .mobile-only{
+    .mobile-only {
         display: none;
     }
-    .desktop-only{
+
+    .desktop-only {
         display: block;
     }
 }
 
 @media (max-width: 768px) {
-   
+
     .swiper-pagination {
         bottom: 5px !important;
     }
@@ -195,10 +196,12 @@ body {
         max-height: 300px;
         margin-bottom: 20px;
     }
-    .mobile-only{
+
+    .mobile-only {
         display: block;
     }
-    .desktop-only{
+
+    .desktop-only {
         display: none;
     }
 }

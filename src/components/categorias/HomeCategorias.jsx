@@ -133,7 +133,7 @@ export const HomeCategorias = () => {
                                     <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">
                                         No, gracias
                                     </button>
-                                    <button  disabled={nombre.length === 0 || telefono.length === 0} type="submit" style={{ backgroundColor: '#938E87' }} className="btn text-white">
+                                    <button disabled={nombre.length === 0 || telefono.length === 0} type="submit" style={{ backgroundColor: '#938E87' }} className="btn text-white">
                                         Unirme!
                                     </button>
                                 </div>

@@ -11,7 +11,13 @@ const useRegistroClientes = () => {
                     button: "Listo",
                 });
             })
-            .catch(error => console.log(error))
+            .catch(() => {
+                swal({
+                    title: "Numero de telefono ya registrado!",
+                    icon: "error",
+                    button: "Listo",
+                });
+            })
     }
     return {
         addCliente

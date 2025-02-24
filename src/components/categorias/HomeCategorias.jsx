@@ -28,10 +28,11 @@ export const HomeCategorias = () => {
     const [modal, setModal] = useState(null);
 
     useEffect(() => {
-        if (modalRef.current) {
-            setModal(new bootstrap.Modal(modalRef.current));
+        if (modalRef.current && window.bootstrap) {
+          setModal(new window.bootstrap.Modal(modalRef.current));
         }
-    }, []);
+      }, []);
+      
 
     useEffect(() => {
         const observer = new IntersectionObserver(

@@ -26,7 +26,6 @@ import '../../assets/css/bootstrap.min.css';
 
 export const HomeCategorias = () => {
     const [hovered, setHovered] = useState({});
-    const carouselRef = useRef(null);
     const targetRef = useRef(null);
     const modalRef = useRef(null);
     const [modal, setModal] = useState(null);

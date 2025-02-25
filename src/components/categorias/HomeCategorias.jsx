@@ -166,7 +166,8 @@ export const HomeCategorias = () => {
                         </div> */}
                         <div className="modal-body">
                             <img src={logo} width={'15%'} className='mb-3' alt="" />
-                            <p className='text-secondary'>¡Únete ahora a nuestra comunidad para gozar de un 10% de descuento en tu primer compra!</p>
+                            <p className='title-modal'>¡10% de descuento en tu primera compra!</p>
+                            <p className='text-secondary mx-3'>¡Únete a nuestra comunidad y se el primero en enterarte de ofertas, exclusivas y promociones especiales!</p>
                             <form onSubmit={SubmitCliente}>
                                 <input type="text" value={nombre} onChange={e => setNombre(e.target.value)} placeholder='Nombre' className="form-control mb-3" />
                                 <input type="text" value={telefono} onChange={e => setTelefono(e.target.value)} placeholder='Telefono' className="form-control mb-3" />

@@ -24,6 +24,7 @@ import './assets/css/whatsapp-icon.css'
 import { Placeholder } from "./pages/Placeholder"
 import { FAQ } from "./pages/FAQ"
 import { ToastContainer } from "react-toastify";
+import { Promocion } from "./components/promociones/Promocion"
 const App = () => {
 
   const { favorites, addFavorite, deleteItem } = useFavorites()
@@ -35,6 +36,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/categorias/:nombre" element={<CategoriaProducto />} />
+        <Route path="/promociones/:id" element={<Promocion />} />
         <Route path="/productos" element={<ProductosPage cart={cart} addToCart={addToCart} addFavorite={addFavorite} />} />
         <Route path="/productos/:id" element={<ProductoView addToCart={addToCart} />} />
         <Route path="/admin/productos/eliminar/:id" element={<ProductoEliminar />} />

@@ -34,7 +34,7 @@ export const Header = () => {
                                 <div className="text-start w-100">
                                     <p className="title-promocion mt-4">{promo.titulo}</p>
                                     <p className="descripcion-promocion mb-5">{promo.descripcion}</p>
-                                    <Link to="/productos" className="btn-call my-5">Inspírate</Link>
+                                    <Link to={`/promociones/${promo.id}`} className="btn-call my-5">Inspírate</Link>
                                 </div>
                             </div>
 

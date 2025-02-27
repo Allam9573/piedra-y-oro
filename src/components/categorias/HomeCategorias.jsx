@@ -34,11 +34,11 @@ export const HomeCategorias = () => {
 
     const { addCliente } = useRegistroClientes()
 
-    useEffect(() => {
-        if (modalRef.current && window.bootstrap) {
-            setModal(new window.bootstrap.Modal(modalRef.current));
-        }
-    }, []);
+    // useEffect(() => {
+    //     if (modalRef.current && window.bootstrap) {
+    //         setModal(new window.bootstrap.Modal(modalRef.current));
+    //     }
+    // }, []);
 
 
     useEffect(() => {
@@ -97,17 +97,17 @@ export const HomeCategorias = () => {
         setTelefono('')
     }
     return (
-        <div ref={targetRef} className="px-0 mx-0 text-center" id=''>
+        <div ref={targetRef} className="px-0 mx-0 w-100 text-center" id=''>
             <h2 className="title-categories">Comprar por categoría</h2>
             <div className="desktop-only">
-                <div className="row px-0 mx-0">
+                <div className="row category-container mx-auto">
                     {categories.map((category, index) => (
                         <div
                             key={index}
                             className="col-12 p-0 col-md-6 col-lg-3 position-relative category-card"
                             onMouseEnter={() => setHovered(index)}
                             onMouseLeave={() => setHovered(null)}
-                            style={{ height: '500px' }}
+                            style={{ height: '400px' }}
                         >
                             <img
                                 src={hovered === index ? category.image2 : category.image1}

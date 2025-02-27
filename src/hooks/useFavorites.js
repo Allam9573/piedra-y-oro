@@ -55,8 +55,6 @@ const useFavorites = () => {
         }
     }, [favorites]);
 
-
-
     return { favorites, addFavorite, deleteItem };
 };
 

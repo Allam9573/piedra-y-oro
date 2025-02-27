@@ -7,7 +7,7 @@ import { GrView } from 'react-icons/gr';
 import { useFavorites } from '../hooks/useFavorites';
 
 export const Favorites = ({ favorites, deleteItem, addToCart }) => {
-    document.title = 'Lioenttas | Lista de deseos'
+    document.title = 'Lionettas | Lista de deseos'
     const { pathname } = useLocation();
 
     useEffect(() => {
@@ -16,7 +16,6 @@ export const Favorites = ({ favorites, deleteItem, addToCart }) => {
     return (
         <>
             <h1 className="text-secondary text-center my-5">Lista de deseos:</h1>
-
             {
                 favorites.length === 0 ? (
                     <div className="text-center my-5">

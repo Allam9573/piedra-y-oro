@@ -7,6 +7,7 @@ import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper/modules";
 import anillo from '../assets/img/anillo.jpeg'
 import logo from '../assets/img/logo_verde.png'
+import logoRosa from '../assets/img/logo_rosado.png'
 import '../assets/css/styles.css'
 
 export const Header = () => {
@@ -28,9 +29,9 @@ export const Header = () => {
                             {/* Contenido de texto */}
                             <div
                                 className="col-12 col-lg-6 text-start d-flex flex-column justify-content-center align-items-start px-4 px-lg-5 py-5 pb-5 pb-lg-4"
-                                style={{ backgroundColor: "#C7D0CF" }}
+                                style={{ backgroundColor: "#343A36" }}
                             >
-                                <img src={logo} className="mb-3 img-fluid w-50 w-md-25" alt="Logo" />
+                                <img src={logoRosa} className="mb-3 img-fluid w-50 w-md-25" alt="Logo" />
                                 <div className="text-start w-100">
                                     <p className="title-promocion mt-4">{promo.titulo}</p>
                                     <p className="descripcion-promocion mb-5">{promo.descripcion}</p>

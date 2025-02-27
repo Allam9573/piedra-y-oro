@@ -180,10 +180,11 @@ body {
 .container-anillos {
     width: 100%;
     background-color: #E7D7C9;
+    padding: 100px !important;
 }
 
 .con-anillos-left {
-    height: 100% !important;
+    height: 800px !important;
     background-color: #fff !important;
 }
 
@@ -238,6 +239,11 @@ body {
     .mobile-only {
         display: block;
     }
+
+    .container-anillos {
+        background-color: #E7D7C9;
+    }
+    
 
     .desktop-only {
         display: none;

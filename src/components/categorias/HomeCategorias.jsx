@@ -97,7 +97,7 @@ export const HomeCategorias = () => {
         setTelefono('')
     }
     return (
-        <div ref={targetRef} className="px-0 mx-0 w-100 text-center" id=''>
+        <div ref={targetRef} className="px-0 mx-0 mb-5 w-100 text-center" id=''>
             <h2 className="title-categories">Comprar por categoría</h2>
             <div className="desktop-only">
                 <div className="row category-container mx-auto">
@@ -122,7 +122,7 @@ export const HomeCategorias = () => {
                     ))}
                 </div>
             </div>
-            <div className="mobile-only" style={{height:'auto'}}>
+            <div className="mobile-only" style={{ height: 'auto' }}>
                 <div id="categoriasCarousel" className="carousel container-carousel slide" data-bs-ride="carousel">
                     <div className="carousel-inner">
                         {categories.map((category, index) => (

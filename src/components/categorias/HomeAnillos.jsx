@@ -7,7 +7,7 @@ export const HomeAnillos = () => {
     const { anillos } = useHomeCategorias()
     return (
 
-        <div className="container-anillos p-5 h-100">
+        <div className="container-anillos h-100">
             <div id='puntoRegistro' className="row con mx-0 px-0 w-100 flex-column-reverse flex-lg-row align-items-center text-center text-lg-start">
                 <div className="con-anillos-left col-12 col-lg-6 px-5 d-flex flex-column justify-content-center align-items-center align-items-lg-start">
                     {anillos.map(anillo => (

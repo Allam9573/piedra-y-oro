@@ -20,6 +20,7 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
     const categoriaSeleccionada = params.get("categoria");
 
     const notify = () => toast("Wow so easy!");
+    console.log(productos)
 
     // Aplicar filtro automáticamente al cargar
     useEffect(() => {
@@ -88,12 +89,12 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
                                     <div className="card mb-4 product-wap rounded-0">
                                         <div className="card rounded-0">
                                             <img
-
                                                 className="card-img rounded-0 img-fluid"
                                                 style={{ objectFit: 'cover', width: '100%', height: '200px' }}
                                                 src={producto.imagenes.length > 0 ? producto.imagenes[0].imagen : "placeholder.jpg"}
                                                 alt={producto.nombre}
                                             />
+
                                             <div className="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                                 <ul className="list-unstyled">
                                                     <li>
@@ -115,7 +116,18 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
                                             </div>
                                         </div>
                                         <div className="card-body">
-                                            <h3 className="text-decoration-none">{producto.nombre}</h3>
+                                            {
+                                                producto.campana_titulo === 'Sin promocion' ?
+                                                    <>
+
+                                                    </> :
+                                                    <>
+                                                        <div className='d-flex justify-content-between'>
+                                                            <h3 className="text-decoration-none">{producto.nombre}</h3>
+                                                            <h6><span class="badge bg-danger p-2">En promocion</span></h6>
+                                                        </div>
+                                                    </>
+                                            }
                                             <span style={{ backgroundColor: '#938E87' }} className='badge'>{producto.subcategoria_nombre}</span>
                                             <p className="text-center mb-0">
                                                 Precio: <span className="fw-bold"> {new Intl.NumberFormat('es-HN', {

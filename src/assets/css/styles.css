@@ -194,8 +194,18 @@ body {
     width: 100%;
 }
 
+.container-anillos-brown {
+    background-color: #E7D7C9 !important;
+    padding: 100px !important;
+}
+
+.promocion-title {
+    font-family: 'bodar' !important;
+}
+
 .container-carousel {}
 
+/* vista PC */
 @media (min-width:769px) {
     .mobile-only {
         display: none;
@@ -206,6 +216,7 @@ body {
     }
 }
 
+/* vista movil */
 @media (max-width: 768px) {
     .text-about {
         text-align: center;
@@ -243,7 +254,7 @@ body {
     .container-anillos {
         background-color: #E7D7C9;
     }
-    
+
 
     .desktop-only {
         display: none;
@@ -260,5 +271,14 @@ body {
         /* background-color: blue; */
         display: flex;
         justify-content: center;
+    }
+
+    .container-anillos-brown {
+        background-color: #fff !important;
+        padding: 0 !important;
+    }
+    .con-anillos-left {
+        height: auto !important;
+        background-color: #fff !important;
     }
 }

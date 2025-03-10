@@ -18,7 +18,7 @@ export const Promocion = () => {
             {
                 promocion != null ?
                     <>
-                        <h2 className='text-center'>{promocion.titulo}</h2>
+                        <h2 className='text-center h1 promocion-title'>{promocion.titulo}</h2>
                         <div className="row">
                             <div className="col-lg-9">
                                 <div className="row">
@@ -69,7 +69,10 @@ export const Promocion = () => {
                                                                     </div>
                                                                 </div>
                                                                 <div className="card-body">
-                                                                    <h3 className="text-decoration-none">{producto.nombre}</h3>
+                                                                    <div className='d-flex justify-content-between'>
+                                                                        <h3 className="text-decoration-none">{producto.nombre}</h3>
+                                                                        <h6><span class="badge bg-danger p-2">En promocion</span></h6>
+                                                                    </div>
                                                                     <span style={{ backgroundColor: '#938E87' }} className='badge'>{producto.subcategoria_nombre}</span>
                                                                     <p className="text-center mb-0">
                                                                         Precio: <span className="fw-bold"> {new Intl.NumberFormat('es-HN', {

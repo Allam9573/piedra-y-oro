@@ -2,20 +2,34 @@ import React from 'react'
 import medallon from '../../assets/img/image2.png'
 import { Link } from 'react-router-dom'
 import { useHomeCategorias } from '../../hooks/useHomeCategorias'
+import anillo1 from '../../assets/img/image1.png'
+import anillo2 from '../../assets/img/modelo1.jpg'
 
 export const HomeMedallones = () => {
 
     const { medallones } = useHomeCategorias()
+    const imagenesAnillos = [anillo1, anillo2];
 
     return (
         <div className="row mx-0 px-0 w-100  flex-lg-row align-items-center text-center text-lg-start">
             <div className="col-12 mx-0 px-0 col-lg-6 text-center">
-                <img
-                    className="img-fluid image w-100"
-                    src={medallon}
-                    alt="Medallón"
-                    style={{ objectFit: 'cover' }}
-                />
+                <div id="carouselMedallones" className="carousel slide" data-bs-ride="carousel">
+                    <div className="carousel-inner">
+                        {imagenesAnillos.map((imagen, index) => (
+                            <div key={index} className={`carousel-item ${index === 0 ? "active" : ""}`}>
+                                <img className="img-fluid w-100 image" style={{ objectFit: "cover", height: '800px' }} src={imagen} alt={`Anillo ${index + 1}`} />
+                            </div>
+                        ))}
+                    </div>
+                    <button className="carousel-control-prev" type="button" data-bs-target="#carouselMedallones" data-bs-slide="prev">
+                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span className="visually-hidden">Previous</span>
+                    </button>
+                    <button className="carousel-control-next" type="button" data-bs-target="#carouselMedallones" data-bs-slide="next">
+                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span className="visually-hidden">Next</span>
+                    </button>
+                </div>
             </div>
             <div className="col-12 col-lg-6 px-5 d-flex flex-column justify-content-center align-items-center align-items-lg-start">
                 {medallones.map((medallon) => (

@@ -57,6 +57,7 @@ const useCategorias = () => {
             })
             .catch(error => console.log(error))
     }
+
     const buscarCategoriaPorNombre = categoria => {
         CategoriaService.buscarCategoriaPorNombre(categoria)
             .then(response => setCategoria(response.data))

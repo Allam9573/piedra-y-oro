@@ -23,9 +23,9 @@ export const Header = () => {
             className="w-100 min-vh-100 position-relative"
         >
             {promociones.map((promo, index) => (
-                <SwiperSlide key={index} className="d-flex align-items-center justify-content-center">
-                    <div className="d-flex align-items-center w-100">
-                        <div className="row w-100 flex-column-reverse flex-lg-row g-0">
+                <SwiperSlide key={index} className="">
+                    <div className="">
+                        <div className="row w-100 flex-column-reverse flex-md-row">
                             {/* Contenido de texto */}
                             <div
                                 className="col-12 col-lg-6 text-start d-flex flex-column justify-content-center align-items-start px-4 px-lg-5 py-5 pb-5 pb-lg-4"

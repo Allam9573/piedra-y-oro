@@ -214,6 +214,9 @@ body {
     .desktop-only {
         display: block;
     }
+    .home-anillos-mobile{
+        display: none;
+    }
 }
 
 /* vista movil */
@@ -277,8 +280,31 @@ body {
         background-color: #fff !important;
         padding: 0 !important;
     }
+
     .con-anillos-left {
         height: auto !important;
         background-color: #fff !important;
     }
+
+    .home-anillos-mobile {
+
+    }
+    .home-anillos-container{
+        height: 600px;
+        background-color: #E7D7C9;
+        padding: 0 20px;
+    }
+    .home-anillos-home-imagen{
+        height: 200px;
+        object-fit: contain;
+        margin: 0 10px;
+    }
+    .btn-home{
+        background-color: #EDE9E3;
+        color: black;
+        text-decoration: none;
+        padding: 10px 20px;
+    }
+
+    .home-medallones-mobile {}
 }

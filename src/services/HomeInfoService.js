@@ -3,11 +3,11 @@ import axios from "axios";
 class HomeInfoService {
 
     getAnillosHomeService() {
-        return axios.get('http://localhost:8000/api/home/anillos/')
+        return axios.get('https://lionettas-backend-production.up.railway.app/api/home/anillos/')
     }
 
     getMedallonesHomeService() {
-        return axios.get('http://localhost:8000/api/home/medallones/')
+        return axios.get('https://lionettas-backend-production.up.railway.app/api/home/medallones/')
     }
 
 }

@@ -13,7 +13,7 @@ export const HomeMedallones = () => {
 
     return (
         <>
-            <div className="row mx-0 px-0 w-100  flex-lg-row align-items-center text-center text-lg-start">
+            <div className="desktop-only row mx-0 px-0 w-100  flex-lg-row align-items-center text-center text-lg-start">
                 <div className="col-12 mx-0 px-0 col-lg-6 text-center">
                     <div id="carouselMedallones" className="carousel slide" data-bs-ride="carousel">
                         <div className="carousel-inner">
@@ -49,7 +49,7 @@ export const HomeMedallones = () => {
                     </Link>
                 </div>
             </div>
-            <div className="home-anillos-mobile">
+            {/* <div className="home-anillos-mobile">
                 <div className="home-anillos-container text-center py-3">
                     {
                         infoMedallones.map(info => (
@@ -65,7 +65,7 @@ export const HomeMedallones = () => {
                         ))
                     }
                 </div>
-            </div>
+            </div> */}
         </>
     )
 }

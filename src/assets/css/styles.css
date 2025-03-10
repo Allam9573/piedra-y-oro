@@ -214,7 +214,8 @@ body {
     .desktop-only {
         display: block;
     }
-    .home-anillos-mobile{
+
+    .home-anillos-mobile {
         display: none;
     }
 }
@@ -286,30 +287,34 @@ body {
         background-color: #fff !important;
     }
 
-    .home-anillos-mobile {
+    .home-anillos-mobile {}
 
-    }
-    .home-anillos-container{
+    .home-anillos-container {
         height: 450px;
         background-color: #E7D7C9;
         padding: 0 20px;
     }
-    .home-anillos-home-imagen{
+
+    .home-anillos-home-imagen {
         height: 200px;
         object-fit: contain;
         margin: 0 10px;
     }
-    .btn-home{
+
+    .btn-home {
         background-color: #EDE9E3;
         color: black;
         text-decoration: none;
         padding: 10px 20px;
     }
-    .title-home-anillos{
+
+    .title-home-anillos {
         font-family: 'bodar';
     }
-    .descripcion-home-anillos{
+
+    .descripcion-home-anillos {
         font-size: 12px !important;
     }
+
     .home-medallones-mobile {}
 }

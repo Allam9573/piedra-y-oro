@@ -195,7 +195,7 @@ body {
 }
 
 .container-anillos-brown {
-    background-color: #E7D7C9 !important;
+    background-color: #d9baa8 !important;
     padding: 100px !important;
 }
 
@@ -290,7 +290,7 @@ body {
 
     }
     .home-anillos-container{
-        height: 600px;
+        height: 450px;
         background-color: #E7D7C9;
         padding: 0 20px;
     }
@@ -305,6 +305,11 @@ body {
         text-decoration: none;
         padding: 10px 20px;
     }
-
+    .title-home-anillos{
+        font-family: 'bodar';
+    }
+    .descripcion-home-anillos{
+        font-size: 12px !important;
+    }
     .home-medallones-mobile {}
 }

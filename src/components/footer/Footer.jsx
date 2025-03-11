@@ -92,7 +92,7 @@ export const Footer = () => {
                     </div>
                 </div>
             </footer>
-            <footer className='footer-mobile'>
+            {/* <footer className='footer-mobile'>
                 <div class="mx-3 pt-5">
                     <img src={logo_blanco} width={'40%'} alt="" />
                     <ul class="list-unstyled text-light mt-3 py-3 footer-link-list">
@@ -111,7 +111,7 @@ export const Footer = () => {
                 </div>
                 <div>
                 </div>
-            </footer>
+            </footer> */}
         </>
     )
 }

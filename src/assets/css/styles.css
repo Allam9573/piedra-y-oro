@@ -133,10 +133,9 @@ body {
 }
 
 .title-categories {
-    font-family: 'bodar';
+    font-family: 'Bodoni Moda';
     font-size: 3em;
     font-weight: lighter;
-    letter-spacing: 7px;
     margin: 80px 0;
 }
 
@@ -293,7 +292,7 @@ body {
     }
 
     .title-categories {
-        font-size: 2.5rem;
+        font-size: 1.5rem;
         margin: 50px 0;
     }
 
@@ -368,7 +367,7 @@ body {
     }
 
     .title-home-anillos {
-        font-family: 'bodar';
+        /* font-family: 'Bodoni Moda'; */
     }
 
     .descripcion-home-anillos {

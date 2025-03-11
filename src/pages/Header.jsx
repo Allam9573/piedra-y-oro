@@ -110,9 +110,9 @@ export const Header = () => {
                             className={`carousel-item ${index === 0 ? 'active' : ''}`}
                             style={{ backgroundImage: `url(${item.imagen})`, height: '600px' }}
                         >
-                            <div style={{ backgroundColor: '#283b36' }} className="text-white carousel-caption text-center">
-                                <h5 style={{ fontFamily: 'Bodoni Moda' }}>{item.titulo}</h5>
-                                <p>{item.descripcion}</p>
+                            <div style={{ backgroundColor: '#343A36' }} className="text-white carousel-caption text-center">
+                                <h5 className='title-promo-mobile'>{item.titulo}</h5>
+                                <p className='descripcion-home-anillos text-white'>{item.descripcion}</p>
                                 <Link className='btn-home-mobile my-5'>Inspírate</Link>
                             </div>
                         </div>

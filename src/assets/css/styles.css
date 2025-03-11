@@ -277,9 +277,15 @@ body {
     .home-anillos-mobile {
         display: block;
         /* height: 500px; */
+    }
+    .title-promo-mobile{
+        font-family: 'Bodoni Moda';
+        font-size: 1.8rem !important;
+    }
+    .text-descripcion-promo-mobile{
+        font-size: 12px !important;
 
     }
-
     .btn-hero-mobile {
         background-color: #d9baa8;
         padding: 10px 20px;

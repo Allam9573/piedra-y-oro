@@ -138,7 +138,7 @@ export const Cart = ({ cart, eliminarItemCarrito, incrementar, decrementar }) =>
                                         value={cliente}
                                         onChange={e => setCliente(e.target.value)}
                                     />
-                                    <button disabled={cliente.length === 0} onClick={() => handlePay()} style={{backgroundColor: '#938E87'}} className='btn btn-shadow text-white w-100'>Pagar</button>
+                                    <button disabled={cliente.length === 0} onClick={() => handlePay()} style={{ backgroundColor: '#938E87' }} className='btn btn-shadow text-white w-100'>Pagar</button>
                                 </div>
                             </div>
                         </div>

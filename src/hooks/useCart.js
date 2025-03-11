@@ -16,11 +16,10 @@ const useCart = () => {
 
             if (!Array.isArray(items)) return []; // Evita errores si no es un array
 
-            if (Date.now() - timestamp > EXPIRATION_TIME) {
-                localStorage.removeItem("cart");
-                return [];
-            }
-
+            // if (Date.now() - timestamp > EXPIRATION_TIME) {
+            //     localStorage.removeItem("cart");
+            //     return [];
+            // }
             return items;
         } catch (error) {
             console.error("Error al leer carrito:", error);
@@ -29,7 +28,6 @@ const useCart = () => {
     };
 
     const [cart, setCart] = useState(initialCartState)
-
 
     const addToCart = producto => {
         const itemExist = cart.findIndex(pro => pro.id === producto.id)

@@ -14,7 +14,7 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
     const { productos } = useProductos();
     const { subcategorias } = useSubcategorias();
     const { pathname } = useLocation()
-
+    console.log(productos)
     const location = useLocation();
     const params = new URLSearchParams(location.search);
     const categoriaSeleccionada = params.get("categoria");
@@ -37,7 +37,6 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
                 : [...prevSeleccionadas, nombreSubcategoria]
         );
     };
-
 
     const resultados = productos.filter((producto) => {
         const coincideBusqueda = producto.nombre
@@ -130,11 +129,18 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
                                             }
                                             <span style={{ backgroundColor: '#938E87' }} className='badge'>{producto.subcategoria_nombre}</span>
                                             <p className="text-center mb-0">
-                                                Precio: <span className="fw-bold"> {new Intl.NumberFormat('es-HN', {
+                                                Precio Normal: <span className="text-decoration-line-through text-secondary"> {new Intl.NumberFormat('es-HN', {
                                                     style: 'currency',
                                                     currency: 'HNL',
                                                     minimumFractionDigits: 2,
                                                 }).format(producto.precio)}</span>
+                                            </p>
+                                            <p className="text-center mb-0">
+                                                Precio Oferta: <span className="fw-bold"> {new Intl.NumberFormat('es-HN', {
+                                                    style: 'currency',
+                                                    currency: 'HNL',
+                                                    minimumFractionDigits: 2,
+                                                }).format(producto.precio - (producto.precio * (producto.campana_descuento) / 100))}</span>
                                             </p>
                                         </div>
                                     </div>

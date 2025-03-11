@@ -10,10 +10,10 @@ export const HomeMedallones = () => {
 
     const { infoMedallones } = useHomeInfo();
     const imagenesAnillos = [anillo1, anillo2];
-
+    console.log(infoMedallones)
     return (
         <>
-            <div className="desktop-only row mx-0 px-0 w-100  flex-lg-row align-items-center text-center text-lg-start">
+            <div className="desktop-medallones-only row mx-0 px-0 w-100  flex-lg-row align-items-center text-center text-lg-start">
                 <div className="col-12 mx-0 px-0 col-lg-6 text-center">
                     <div id="carouselMedallones" className="carousel slide" data-bs-ride="carousel">
                         <div className="carousel-inner">
@@ -49,23 +49,23 @@ export const HomeMedallones = () => {
                     </Link>
                 </div>
             </div>
-            {/* <div className="home-anillos-mobile">
-                <div className="home-anillos-container text-center py-3">
+            <div className="home-medallones-mobile">
+                <div className="text-center py-3">
                     {
                         infoMedallones.map(info => (
                             <>
-                                <h2 className='title mt-5 text-white'>{info.titulo}</h2>
-                                <div className='d-flex justify-content-center mt-5'>
+                                <h2 className='title-home-anillos '>{info.titulo}</h2>
+                                <div className='d-flex justify-content-center mt-4'>
                                     <img className='home-anillos-home-imagen' src={anillo1} alt="" />
                                     <img className='home-anillos-home-imagen' src={anillo2} alt="" />
                                 </div>
-                                <p className='text-white mt-4'>{info.descripcion}</p>
-                                <Link className='btn-home'>Explora el amor y el compromiso</Link>
+                                <p className='text-secondary descripcion-home-anillos mx-2 my-4'>{info.descripcion}</p>
+                                <Link className='btn-home'>Comprar Ahora</Link>
                             </>
                         ))
                     }
                 </div>
-            </div> */}
+            </div>
         </>
     )
 }

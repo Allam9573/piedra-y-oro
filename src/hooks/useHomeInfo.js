@@ -13,8 +13,8 @@ const useHomeInfo = () => {
     }
 
     const getInfoMedallones = () => {
-        HomeInfoService.getAnillosHomeService()
-            .then(response => setInfoAnillos(response.data))
+        HomeInfoService.getMedallonesHomeService()
+            .then(response => setinfoMedallones(response.data))
             .catch(error => console.log('error'))
     }
 

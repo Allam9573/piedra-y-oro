@@ -57,7 +57,19 @@ body {
     font-size: 1.5rem !important;
     color: white;
 }
+.btn-home-anillos{
+    background-color: #E7D7C9;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: 0.8s;
+}
+.btn-home-anillos:hover{
+    background-color: #cbbdaf;
+    transition: 0.8s;
 
+}
 .btn-outline-call {
     background-color: #E7D7C9;
     padding: 20px 50px;
@@ -195,7 +207,7 @@ body {
 }
 
 .container-anillos-brown {
-    background-color: #d9baa8 !important;
+    background-color: #EDE9E3 !important;
     padding: 100px !important;
 }
 
@@ -375,6 +387,7 @@ body {
         font-size: 0.7rem !important;
         text-decoration: none;
         padding: 10px 20px;
+        border-radius: 10px;
         transition: 0.8s !important;
     }
     .btn-home-mobile:hover{
@@ -383,7 +396,7 @@ body {
         transition: 0.8s !important;
     }
     .title-home-anillos {
-        /* font-family: 'Bodoni Moda'; */
+        font-family: 'Bodoni Moda';
     }
 
     .descripcion-home-anillos {

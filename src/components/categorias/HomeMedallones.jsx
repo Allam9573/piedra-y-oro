@@ -41,7 +41,7 @@ export const HomeMedallones = () => {
                         </div>
                     ))}
                     <Link
-                        to="/productos?categoria=Medallones"
+                        to={"/productos?categoria=Medallones"}
                         style={{ backgroundColor: '#E7D7C9' }}
                         className="btn mb-5 mb-lg-3 p-2 p-lg-4 fs-4 btn-lg btn-shadow"
                     >
@@ -60,7 +60,7 @@ export const HomeMedallones = () => {
                                     <img className='home-anillos-home-imagen' src={anillo2} alt="" />
                                 </div>
                                 <p className='text-secondary descripcion-home-anillos mx-2 my-4'>{info.descripcion}</p>
-                                <Link className='btn-home'>Comprar Ahora</Link>
+                                <Link to={"/productos?categoria=Medallones"} className='btn-home'>Comprar Ahora</Link>
                             </>
                         ))
                     }

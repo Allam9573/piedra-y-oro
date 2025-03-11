@@ -208,8 +208,20 @@ body {
 
 /* vista PC */
 @media (min-width:769px) {
+    .navbar-desktop{
+        display: block !important;
+    }
+    .navbar-mobile{
+        display: none !important;
+    }
     .mobile-only {
         display: none;
+    }
+    .footer-mobile{
+        display: none;
+    }
+    .footer-desktop{
+        display: block;
     }
 
     .desktop-only {
@@ -233,6 +245,12 @@ body {
 
 /* vista movil */
 @media (max-width: 768px) {
+    .navbar-desktop{
+        display: none !important;
+    }
+    .navbar-mobile{
+        display: block !important;
+    }
     .text-about {
         text-align: center;
     }
@@ -346,5 +364,12 @@ body {
 
     .header-mobile {
         display: block;
+    }
+    .footer-mobile{
+        display: block;
+        background-color: rgb(28, 43, 38);
+    }
+    .footer-desktop{
+        display: none;
     }
 }

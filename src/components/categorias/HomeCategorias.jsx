@@ -124,15 +124,15 @@ export const HomeCategorias = () => {
             </div>
             <div className="mobile-only" style={{ height: 'auto' }}>
                 <div id="categoriasCarousel" className="carousel container-carousel slide" data-bs-ride="carousel">
-                    <div className="carousel-inner">
+                    <div className="carousel-inner" style={{ padding: '20px 0' }}> {/* Agrega padding al contenedor */}
                         {categories.map((category, index) => (
-                            <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
+                            <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`} style={{ padding: '0 10px' }}> {/* Agrega padding horizontal a los slides */}
                                 <div className="position-relative category-card" >
                                     <img
                                         src={category.image1}
                                         alt={category.name}
-                                        className="d-block w-100 object-fit-cover"
-                                        style={{ objectFit: 'cover' }}
+                                        className="d-block w-100 object-fit-contain" // Cambia object-fit a contain
+                                        style={{ width: '200px', height: '150px', margin: '0 auto' }} // Ajusta el ancho, la altura y el margen
                                     />
                                     <div className="position-absolute top-50 start-50 translate-middle px-4 py-2 fw-bold category-button">
                                         <Link to={`/productos?categoria=${category.name}`} className="btn-outline-call">
@@ -143,14 +143,6 @@ export const HomeCategorias = () => {
                             </div>
                         ))}
                     </div>
-                    <button className="carousel-control-prev" type="button" data-bs-target="#categoriasCarousel" data-bs-slide="prev">
-                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span className="visually-hidden">Previous</span>
-                    </button>
-                    <button className="carousel-control-next" type="button" data-bs-target="#categoriasCarousel" data-bs-slide="next">
-                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span className="visually-hidden">Next</span>
-                    </button>
                 </div>
             </div>
 

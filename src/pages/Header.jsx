@@ -21,6 +21,7 @@ export const Header = () => {
         if (promociones && promociones.length > 0 && carouselRef.current) {
             const carousel = carouselRef.current;
             let currentIndex = 0;
+            // new window.bootstrap.Carousel(carouselRef.current);
 
             const updateCarousel = () => {
                 const items = carousel.querySelectorAll('.carousel-item');
@@ -77,7 +78,7 @@ export const Header = () => {
                     <SwiperSlide key={index} className="promo-con w-100">
                         <div className="promo-con w-100">
                             <div className="row w-100 flex-column-reverse flex-md-row">
-                           
+
                                 <div
                                     className="col-12 col-lg-6 text-start d-flex flex-column justify-content-center align-items-start px-4 px-lg-5 py-5 pb-5 pb-lg-4"
                                     style={{ backgroundColor: "#343A36" }}
@@ -89,11 +90,10 @@ export const Header = () => {
                                         <Link to={`/promociones/${promo.id}`} className="btn-call my-5">Inspírate</Link>
                                     </div>
                                 </div>
-
                                 <div className="col-12 col-lg-6 text-center p-0">
                                     <img
                                         className="img-fluid w-100"
-                                        style={{ objectFit: "cover", maxHeight: "100vh" }}
+                                        style={{ objectFit: "cover", minHeight: "100vh" }}
                                         src={promo.imagen}
                                         alt="Anillo"
                                     />
@@ -103,16 +103,16 @@ export const Header = () => {
                     </SwiperSlide>
                 ))}
             </Swiper>
-            <div ref={carouselRef} id="headerCarousel" className="header-mobile carousel slide" data-ride="carousel">
+            <div ref={carouselRef} id="headerCarousel" className="header-mobile mt-0 carousel slide" data-ride="carousel" data-interval="1000">
                 <div className="carousel-inner">
                     {promociones.map((item, index) => (
                         <div
                             key={index}
                             className={`carousel-item ${index === 0 ? 'active' : ''}`}
-                            style={{ backgroundImage: `url(${item.imagen})`, height:'600px' }}
+                            style={{ backgroundImage: `url(${item.imagen})`, height: '600px' }}
                         >
-                            <div className="carousel-caption text-center">
-                                <h5>{item.titulo}</h5>
+                            <div style={{ backgroundColor: '#283b36' }} className="text-white carousel-caption text-center">
+                                <h5 style={{ fontFamily: 'bodar' }}>{item.titulo}</h5>
                                 <p>{item.descripcion}</p>
                                 <button>Inspírate</button>
                             </div>

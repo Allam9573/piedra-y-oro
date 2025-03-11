@@ -74,7 +74,7 @@ export const Navbar = ({ quantity, quantityFavorites }) => {
                 </div>
             </nav>
 
-            <nav className="navbar-mobile navbar fixed-top navbar-expand-lg navbar-light shadow" style={{ backgroundColor: "#E7D7C9", width: "100%" }}>
+            <nav className="navbar-mobile px-0 navbar fixed-top navbar-expand-lg navbar-light shadow" style={{ backgroundColor: "#E7D7C9", width: "100%" }}>
                 <div className="container d-flex justify-content-between align-items-center">
                     <div className="d-flex justify-content-center align-items-center">
                         <button className="navbar-toggler border-0 ms-auto" type="button" data-bs-toggle="collapse"

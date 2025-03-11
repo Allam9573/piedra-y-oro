@@ -9,13 +9,13 @@ const useHomeInfo = () => {
     const getInfoAnillos = () => {
         HomeInfoService.getAnillosHomeService()
             .then(response => setInfoAnillos(response.data))
-            .catch(error => console.log('error'))
+            .catch(error => console.log(error))
     }
 
     const getInfoMedallones = () => {
         HomeInfoService.getMedallonesHomeService()
             .then(response => setinfoMedallones(response.data))
-            .catch(error => console.log('error'))
+            .catch(error => console.log(error))
     }
 
     useEffect(() => {

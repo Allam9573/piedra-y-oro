@@ -122,7 +122,7 @@ export const HomeCategorias = () => {
                     ))}
                 </div>
             </div>
-            {/* <div className="mobile-only" style={{ height: 'auto' }}>
+            <div className="mobile-only" style={{ height: 'auto' }}>
                 <div id="categoriasCarousel" className="carousel container-carousel slide" data-bs-ride="carousel">
                     <div className="carousel-inner">
                         {categories.map((category, index) => (
@@ -152,7 +152,7 @@ export const HomeCategorias = () => {
                         <span className="visually-hidden">Next</span>
                     </button>
                 </div>
-            </div> */}
+            </div>
 
             {/* <div className="card bg-danger w-25">
                 <img src={pulsera1} alt="" />
@@ -181,7 +181,6 @@ export const HomeCategorias = () => {
                                 </div>
                             </form>
                         </div>
-
                     </div>
                 </div>
             </div>

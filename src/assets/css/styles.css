@@ -205,7 +205,8 @@ body {
 
 .container-carousel {}
 
-
+.desktop-header{
+}
 /* vista PC */
 @media (min-width:769px) {
     .navbar-desktop{
@@ -365,6 +366,9 @@ body {
 
     .header-mobile {
         display: block;
+    }
+    .desktop-header{
+        display: none !important;
     }
     .footer-mobile{
         display: block;

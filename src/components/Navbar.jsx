@@ -82,11 +82,9 @@ export const Navbar = ({ quantity, quantityFavorites }) => {
                             aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
-
                         <Link className="navbar-brand text-success text-center logo h1" to={'/'}>
                             <img src={logo_blanco} className="img-fluid" style={{ maxWidth: '100%' }} alt="Logo" />
                         </Link>
-
                         <div className="mx-3 align-self-center flex-row d-flex">
                             <Link className="nav-icon position-relative text-decoration-none" to={'/my-cart'}>
                                 <MdAddShoppingCart className='fs-3 link' />
@@ -108,11 +106,7 @@ export const Navbar = ({ quantity, quantityFavorites }) => {
                                 <i className="fa fa-fw fa-user text-dark mr-3"></i>
                             </a>
                         </div>
-
-
                     </div>
-
-
                     <div className="collapse navbar-collapse flex-fill d-lg-flex justify-content-lg-between"
                         id="templatemo_main_nav">
                         <div className="flex-fill">

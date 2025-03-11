@@ -86,7 +86,7 @@ export const Navbar = ({ quantity, quantityFavorites }) => {
                     </button>
                     {/* Logo alineado a la izquierda */}
                     <Link className="navbar-brand text-success text-center logo h1" to={'/'}>
-                        <img src={logo_blanco} className="img-fluid" style={{ maxWidth: '65%' }} alt="Logo" />
+                        <img src={logo_blanco} className="img-fluid" style={{ maxWidth: '100%' }} alt="Logo" />
                     </Link>
 
                     <div className="mx-3 align-self-center flex-row d-flex">

@@ -250,7 +250,7 @@ body {
     }
     .navbar-mobile{
         display: block !important;
-        height: 80px;
+        /* height: 80px; */
     }
     .text-about {
         text-align: center;
@@ -369,6 +369,7 @@ body {
     .footer-mobile{
         display: block;
         background-color: rgb(28, 43, 38);
+        margin-bottom: 0 !important;
     }
     .footer-desktop{
         display: none;

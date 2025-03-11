@@ -250,6 +250,7 @@ body {
     }
     .navbar-mobile{
         display: block !important;
+        height: 80px;
     }
     .text-about {
         text-align: center;

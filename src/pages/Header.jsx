@@ -111,7 +111,7 @@ export const Header = () => {
                             style={{ backgroundImage: `url(${item.imagen})`, height: '600px' }}
                         >
                             <div style={{ backgroundColor: '#283b36' }} className="text-white carousel-caption text-center">
-                                <h5 style={{ fontFamily: 'bodar' }}>{item.titulo}</h5>
+                                <h5 style={{ fontFamily: 'Bodoni Moda' }}>{item.titulo}</h5>
                                 <p>{item.descripcion}</p>
                                 <Link className='btn-hero-mobile my-5'>Inspírate</Link>
                             </div>

@@ -1,4 +1,4 @@
-@import url('https://fonts.cdnfonts.com/css/bodar');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
 
 * {
     margin: 0;
@@ -20,7 +20,7 @@ body {
 }
 
 .title {
-    font-family: 'bodar';
+    font-family: 'Bodoni Moda';
     font-size: 3em;
     font-weight: lighter;
     /* letter-spacing: 5px; */
@@ -31,6 +31,7 @@ body {
     font-weight: lighter;
     color: white;
     /* margin: 0 auto; */
+    font-family: 'Bodoni Moda';
 }
 
 .link {
@@ -264,7 +265,7 @@ body {
     }
 
     .btn-hero-mobile {
-        margin-top: 200px !important;
+        /* margin-top: 00px !important; */
         background-color: #d9baa8;
         padding: 10px 20px;
         color: white;

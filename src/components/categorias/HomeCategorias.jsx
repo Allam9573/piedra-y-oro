@@ -123,28 +123,28 @@ export const HomeCategorias = () => {
                 </div>
             </div>
             <div className="mobile-only" style={{ height: 'auto' }}>
-                <div id="categoriasCarousel" className="carousel container-carousel slide" data-bs-ride="carousel">
-                    <div className="carousel-inner" style={{ padding: '20px 0' }}> {/* Agrega padding al contenedor */}
-                        {categories.map((category, index) => (
-                            <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`} style={{ padding: '0 10px' }}> {/* Agrega padding horizontal a los slides */}
-                                <div className="position-relative category-card" >
-                                    <img
-                                        src={category.image1}
-                                        alt={category.name}
-                                        className="d-block w-100 object-fit-contain" // Cambia object-fit a contain
-                                        style={{ width: '200px', height: '150px', margin: '0 auto' }} // Ajusta el ancho, la altura y el margen
-                                    />
-                                    <div className="position-absolute top-50 start-50 translate-middle px-4 py-2 fw-bold category-button">
-                                        <Link to={`/productos?categoria=${category.name}`} className="btn-outline-call">
-                                            {category.name}
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
+    <div id="categoriasCarousel" className="carousel container-carousel slide" data-bs-ride="carousel">
+        <div className="carousel-inner" style={{ padding: '20px 0' }}> {/* Agrega padding al contenedor */}
+            {categories.map((category, index) => (
+                <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`} style={{ padding: '0 10px' }}> {/* Agrega padding horizontal a los slides */}
+                    <div className="position-relative category-card" >
+                        <img
+                            src={category.image1}
+                            alt={category.name}
+                            className="d-block w-100 object-fit-contain" // Cambia object-fit a contain
+                            style={{ width: '200px', height: '150px', margin: '0 auto' }} // Ajusta el ancho, la altura y el margen
+                        />
+                        <div className="position-absolute top-50 start-50 translate-middle px-4 py-2 fw-bold category-button">
+                            <Link to={`/productos?categoria=${category.name}`} className="btn-outline-call">
+                                {category.name}
+                            </Link>
+                        </div>
                     </div>
                 </div>
-            </div>
+            ))}
+        </div>
+    </div>
+</div>
 
             {/* <div className="card bg-danger w-25">
                 <img src={pulsera1} alt="" />

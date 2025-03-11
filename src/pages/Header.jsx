@@ -78,7 +78,6 @@ export const Header = () => {
                     <SwiperSlide key={index} className="promo-con w-100">
                         <div className="promo-con w-100">
                             <div className="row w-100 flex-column-reverse flex-md-row">
-
                                 <div
                                     className="col-12 col-lg-6 text-start d-flex flex-column justify-content-center align-items-start px-4 px-lg-5 py-5 pb-5 pb-lg-4"
                                     style={{ backgroundColor: "#343A36" }}
@@ -114,7 +113,7 @@ export const Header = () => {
                             <div style={{ backgroundColor: '#283b36' }} className="text-white carousel-caption text-center">
                                 <h5 style={{ fontFamily: 'bodar' }}>{item.titulo}</h5>
                                 <p>{item.descripcion}</p>
-                                <button>Inspírate</button>
+                                <Link className='btn-hero-mobile my-5'>Inspírate</Link>
                             </div>
                         </div>
                     ))}

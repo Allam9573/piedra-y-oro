@@ -19,7 +19,7 @@ export const HomeMedallones = () => {
                         <div className="carousel-inner">
                             {imagenesAnillos.map((imagen, index) => (
                                 <div key={index} className={`carousel-item ${index === 0 ? "active" : ""}`}>
-                                    <img className="img-fluid w-100 image" style={{ objectFit: "cover", height: '700px' }} src={imagen} alt={`Anillo ${index + 1}`} />
+                                    <img className="img-fluid w-100 image" style={{ objectFit: "cover", height: '850px' }} src={imagen} alt={`Anillo ${index + 1}`} />
                                 </div>
                             ))}
                         </div>

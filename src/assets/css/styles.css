@@ -263,6 +263,15 @@ body {
         padding-bottom: 0 !important;
     }
 
+    .btn-hero-mobile {
+        margin-top: 200px !important;
+        background-color: #d9baa8;
+        padding: 10px 20px;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
     .text-about {
         text-align: center;
     }

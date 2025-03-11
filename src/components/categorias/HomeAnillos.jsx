@@ -57,13 +57,13 @@ export const HomeAnillos = () => {
                     {
                         infoAnillos.map(info => (
                             <>
-                                <h2 className='title-home-anillos fs-5 text-white'>{info.titulo}</h2>
+                                <h2 className='title-categories-mobile text-white'>{info.titulo}</h2>
                                 <div className='d-flex justify-content-center mt-3'>
                                     <img className='home-anillos-home-imagen' src={anillo1} alt="" />
                                     <img className='home-anillos-home-imagen' src={anillo2} alt="" />
                                 </div>
                                 <p className='text-white mt-4 descripcion-home-anillos'>{info.descripcion}</p>
-                                <Link to={`/productos?categoria=Anillos`} className='btn-home'>Explora el amor y el compromiso</Link>
+                                <Link to={`/productos?categoria=Anillos`} className='btn-home-mobile'>Explora el amor y el compromiso</Link>
                             </>
                         ))
                     }

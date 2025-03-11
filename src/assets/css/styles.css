@@ -375,11 +375,12 @@ body {
         font-size: 0.7rem !important;
         text-decoration: none;
         padding: 10px 20px;
-        transition: 0.8s;
+        transition: 0.8s !important;
     }
     .btn-home-mobile:hover{
-        color: #fff;
-        transition: 0.8s;
+        color: #fff !important;
+        background-color: #927c6f;
+        transition: 0.8s !important;
     }
     .title-home-anillos {
         /* font-family: 'Bodoni Moda'; */
@@ -421,7 +422,7 @@ body {
     }
     .title-categories-mobile{
         font-family: 'Bodoni Moda';
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         color: #313131 !important;
     }
 }

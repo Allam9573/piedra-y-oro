@@ -264,7 +264,6 @@ body {
     }
 
     .btn-hero-mobile {
-        /* margin-top: 00px !important; */
         background-color: #d9baa8;
         padding: 10px 20px;
         color: white;
@@ -292,7 +291,7 @@ body {
     }
 
     .title-categories {
-        font-size: 1.5rem;
+        font-size: 1.7rem;  
         margin: 50px 0;
     }
 

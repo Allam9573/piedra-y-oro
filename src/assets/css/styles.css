@@ -270,9 +270,11 @@ body {
 
     .navbar-mobile {
         display: block !important;
-        height: 80px;
         margin-bottom: 0 !important;
         padding-bottom: 0 !important;
+    }
+    .logo-nav-mobile{
+        background-color: red !important;
     }
     .home-anillos-mobile {
         display: block;
@@ -438,6 +440,15 @@ body {
 
     .footer-desktop {
         display: none;
+    }
+    .text-number-mobile{
+        font-size: 0.9rem !important;
+    }
+    .text-email-mobile{
+        font-size: 0.9rem !important;
+    }
+    .margin-text-mobile{
+        margin: 0 !important;
     }
     .title-categories-mobile{
         font-family: 'Bodoni Moda';

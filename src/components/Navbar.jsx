@@ -22,7 +22,7 @@ export const Navbar = ({ quantity, quantityFavorites }) => {
                     <div className="d-flex align-items-center">
                         {/* Logo alineado a la izquierda */}
                         <Link className="navbar-brand text-success logo h1" to={'/'}>
-                            <img src={logo} className="img-fluid" style={{ maxWidth: '15%' }} alt="Logo" />
+                            <img src={logo} className="img-fluid" width={'15%'} alt="Logo" />
                         </Link>
 
                         {/* Botón hamburguesa alineado a la derecha en móvil */}
@@ -83,7 +83,7 @@ export const Navbar = ({ quantity, quantityFavorites }) => {
                             <span className="navbar-toggler-icon"></span>
                         </button>
                         <Link className="navbar-brand text-success text-center logo h1" to={'/'}>
-                            <img src={logo_blanco} className="img-fluid" style={{ maxWidth: '100%' }} alt="Logo" />
+                            <img src={logo_blanco} className="img-fluid ms-4" style={{ maxWidth: '90%' }} alt="Logo" />
                         </Link>
                         <div className="mx-3 align-self-center flex-row d-flex">
                             <Link className="nav-icon position-relative text-decoration-none" to={'/my-cart'}>

@@ -113,7 +113,7 @@ export const Header = () => {
                             <div style={{ backgroundColor: '#343A36' }} className="text-white carousel-caption text-center">
                                 <h5 className='title-promo-mobile'>{item.titulo}</h5>
                                 <p className='descripcion-home-anillos text-white'>{item.descripcion}</p>
-                                <Link className='btn-home-mobile my-5'>Inspírate</Link>
+                                <Link className='btn-inspirate my-5'>Inspírate</Link>
                             </div>
                         </div>
                     ))}

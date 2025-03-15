@@ -96,7 +96,7 @@ export const Footer = () => {
                 <div class="container">
                     <div class="col-md-4 pt-5">
                         <img src={logo_blanco} width={'40%'} alt="" />
-                        <ul class="list-unstyled text-light footer-link-list">
+                        <ul class="list-unstyled text-light mt-3">
                             <li>
                                 <i class="fas fa-map-marker-alt fa-fw"></i>
                             </li>
@@ -113,7 +113,7 @@ export const Footer = () => {
                     <div class="row">
                         <div class="col-12 col-sm-6 col-md-3">
                             {/* poner tilde en siguenos */}
-                            <h2 class="h5 text-light border-bottom pb-3">Sìguenos</h2>
+                            {/* <h2 class="h5 text-light pb-3">Sìguenos</h2> */}
                             <ul class="list-unstyled text-light footer-link-list">
                                 <li class="list-inline-item">
                                     <a rel="nofollow" class="margin-text-mobile text-light text-decoration-none" target="_blank" href="https://www.facebook.com/share/1FGKwQ98qn/?mibextid=wwXIfr"><FaFacebook className='fs-3' /></a>
@@ -121,6 +121,7 @@ export const Footer = () => {
                                 <li class="list-inline-item">
                                     <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/lionettasjoyeria?igsh=c3hjZHBhNWh4MmNn&utm_source=qr"><FaInstagram className='fs-3' /></a>
                                 </li>
+                                <div className='border-bottom mt-3'></div>
                             </ul>
                         </div>
                         {/* <div class="col-12 col-sm-6 col-md-3 pt-5">

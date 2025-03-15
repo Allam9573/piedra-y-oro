@@ -57,7 +57,8 @@ body {
     font-size: 1.5rem !important;
     color: white;
 }
-.btn-home-anillos{
+
+.btn-home-anillos {
     background-color: #E7D7C9;
     padding: 10px 20px;
     color: #fff;
@@ -65,11 +66,13 @@ body {
     border-radius: 10px;
     transition: 0.8s;
 }
-.btn-home-anillos:hover{
+
+.btn-home-anillos:hover {
     background-color: #cbbdaf;
     transition: 0.8s;
 
 }
+
 .btn-outline-call {
     background-color: #E7D7C9;
     padding: 20px 50px;
@@ -273,21 +276,26 @@ body {
         margin-bottom: 0 !important;
         padding-bottom: 0 !important;
     }
-    .logo-nav-mobile{
+
+    .logo-nav-mobile {
         background-color: red !important;
     }
+
     .home-anillos-mobile {
         display: block;
         /* height: 500px; */
     }
-    .title-promo-mobile{
+
+    .title-promo-mobile {
         font-family: 'Bodoni Moda';
         font-size: 1.8rem !important;
     }
-    .text-descripcion-promo-mobile{
+
+    .text-descripcion-promo-mobile {
         font-size: 12px !important;
 
     }
+
     .btn-hero-mobile {
         background-color: #d9baa8;
         padding: 10px 20px;
@@ -316,7 +324,7 @@ body {
     }
 
     .title-categories {
-        font-size: 1.7rem;  
+        font-size: 1.7rem;
         margin: 50px 0;
     }
 
@@ -389,8 +397,9 @@ body {
         text-decoration: none;
         padding: 10px 20px;
     }
-    .btn-home-mobile{
-        background-color: #d9baa8;
+
+    .btn-home-mobile {
+        background-color: #EDE9E3;
         color: #000;
         font-size: 0.7rem !important;
         text-decoration: none;
@@ -398,11 +407,22 @@ body {
         border-radius: 10px;
         transition: 0.8s !important;
     }
-    .btn-home-mobile:hover{
+    .btn-inspirate{
+        background-color: #E7D7C9;
+        color: #000;
+        font-size: 0.7rem !important;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 10px;
+        transition: 0.8s !important;
+    }
+
+    .btn-home-mobile:hover {
         color: #fff !important;
         background-color: #927c6f;
         transition: 0.8s !important;
     }
+
     .title-home-anillos {
         font-family: 'Bodoni Moda';
     }
@@ -441,16 +461,20 @@ body {
     .footer-desktop {
         display: none;
     }
-    .text-number-mobile{
-        font-size: 0.9rem !important;
+
+    .text-number-mobile {
+        font-size: 1.3rem !important;
     }
-    .text-email-mobile{
-        font-size: 0.9rem !important;
+
+    .text-email-mobile {
+        font-size: 1.3rem !important;
     }
-    .margin-text-mobile{
+
+    .margin-text-mobile {
         margin: 0 !important;
     }
-    .title-categories-mobile{
+
+    .title-categories-mobile {
         font-family: 'Bodoni Moda';
         font-size: 1.3rem;
         color: #313131 !important;

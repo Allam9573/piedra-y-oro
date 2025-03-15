@@ -60,7 +60,7 @@ export const HomeMedallones = () => {
                                     <img className='home-anillos-home-imagen' src={anillo2} alt="" />
                                 </div>
                                 <p className='text-secondary descripcion-home-anillos mx-2 my-3'>{info.descripcion}</p>
-                                <Link to={"/productos?categoria=Medallones"} className='btn-home-mobile'>Comprar Ahora</Link>
+                                <Link to={"/productos?categoria=Medallones"} className='btn-inspirate'>Comprar Ahora</Link>
                             </>
                         ))
                     }

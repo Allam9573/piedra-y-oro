@@ -124,13 +124,16 @@ export const Footer = () => {
                                 <div className='border-bottom mt-3'></div>
                             </ul>
                         </div>
-                        {/* <div class="col-12 col-sm-6 col-md-3 pt-5">
+                        <div class="col-12 col-sm-6 col-md-3 pt-2">
                             <ul class="list-unstyled text-light footer-link-list">
-                                <Link className='text-decoration-none' to={'/nosotros'}><h5 class="h5 text-light pb-3 border-light">Quienes Somos</h5></Link>
-                                <Link className='text-decoration-none' to={'/preguntas-frecuentes'}><h5 class="h5 text-light pb-3 border-light">Preguntas Frecuentes</h5></Link>
+                                {/* <Link className='text-decoration-none' to={'/nosotros'}><h5 class="h5 text-light pb-3 border-light">Quienes Somos</h5></Link> */}
+                                <Link className='text-decoration-none' to={'/preguntas-frecuentes'}><h5 class="h5 text-light border-light">Preguntas Frecuentes</h5></Link>
                             </ul>
-                        </div> */}
-                        <div class="col-12 col-sm-6 col-md-3 pt-5">
+                        </div>
+                        <div className="container">
+                            <div className='border-bottom'></div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-3 pt-2">
                             <h6 class="h6 text-light pb-3 border-light">
                                 Unete a nuestra comunidad y mantente al dia con las ultimas noticias y promociones!
                             </h6>

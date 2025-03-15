@@ -109,6 +109,7 @@ body {
 
 .text-brown {
     color: #938E87;
+    font-family: 'Bodoni Moda' !important;
 }
 
 .swiper-slide {
@@ -236,6 +237,11 @@ body {
         display: none;
     }
 
+    .about-mobile {
+        display: none;
+    }
+
+
     .footer-mobile {
         display: none;
     }
@@ -279,6 +285,20 @@ body {
 
     .logo-nav-mobile {
         background-color: red !important;
+    }
+
+    .text-about-mobile {
+        font-size: 1rem !important;
+        color: #888888;
+
+    }
+
+    .desktop-about {
+        display: none;
+    }
+
+    .about-mobile {
+        margin: 0 0 !important;
     }
 
     .home-anillos-mobile {
@@ -407,7 +427,8 @@ body {
         border-radius: 10px;
         transition: 0.8s !important;
     }
-    .btn-inspirate{
+
+    .btn-inspirate {
         background-color: #E7D7C9;
         color: #000;
         font-size: 0.7rem !important;
@@ -460,6 +481,10 @@ body {
 
     .footer-desktop {
         display: none;
+    }
+
+    .footer-line {
+        margin-left: 10px !important;
     }
 
     .text-number-mobile {

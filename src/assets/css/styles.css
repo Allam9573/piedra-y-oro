@@ -575,7 +575,7 @@ body {
 } */
 
 .mobile-menu {
-    display: none; /* Ocultar por defecto */
+    display: none;
   }
   
   .mobile-menu.open {

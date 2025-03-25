@@ -573,3 +573,27 @@ body {
         width: 180px;
     }
 } */
+
+.mobile-menu {
+    display: none; /* Ocultar por defecto */
+  }
+  
+  .mobile-menu.open {
+    display: block;
+  }
+  
+  .mobile-menu .nav-item {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .mobile-menu .nav-item:last-child {
+    border-bottom: none;
+  }
+  
+  .mobile-menu .link {
+    display: block;
+    padding: 10px 0;
+    color: #333;
+    text-decoration: none;
+  }

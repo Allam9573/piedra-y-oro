@@ -504,4 +504,72 @@ body {
         font-size: 1.3rem;
         color: #313131 !important;
     }
+    
 }
+
+/* Estilos para ocultar/mostrar las secciones según el dispositivo */
+.mobile-only-carousel {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .desktop-only {
+        display: none;
+    }
+    .mobile-only-carousel {
+        display: block;
+    }
+}
+
+/* Estilos para el contenedor del carrusel */
+.category-carousel-container {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 10px;
+}
+
+/* Estilos para cada elemento del carrusel */
+.category-carousel-item {
+    flex: 0 0 auto;
+    width: 150px; /* Ajusta según sea necesario */
+    margin-right: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative; /* Necesario para posicionar el botón absolutamente */
+    overflow: hidden; /* Oculta cualquier desbordamiento del botón */
+}
+
+.category-carousel-item img {
+    width: 100%;
+    height: auto; /* Ajusta si quieres una altura fija */
+    display: block; /* Evita espacios extra debajo de la imagen */
+    border-radius: 8px;
+}
+
+.category-carousel-item .btn-outline-call {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el botón */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente para el botón */
+    color: #000; /* Ajusta el color del texto */
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap; /* Evita que el texto se rompa */
+}
+
+/* Opcional: Ajustes adicionales para el botón al pasar el ratón (si es relevante en móvil) */
+.category-carousel-item .btn-outline-call:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Ajusta el ancho de los elementos del carrusel según tus necesidades */
+/* @media (max-width: 576px) {
+    .category-carousel-item {
+        width: 180px;
+    }
+} */

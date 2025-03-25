@@ -72,7 +72,7 @@ export const Header = () => {
                 autoplay={{ delay: 5000, disableOnInteraction: false }}
                 loop={true}
                 modules={[Pagination, Autoplay]}
-                className="w-100 promo-con desktop-header min-vh-100 position-relative"
+                className="w-100 desktop-header min-vh-100 position-relative"
             >
                 {promociones.map((promo, index) => (
                     <SwiperSlide key={index} className="promo-con w-100">

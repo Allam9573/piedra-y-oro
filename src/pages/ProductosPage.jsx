@@ -84,67 +84,108 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
                     <div className="row">
                         {resultados.length > 0 ? (
                             resultados.map(producto => (
-                                <div key={producto.id} className="col-md-4">
-                                    <div className="card mb-4 product-wap rounded-0">
-                                        <div className="card rounded-0">
-                                            <img
-                                                className="card-img rounded-0 img-fluid"
-                                                style={{ objectFit: 'cover', width: '100%', height: '200px' }}
-                                                src={producto.imagenes.length > 0 ? producto.imagenes[0].imagen : "placeholder.jpg"}
-                                                alt={producto.nombre}
-                                            />
+                                <>
+                                    {
+                                        producto.campana_titulo === 'Sin promocion' ?
+                                            <>
+                                                <div key={producto.id} className="col-md-4">
+                                                    <div className="card mb-4 product-wap rounded-0">
+                                                        <div className="card rounded-0">
+                                                            <img
+                                                                className="card-img rounded-0 img-fluid"
+                                                                style={{ objectFit: 'cover', width: '100%', height: '200px' }}
+                                                                src={producto.imagenes.length > 0 ? producto.imagenes[0].imagen : "placeholder.jpg"}
+                                                                alt={producto.nombre}
+                                                            />
 
-                                            <div className="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                                                <ul className="list-unstyled">
-                                                    <li>
-                                                        <a style={{ backgroundColor: '#938E87' }} onClick={() => addFavorite(producto)} className="btn text-white">
-                                                            <MdFavoriteBorder />
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <Link style={{ backgroundColor: '#938E87' }} className="btn text-white mt-2" to={`/productos/${producto.id}`}>
-                                                            <GrView />
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <a onClick={() => addToCart(producto)} style={{ backgroundColor: '#938E87' }} className="btn text-white mt-2">
-                                                            <MdAddShoppingCart />
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div className="card-body">
-                                            {
-                                                producto.campana_titulo === 'Sin promocion' ?
-                                                    <>
-
-                                                    </> :
-                                                    <>
-                                                        <div className='d-flex justify-content-between'>
-                                                            <h3 className="text-decoration-none">{producto.nombre}</h3>
-                                                            <h6><span class="badge bg-danger p-2">En promocion</span></h6>
+                                                            <div className="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                                                <ul className="list-unstyled">
+                                                                    <li>
+                                                                        <a style={{ backgroundColor: '#938E87' }} onClick={() => addFavorite(producto)} className="btn text-white">
+                                                                            <MdFavoriteBorder />
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <Link style={{ backgroundColor: '#938E87' }} className="btn text-white mt-2" to={`/productos/${producto.id}`}>
+                                                                            <GrView />
+                                                                        </Link>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a onClick={() => addToCart(producto)} style={{ backgroundColor: '#938E87' }} className="btn text-white mt-2">
+                                                                            <MdAddShoppingCart />
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
                                                         </div>
-                                                    </>
-                                            }
-                                            <span style={{ backgroundColor: '#938E87' }} className='badge'>{producto.subcategoria_nombre}</span>
-                                            <p className="text-center mb-0">
-                                                Precio Normal: <span className="text-decoration-line-through text-secondary"> {new Intl.NumberFormat('es-HN', {
-                                                    style: 'currency',
-                                                    currency: 'HNL',
-                                                    minimumFractionDigits: 2,
-                                                }).format(producto.precio)}</span>
-                                            </p>
-                                            <p className="text-center mb-0">
-                                                Precio Oferta: <span className="fw-bold"> {new Intl.NumberFormat('es-HN', {
-                                                    style: 'currency',
-                                                    currency: 'HNL',
-                                                    minimumFractionDigits: 2,
-                                                }).format(producto.precio - (producto.precio * (producto.campana_descuento) / 100))}</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+                                                        <div className="card-body">
+                                                            <h4 className='text-secondary'>{producto.nombre}</h4>
+                                                            <span style={{ backgroundColor: '#938E87' }} className='badge'>{producto.subcategoria_nombre}</span>
+                                                            <p className="text-center mb-0">
+                                                                Precio: <span className="fw-bold">{producto.precio}</span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </> :
+                                            // aplica promocion
+                                            <>
+                                                <div key={producto.id} className="col-md-4">
+                                                    <div className="card mb-4 product-wap rounded-0">
+                                                        <div className="card rounded-0">
+                                                            <img
+                                                                className="card-img rounded-0 img-fluid"
+                                                                style={{ objectFit: 'cover', width: '100%', height: '200px' }}
+                                                                src={producto.imagenes.length > 0 ? producto.imagenes[0].imagen : "placeholder.jpg"}
+                                                                alt={producto.nombre}
+                                                            />
+
+                                                            <div className="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                                                <ul className="list-unstyled">
+                                                                    <li>
+                                                                        <a style={{ backgroundColor: '#938E87' }} onClick={() => addFavorite(producto)} className="btn text-white">
+                                                                            <MdFavoriteBorder />
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <Link style={{ backgroundColor: '#938E87' }} className="btn text-white mt-2" to={`/productos/${producto.id}`}>
+                                                                            <GrView />
+                                                                        </Link>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a onClick={() => addToCart(producto)} style={{ backgroundColor: '#938E87' }} className="btn text-white mt-2">
+                                                                            <MdAddShoppingCart />
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div className="card-body">
+                                                            <h4 className='text-secondary'>{producto.nombre}</h4>
+                                                            <span style={{ backgroundColor: '#938E87' }} className='badge'>{producto.subcategoria_nombre}</span>
+                                                            <p className="text-center mb-0">
+                                                                Precio Normal: <span className="text-decoration-line-through text-secondary"> {new Intl.NumberFormat('es-HN', {
+                                                                    style: 'currency',
+                                                                    currency: 'HNL',
+                                                                    minimumFractionDigits: 2,
+                                                                }).format(producto.precio)}</span>
+                                                            </p>
+                                                            <p className="text-center mb-0">
+                                                                Precio Oferta: <span className="fw-bold"> {new Intl.NumberFormat('es-HN', {
+                                                                    style: 'currency',
+                                                                    currency: 'HNL',
+                                                                    minimumFractionDigits: 2,
+                                                                }).format(producto.precio - (producto.precio * (producto.campana_descuento) / 100))}</span>
+                                                            </p>
+                                                        
+                                                        </div>
+                                                    <div className="bg-danger text-white text-center">Articulo en promocion</div>
+                                                    </div>
+                                                
+                                                </div>
+                                            </>
+                                    }
+                                </>
                             ))
                         ) : (
                             <h2>Sin resultados</h2>

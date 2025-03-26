@@ -84,10 +84,9 @@ export const ProductoView = ({ addToCart }) => {
                                 <div class="col-1 align-self-center">
                                     <a href="#multi-item-example" role="button" data-bs-slide="next">
                                         <FaChevronRight />
-                                        {/* <span class="sr-only">Siguente</span> */}
+                                        <span class="sr-only">Siguente</span>
                                     </a>
                                 </div>
-
                             </div>
                         </div>
                         <div class="col-lg-7 mt-5">

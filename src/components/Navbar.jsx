@@ -111,7 +111,6 @@ export const Navbar = ({ quantity, quantityFavorites }) => {
                             </a>
                         </div>
                     </div>
-
                     <div className={`mobile-menu ${isOpen ? 'open' : ''} w-100 d-lg-none`} style={{ backgroundColor: "#E7D7C9", position: 'absolute', top: '100%', left: 0, zIndex: 1000 }}>
                         <div className="flex-fill">
                             <ul className="nav navbar-nav d-flex flex-column align-items-center mx-lg-auto">

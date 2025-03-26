@@ -7,7 +7,7 @@ import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper/modules";
 import anillo from '../assets/img/anillo.jpeg'
 import logo from '../assets/img/logo_verde.png'
-import logoRosa from '../assets/img/logo_rosado.png'
+import logoRosa from '../assets/img/logo_blanco.png'
 import '../assets/css/styles.css'
 import '../assets/js/carousel.js'
 import '../assets/css/carousel.css'

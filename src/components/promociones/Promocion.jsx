@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { GrView } from 'react-icons/gr'
 import { MdAddShoppingCart, MdFavoriteBorder } from 'react-icons/md'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useLocation, useParams } from 'react-router-dom'
 import { usePromociones } from '../../hooks/usePromociones'
 
 export const Promocion = () => {
@@ -11,7 +11,11 @@ export const Promocion = () => {
     useEffect(() => {
         buscarPromocion(id)
     }, [])
-    console.log(promocion);
+    const { pathname } = useLocation()
+
+    useEffect(() => {
+        scrollTo(0, 0)
+    }, [pathname])
     return (
         <div className="container py-5">
             {

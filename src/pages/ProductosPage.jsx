@@ -14,7 +14,6 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
     const { productos } = useProductos();
     const { subcategorias } = useSubcategorias();
     const { pathname } = useLocation()
-    console.log(productos)
     const location = useLocation();
     const params = new URLSearchParams(location.search);
     const categoriaSeleccionada = params.get("categoria");

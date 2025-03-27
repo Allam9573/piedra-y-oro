@@ -64,44 +64,46 @@ export const Header = () => {
         return <div>Cargando promociones...</div>;
     }
 
-
+    // desktop-header
     return (
         <>
-            <Swiper
-                pagination={{ clickable: true, dynamicBullets: true }}
-                autoplay={{ delay: 5000, disableOnInteraction: false }}
-                loop={true}
-                modules={[Pagination, Autoplay]}
-                className="w-100 desktop-header min-vh-100 position-relative"
-            >
-                {promociones.map((promo, index) => (
-                    <SwiperSlide key={index} className="promo-con w-100">
-                        <div className="promo-con w-100">
-                            <div className="row w-100 flex-column-reverse flex-md-row">
-                                <div
-                                    className="col-12 col-lg-6 text-start d-flex flex-column justify-content-center align-items-start px-4 px-lg-5 py-5 pb-5 pb-lg-4"
-                                    style={{ backgroundColor: "#343A36" }}
-                                >
-                                    <img src={logoRosa} className="mb-3 img-fluid w-50 w-md-25" alt="Logo" />
-                                    <div className="text-start w-100">
-                                        <p className="title-promocion mt-4">{promo.titulo}</p>
-                                        <p className="descripcion-promocion mb-5">{promo.descripcion}</p>
-                                        <Link to={`/promociones/${promo.id}`} className="btn-call my-5">Inspírate</Link>
+            <div className='desktop-header'>
+                <Swiper
+                    pagination={{ clickable: true, dynamicBullets: true }}
+                    autoplay={{ delay: 5000, disableOnInteraction: false }}
+                    loop={true}
+                    modules={[Pagination, Autoplay]}
+                    className="w-100 min-vh-100 position-relative"
+                >
+                    {promociones.map((promo, index) => (
+                        <SwiperSlide key={index} className="promo-con w-100">
+                            <div className="promo-con w-100">
+                                <div className="row w-100 flex-column-reverse flex-md-row">
+                                    <div
+                                        className="col-12 col-lg-6 text-start d-flex flex-column justify-content-center align-items-start px-4 px-lg-5 py-5 pb-5 pb-lg-4"
+                                        style={{ backgroundColor: "#343A36" }}
+                                    >
+                                        <img src={logoRosa} className="mb-3 img-fluid w-50 w-md-25" alt="Logo" />
+                                        <div className="text-start w-100">
+                                            <p className="title-promocion mt-4">{promo.titulo}</p>
+                                            <p className="descripcion-promocion mb-5">{promo.descripcion}</p>
+                                            <Link to={`/promociones/${promo.id}`} className="btn-call my-5">Inspírate</Link>
+                                        </div>
+                                    </div>
+                                    <div className="col-12 col-lg-6 text-center p-0">
+                                        <img
+                                            className="img-fluid w-100"
+                                            style={{ objectFit: "cover", minHeight: "100vh" }}
+                                            src={promo.imagen}
+                                            alt="Anillo"
+                                        />
                                     </div>
                                 </div>
-                                <div className="col-12 col-lg-6 text-center p-0">
-                                    <img
-                                        className="img-fluid w-100"
-                                        style={{ objectFit: "cover", minHeight: "100vh" }}
-                                        src={promo.imagen}
-                                        alt="Anillo"
-                                    />
-                                </div>
                             </div>
-                        </div>
-                    </SwiperSlide>
-                ))}
-            </Swiper>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </div>
             <div ref={carouselRef} id="headerCarousel" className="header-mobile mt-0 carousel slide" data-ride="carousel" data-interval="1000">
                 <div className="carousel-inner">
                     {promociones.map((item, index) => (
@@ -113,7 +115,7 @@ export const Header = () => {
                             <div style={{ backgroundColor: '#343A36' }} className="text-white carousel-caption text-center">
                                 <h5 className='title-promo-mobile'>{item.titulo}</h5>
                                 <p className='descripcion-home-anillos text-white'>{item.descripcion}</p>
-                                <Link className='btn-inspirate my-5'>Inspírate</Link>
+                                <Link to={`/promociones/${item.id}`} className='btn-inspirate my-5'>Inspírate</Link>
                             </div>
                         </div>
                     ))}

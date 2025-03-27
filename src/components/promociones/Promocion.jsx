@@ -104,7 +104,21 @@ export const Promocion = () => {
                         </div>
                     </>
                     :
-                    <>Cargando</>
+                    <>
+                        <div className='text-center mt-5'>
+                            <div class="spinner-border text-secondary" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <h3 className='mt-3 text-secondary'>Cargando productos...</h3>
+                            <p class="placeholder-glow">
+                                <span class="placeholder col-12"></span>
+                            </p>
+
+                            <p class="placeholder-wave">
+                                <span class="placeholder col-12"></span>
+                            </p>
+                        </div>
+                    </>
             }
         </div>
     )

@@ -42,7 +42,6 @@ export const Navbar = ({ quantity, quantityFavorites }) => {
                             <span className="navbar-toggler-icon"></span>
                         </button>
                     </div>
-
                     {/* Contenido del menú */}
                     <div className="collapse navbar-collapse flex-fill d-lg-flex justify-content-lg-between"
                         id="templatemo_main_nav">

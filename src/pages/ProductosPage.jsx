@@ -176,18 +176,28 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
                                                                     minimumFractionDigits: 2,
                                                                 }).format(producto.precio - (producto.precio * (producto.campana_descuento) / 100))}</span>
                                                             </p>
-                                                        
+
                                                         </div>
-                                                    <div className="bg-danger text-white text-center">Articulo en promocion</div>
+                                                        <div className="bg-danger text-white text-center">Articulo en promocion</div>
                                                     </div>
-                                                
+
                                                 </div>
                                             </>
                                     }
                                 </>
                             ))
                         ) : (
-                            <h2>Sin resultados</h2>
+
+                            <>
+                                <div className="d-flex">
+
+                                    <div class="spinner-border text-secondary me-3" role="status">
+                                        <span class="visually-hidden">Loading...</span>
+                                    </div>
+                                    <h3 className='text-secondary'>Cargando productos...</h3>
+                                </div>
+                            </>
+
                         )}
                     </div>
                 </div>

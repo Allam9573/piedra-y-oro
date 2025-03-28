@@ -117,7 +117,7 @@ export const Header = () => {
                         </div>
                     </>
             }
-            <div ref={carouselRef} id="headerCarousel" className="header-mobile mt-0 carousel slide" data-ride="carousel" data-interval="1000">
+            <div ref={carouselRef} id="headerCarousel" className="header-mobile carousel slide" data-ride="carousel" data-interval="1000">
                 <div className="carousel-inner">
                     {promociones.map((item, index) => (
                         <div

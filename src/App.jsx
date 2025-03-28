@@ -25,6 +25,7 @@ import { Placeholder } from "./pages/Placeholder"
 import { FAQ } from "./pages/FAQ"
 import { ToastContainer } from "react-toastify";
 import { Promocion } from "./components/promociones/Promocion"
+import { Prom } from "./components/Prom"
 const App = () => {
 
   const { favorites, addFavorite, deleteItem } = useFavorites()
@@ -42,6 +43,7 @@ const App = () => {
         <Route path="/admin/productos/eliminar/:id" element={<ProductoEliminar />} />
         <Route path="/nosotros" element={<AboutPage />} />
         <Route path="/preguntas-frecuentes" element={<FAQ />} />
+        <Route path="/prom" element={<Prom />} />
         <Route
           path="/my-cart"
           element={<Cart cart={cart} eliminarItemCarrito={eliminarItemCarrito} incrementar={incrementar} decrementar={decrementar} />} />

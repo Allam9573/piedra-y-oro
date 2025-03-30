@@ -92,7 +92,7 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
                                                         <div className="card rounded-0">
                                                             <img
                                                                 className="card-img rounded-0 img-fluid"
-                                                                style={{ objectFit: 'cover', width: '100%', height: '200px' }}
+                                                                style={{ objectFit: 'cover', width: '100%', height: '253px' }}
                                                                 src={producto.imagenes.length > 0 ? producto.imagenes[0].imagen : "placeholder.jpg"}
                                                                 alt={producto.nombre}
                                                             />
@@ -130,16 +130,16 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
                                             // aplica promocion
                                             <>
                                                 <div key={producto.id} className="col-md-4">
-                                                    <div className="card mb-4 product-wap rounded-0">
-                                                        <div className="card rounded-0">
+                                                    <div className="card rounded-bottom mb-4 product-wap">
+                                                        <div className="card">
                                                             <img
-                                                                className="card-img rounded-0 img-fluid"
+                                                                className="card-img img-fluid"
                                                                 style={{ objectFit: 'cover', width: '100%', height: '200px' }}
                                                                 src={producto.imagenes.length > 0 ? producto.imagenes[0].imagen : "placeholder.jpg"}
                                                                 alt={producto.nombre}
                                                             />
 
-                                                            <div className="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                                            <div className="card-img-overlay product-overlay d-flex align-items-center justify-content-center">
                                                                 <ul className="list-unstyled">
                                                                     <li>
                                                                         <a style={{ backgroundColor: '#938E87' }} onClick={() => addFavorite(producto)} className="btn text-white">
@@ -178,7 +178,7 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
                                                             </p>
 
                                                         </div>
-                                                        <div className="bg-danger text-white text-center">Articulo en promocion</div>
+                                                        <div style={{ backgroundColor: '#938E87' }} className="text-white bg-danger rounded-bottom text-center"> 🔥- {producto.campana_descuento}% Descuento!</div>
                                                     </div>
 
                                                 </div>

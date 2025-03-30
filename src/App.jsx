@@ -26,6 +26,7 @@ import { FAQ } from "./pages/FAQ"
 import { ToastContainer } from "react-toastify";
 import { Promocion } from "./components/promociones/Promocion"
 // import { Prom } from "./components/Prom"
+// import '../src/assets/css/card.css'
 const App = () => {
 
   const { favorites, addFavorite, deleteItem } = useFavorites()
@@ -54,7 +55,7 @@ const App = () => {
       <a href="https://wa.me/+50494969595" target="_blank" class="whatsapp-btn">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
       </a>
-      <ToastContainer/>
+      <ToastContainer />
     </BrowserRouter>
   )
 }

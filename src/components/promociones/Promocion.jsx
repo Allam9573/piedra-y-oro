@@ -80,7 +80,7 @@ export const Promocion = () => {
                                                         <div className="card-body">
                                                             <div className='d-flex justify-content-between align-items-center'> {/* Aligned items vertically */}
                                                                 <h3 className="text-decoration-none">{producto.nombre}</h3>
-                                                                <h6><span className="badge bg-danger p-2">En promocion</span></h6>
+                                                                <h6><span className="badge bg-danger p-2">🔥 - {producto.campana_descuento}%</span></h6>
                                                             </div>
                                                             <span style={{ backgroundColor: '#938E87' }} className='badge'>{producto.subcategoria_nombre}</span>
                                                             <p className="text-center mb-0">

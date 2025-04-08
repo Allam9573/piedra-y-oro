@@ -19,7 +19,6 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
     const categoriaSeleccionada = params.get("categoria");
 
     const notify = () => toast("Wow so easy!");
-    console.log(productos)
 
     // Aplicar filtro automáticamente al cargar
     useEffect(() => {
@@ -88,14 +87,16 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
                                         producto.campana_titulo === 'Sin promocion' ?
                                             <>
                                                 <div key={producto.id} className="col-md-4">
-                                                    <div className="card mb-4 product-wap rounded-0">
+                                                    <div className="card mb-4 product-wap rounded-0" style={{height:'380px'}}>
                                                         <div className="card rounded-0">
-                                                            <img
-                                                                className="card-img rounded-0 img-fluid"
-                                                                style={{ objectFit: 'cover', width: '100%', height: '253px' }}
-                                                                src={producto.imagenes.length > 0 ? producto.imagenes[0].imagen : "placeholder.jpg"}
-                                                                alt={producto.nombre}
-                                                            />
+                                                            <div style={{ width: '100%', height: '200px', overflow: 'hidden' }}>
+                                                                <img
+                                                                    className="card-img-top img-fluid" // Usar card-img-top si estás usando Bootstrap Cards
+                                                                    style={{ objectFit: 'cover', width: '100%', height: '100%' }} // Ajustar height al 100% del contenedor
+                                                                    src={producto.imagenes.length > 0 ? producto.imagenes[0].imagen : "placeholder.jpg"}
+                                                                    alt={producto.nombre}
+                                                                />
+                                                            </div>
 
                                                             <div className="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                                                 <ul className="list-unstyled">
@@ -132,12 +133,14 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
                                                 <div key={producto.id} className="col-md-4">
                                                     <div className="card rounded-bottom mb-4 product-wap">
                                                         <div className="card">
-                                                            <img
-                                                                className="card-img img-fluid"
-                                                                style={{ objectFit: 'cover', width: '100%', height: '200px' }}
-                                                                src={producto.imagenes.length > 0 ? producto.imagenes[0].imagen : "placeholder.jpg"}
-                                                                alt={producto.nombre}
-                                                            />
+                                                            <div style={{ width: '100%', height: '200px', overflow: 'hidden' }}>
+                                                                <img
+                                                                    className="card-img-top img-fluid" // Usar card-img-top si estás usando Bootstrap Cards
+                                                                    style={{ objectFit: 'cover', width: '100%', height: '100%' }} // Ajustar height al 100% del contenedor
+                                                                    src={producto.imagenes.length > 0 ? producto.imagenes[0].imagen : "placeholder.jpg"}
+                                                                    alt={producto.nombre}
+                                                                />
+                                                            </div>
 
                                                             <div className="card-img-overlay product-overlay d-flex align-items-center justify-content-center">
                                                                 <ul className="list-unstyled">

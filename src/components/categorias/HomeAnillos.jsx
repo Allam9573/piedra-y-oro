@@ -5,6 +5,7 @@ import anillo3 from '../../assets/img/image1.png'
 import { Link } from 'react-router-dom'
 import { useHomeCategorias } from '../../hooks/useHomeCategorias'
 import { useHomeInfo } from '../../hooks/useHomeInfo'
+import '../../assets/css/HomeAnillos.css'
 
 export const HomeAnillos = () => {
 
@@ -16,7 +17,7 @@ export const HomeAnillos = () => {
             <div className="desktop-only container-anillos-brown h-100">
                 <div
                     id="puntoRegistro"
-                    className="row con mx-0 px-0 w-100 flex-column-reverse flex-lg-row align-items-center text-center text-lg-start"
+                    className="row mx-0 px-0 w-100 flex-column-reverse flex-lg-row align-items-center text-center text-lg-start"
                 >
                     <div style={{ height: '850px' }} className="con-anillos-left col-12 col-lg-6 px-5 d-flex flex-column justify-content-center align-items-center align-items-lg-start">
                         {
@@ -57,6 +58,8 @@ export const HomeAnillos = () => {
                     </div>
                 </div>
             </div>
+
+
             <div className="home-anillos-mobile">
                 <div className="home-anillos-container text-center py-3">
                     {

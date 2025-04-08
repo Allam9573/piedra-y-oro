@@ -19,17 +19,17 @@ export const HomeAnillos = () => {
                 <div className='container-div'>
                     <div className='con-elements'>
                         <div className='con-left'>
-                            <h2 className='title-info-anillos'>
+                            <h2 className='title text-orange-light mb-4'>
                                 {
                                     infoData == null ? 'Cargando titulo...' : infoData.titulo
                                 }
                             </h2>
-                            <p className='descripcion'>
+                            <p className='mb-4 fs-5  fs-lg-3 text-gray-light'>
                                 {
                                     infoData == null ? 'Cargando descripcion...' : infoData.descripcion
                                 }
                             </p>
-                            <Link>Explora el amor y el compromiso</Link>
+                            <Link className='btn-orange'>Explora el amor y el compromiso</Link>
                         </div>
                         <div className='con-right'>
                             <div id="carouselAnillos" className="carousel slide" data-bs-ride="carousel">

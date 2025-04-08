@@ -1,18 +1,21 @@
 /* vista PC */
 .home-anillos-pc {}
-.container-div{
+
+.container-div {
     background-color: #ddd6d0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
-.con-elements{
+
+.con-elements {
     display: flex;
     width: 90%;
     height: 600px;
 }
-.con-left{
+
+.con-left {
     background-color: white;
     height: 600px;
     display: flex;
@@ -22,15 +25,40 @@
     padding: 0 30px;
     width: 50%;
 }
-.img-anillo{
+
+.img-anillo {
     height: 600px;
     width: 100%;
     object-fit: cover;
 }
-.con-right{
+
+.con-right {
     width: 50%;
 }
 
+.title-info-anillos {
+    color: #E7D7C9;
+    font-family: 'Bodoni Moda';
+}
+
+.text-orange-light {
+    color: #E7D7C9;
+}
+.text-gray-light{
+    color: rgb(209, 209, 209);
+}
+.btn-orange{
+    padding: 10px 20px;
+    background-color: #E7D7C9;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.btn-orange:hover{
+    background-color: #c8bdb3;
+    transition: 0.5s;
+}
 @media (min-width:769px) {
     /* .home-anillos-mobile {
         display: none;

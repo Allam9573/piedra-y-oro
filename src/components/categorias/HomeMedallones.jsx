@@ -42,8 +42,7 @@ export const HomeMedallones = () => {
                     ))}
                     <Link
                         to={"/productos?categoria=Medallones"}
-                        style={{ backgroundColor: '#E7D7C9' }}
-                        className="btn mb-5 mb-lg-3 p-2 p-lg-4 fs-4 btn-lg btn-shadow"
+                        className="btn-orange"
                     >
                         Comprar Ahora
                     </Link>

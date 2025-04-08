@@ -1,25 +1,48 @@
-/* 
-desktop-only container-anillos-brown
-con-anillos-left
-btn-home-anillos
-title
-carousel slide
-
-*/
 /* vista PC */
+.home-anillos-pc {}
+.container-div{
+    background-color: #ddd6d0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.con-elements{
+    display: flex;
+    width: 90%;
+    height: 600px;
+}
+.con-left{
+    background-color: white;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding: 0 30px;
+    width: 50%;
+}
+.img-anillo{
+    height: 600px;
+    width: 100%;
+    object-fit: cover;
+}
+.con-right{
+    width: 50%;
+}
 
 @media (min-width:769px) {
     /* .home-anillos-mobile {
         display: none;
     } */
+
 }
 
 /* vista mobile */
 @media (max-width: 768px) {
 
-    .image {
-        max-height: 300px;
-        margin-bottom: 20px;
+    .home-anillos-pc {
+        display: none;
     }
 
     /* .home-anillos-mobile {

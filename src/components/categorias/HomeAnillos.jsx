@@ -10,56 +10,52 @@ import '../../assets/css/HomeAnillos.css'
 export const HomeAnillos = () => {
 
     const { infoAnillos } = useHomeInfo();
+    const infoData = infoAnillos[0]
     const imagenesAnillos = [anillo1, anillo2];
-    console.log(infoAnillos)
     return (
         <>
-            <div className="desktop-only container-anillos-brown h-100">
-                <div
-                    id="puntoRegistro"
-                    className="row mx-0 px-0 w-100 flex-column-reverse flex-lg-row align-items-center text-center text-lg-start"
-                >
-                    <div style={{ height: '850px' }} className="con-anillos-left col-12 col-lg-6 px-5 d-flex flex-column justify-content-center align-items-center align-items-lg-start">
-                        {
-                            infoAnillos.map(infoAnillo => (
-                                <>
-                                    <h2 className="title" style={{ color: "#E7D7C9" }}>{infoAnillo.titulo}</h2>
-                                    <h3 className="my-3 fs-5 fs-lg-3" style={{ color: "#C7D0CF" }}>
-                                        {infoAnillo.descripcion}
-                                    </h3>
-                                    <Link
-                                        to={`/productos?categoria=Anillos`}
-                                        className="btn-home-anillos"
-                                    >
-                                        Explora el amor y el compromiso
-                                    </Link>
-                                </>
-                            ))
-                        }
-                    </div>
-                    <div className="col-12 mx-0 px-0 col-lg-6">
-                        <div id="carouselAnillos" className="carousel slide" data-bs-ride="carousel">
-                            <div className="carousel-inner" style={{ height: '850px' }}>
-                                {imagenesAnillos.map((imagen, index) => (
-                                    <div key={index} className={`carousel-item ${index === 0 ? "active" : ""}`}>
-                                        <img className="img-fluid w-100 image" style={{ objectFit: "cover", height: '100%' }} src={imagen} alt={`Anillo ${index + 1}`} />
+            {/* vista pc */}
+            <div className='home-anillos-pc'>
+                <div className='container-div'>
+                    <div className='con-elements'>
+                        <div className='con-left'>
+                            <h2 className='title-info-anillos'>
+                                {
+                                    infoData == null ? 'Cargando titulo...' : infoData.titulo
+                                }
+                            </h2>
+                            <p className='descripcion'>
+                                {
+                                    infoData == null ? 'Cargando descripcion...' : infoData.descripcion
+                                }
+                            </p>
+                            <Link>Explora el amor y el compromiso</Link>
+                        </div>
+                        <div className='con-right'>
+                            <div id="carouselAnillos" className="carousel slide" data-bs-ride="carousel">
+                                <div className="carousel-inner">
+                                    <div className="carousel-item active">
+                                        <img src={anillo1} className="d-block w-100 img-anillo" alt="Anillo 1" />
                                     </div>
-                                ))}
+                                    <div className="carousel-item">
+                                        <img src={anillo2} className="d-block w-100 img-anillo" alt="Anillo 2" />
+                                    </div>
+                                </div>
+                                <button className="carousel-control-prev" type="button" data-bs-target="#carouselAnillos" data-bs-slide="prev">
+                                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span className="visually-hidden">Previous</span>
+                                </button>
+                                <button className="carousel-control-next" type="button" data-bs-target="#carouselAnillos" data-bs-slide="next">
+                                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span className="visually-hidden">Next</span>
+                                </button>
                             </div>
-                            <button className="carousel-control-prev" type="button" data-bs-target="#carouselAnillos" data-bs-slide="prev">
-                                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span className="visually-hidden">Previous</span>
-                            </button>
-                            <button className="carousel-control-next" type="button" data-bs-target="#carouselAnillos" data-bs-slide="next">
-                                <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span className="visually-hidden">Next</span>
-                            </button>
                         </div>
                     </div>
                 </div>
             </div>
 
-
+            {/* vista mobile */}
             <div className="home-anillos-mobile">
                 <div className="home-anillos-container text-center py-3">
                     {

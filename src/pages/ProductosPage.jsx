@@ -87,7 +87,7 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
                                         producto.campana_titulo === 'Sin promocion' ?
                                             <>
                                                 <div key={producto.id} className="col-md-4">
-                                                    <div className="card mb-4 product-wap rounded-0" style={{height:'380px'}}>
+                                                    <div className="card mb-4 product-wap rounded-0" style={{ height: '380px' }}>
                                                         <div className="card rounded-0">
                                                             <div style={{ width: '100%', height: '200px', overflow: 'hidden' }}>
                                                                 <img

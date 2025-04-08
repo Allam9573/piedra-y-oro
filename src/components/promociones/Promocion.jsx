@@ -21,8 +21,8 @@ export const Promocion = () => {
             {
                 promocion != null ?
                     <>
-                        <h2 className='text-center h1 promocion-title'>{promocion.titulo}</h2>
-                        <div className="row mb-4"> {/* Added margin-bottom for spacing */}
+                        <h2 className='text-orange-light text-center title mb-5'>{promocion.titulo}</h2>
+                        {/* <div className="row mb-4"> 
                             <div className="col-lg-12">
                                 <div className="row">
                                     <div className="col-md-6 pb-4">
@@ -34,7 +34,7 @@ export const Promocion = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                         <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
                             {/*
                         row-cols-1: 1 column on extra small screens

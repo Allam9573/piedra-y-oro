@@ -29,7 +29,7 @@ export const HomeAnillos = () => {
                                     infoData == null ? 'Cargando descripcion...' : infoData.descripcion
                                 }
                             </p>
-                            <Link className='btn-orange'>Explora el amor y el compromiso</Link>
+                            <Link to={`/productos?categoria=Anillos`} className='btn-orange'>Explora el amor y el compromiso</Link>
                         </div>
                         <div className='con-right'>
                             <div id="carouselAnillos" className="carousel slide" data-bs-ride="carousel">

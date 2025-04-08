@@ -4,6 +4,7 @@ import { useProductos } from '../../hooks/useProductos'
 import classNames from 'classnames';
 import { FaChevronLeft } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
+import '../../assets/css/carousel-productos.css'
 
 
 export const ProductoView = ({ addToCart }) => {
@@ -35,87 +36,128 @@ export const ProductoView = ({ addToCart }) => {
     }
     return (
         <>
-
-            <section class="bg-light">
-                <div class="container pb-5">
-                    <div class="row">
-                        <div class="col-lg-5 mt-5">
-                            <div class="card shadow mb-3">
-                                <img class="card-img img-fluid" src={firstImage} alt="Card image cap" id="product-detail" />
+            <section className="bg-light">
+                <div className="container pb-5">
+                    <div className="row">
+                        <div className="col-lg-5 mt-5">
+                            <div className="card shadow mb-3">
+                                <img
+                                    className="card-img img-fluid"
+                                    src={firstImage}
+                                    alt="Product"
+                                    id="product-detail"
+                                />
                             </div>
-                            <div class="row">
-                                <div class="col-1 align-self-center">
-                                    <a href="#multi-item-example" role="button" data-bs-slide="prev">
-                                        <FaChevronLeft />
-                                        {/* <span class="sr-only">Anterior</span> */}
+                            <div className="row align-items-center">
+                                <div className="col-auto pe-2">
+                                    <a
+                                        href="#multi-item-example"
+                                        role="button"
+                                        data-bs-slide="prev"
+                                        className="text-dark"
+                                    >
+                                        {/* <FaChevronLeft size={20} /> */}
                                     </a>
                                 </div>
-                                <div id="multi-item-example" class="col-10 carousel slide carousel-multi-item" data-bs-ride="carousel">
-                                    <div class="carousel-inner product-links-wap" role="listbox">
-                                        <div class="carousel-item active">
-                                            <div class="row">
-                                                <div className="col-4">
-                                                    <a href="#" className='d-flex'>
-                                                        {
-                                                            producto.imagenes ?
-                                                                <>
-                                                                    {
-                                                                        producto.imagenes.map(imagen => {
-                                                                            return (
-                                                                                <img
-                                                                                    style={{ maxHeight: '100%', objectFit: 'contain' }}
-                                                                                    onClick={() => setFirstImage(imagen.imagen)}
-                                                                                    key={imagen} class="card-img img-fluid mx-2"
-                                                                                    src={imagen.imagen} alt="Product Image 1" />
-                                                                            )
-                                                                        })
-                                                                    }
-                                                                </> :
-                                                                <>
-                                                                    Producto sin imagen
-                                                                </>
-                                                        }
-                                                    </a>
-                                                </div>
+
+                                <div
+                                    id="multi-item-example"
+                                    className="col-12 overflow-hidden carousel slide carousel-multi-item"
+                                    data-bs-ride="carousel"
+                                >
+                                    <div className="carousel-inner product-links-wap" role="listbox">
+                                        <div className="carousel-item active">
+                                            <div className="row gx-3 gy-2"> {/* Ajuste de espacio entre miniaturas */}
+                                                {producto.imagenes ? (
+                                                    producto.imagenes.map((imagen, index) => (
+                                                        <div className="col-3 col-md-2" key={index}> {/* Espaciado ajustado */}
+                                                            <a href="#" className="d-block">
+                                                                <img
+                                                                    style={{
+                                                                        maxWidth: '100%',
+                                                                        maxHeight: '80px',
+                                                                        objectFit: 'contain',
+                                                                        cursor: 'pointer',
+                                                                        border: 'none',
+                                                                    }}
+                                                                    onClick={() => setFirstImage(imagen.imagen)}
+                                                                    className="card-img img-fluid mx-1 mb-2"
+                                                                    src={imagen.imagen}
+                                                                    alt={`Product Image ${index + 1}`}
+                                                                />
+                                                            </a>
+                                                        </div>
+                                                    ))
+                                                ) : (
+                                                    <span>Producto sin imagen</span>
+                                                )}
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-1 align-self-center">
-                                    <a href="#multi-item-example" role="button" data-bs-slide="next">
-                                        <FaChevronRight />
-                                        <span class="sr-only">Siguente</span>
+
+                                <div className="col-auto ps-2">
+                                    <a
+                                        href="#multi-item-example"
+                                        role="button"
+                                        data-bs-slide="next"
+                                        className="text-dark"
+                                    >
+                                        {/* <FaChevronRight size={20} /> */}
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-7 mt-5">
-                            <div class="card shadow">
-                                <div class="card-body">
-                                    <h1 class="h2">{producto.nombre}</h1>
-                                    <p class="h3 py-2">Precio: {new Intl.NumberFormat('es-HN', {
-                                        style: 'currency',
-                                        currency: 'HNL',
-                                        minimumFractionDigits: 2,
-                                    }).format(producto.precio)}</p>
-                                    <span className={badgeClass(producto.categoria_nombre)}>{producto.categoria_nombre}</span>
 
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
+                        <div className="col-lg-7 mt-5">
+                            <div className="card shadow">
+                                <div className="card-body">
+                                    <h1 className="h2">{producto.nombre}</h1>
+                                    <p className="h3 py-2">
+                                        Precio:{' '}
+                                        {new Intl.NumberFormat('es-HN', {
+                                            style: 'currency',
+                                            currency: 'HNL',
+                                            minimumFractionDigits: 2,
+                                        }).format(producto.precio)}
+                                    </p>
+                                    <span className={badgeClass(producto.categoria_nombre)}>
+                                        {producto.categoria_nombre}
+                                    </span>
+                                    <ul className="list-inline">
+                                        <li className="list-inline-item">
                                             <h6>Existencia:</h6>
                                         </li>
-                                        <li class="list-inline-item">
-                                            <p class="text-muted"><strong>{producto.stock} unidades</strong></p>
+                                        <li className="list-inline-item">
+                                            <p className="text-muted">
+                                                <strong>{producto.stock} unidades</strong>
+                                            </p>
                                         </li>
                                     </ul>
                                     <h6>Descripcion:</h6>
                                     <p>{producto.descripcion}</p>
-                                    <div class="row pb-3">
-                                        <div class="col d-grid">
-                                            <Link style={{ backgroundColor: '#938E87' }} to={'/productos'} class="text-white btn btn-lg" name="submit" value="buy">Atras</Link>
+                                    <div className="row pb-3">
+                                        <div className="col d-grid">
+                                            <Link
+                                                style={{ backgroundColor: '#938E87' }}
+                                                to={'/productos'}
+                                                className="text-white btn btn-lg"
+                                                name="submit"
+                                                value="buy"
+                                            >
+                                                Atras
+                                            </Link>
                                         </div>
-                                        <div class="col d-grid">
-                                            <button style={{ backgroundColor: '#938E87' }} onClick={() => addToCart(producto)} class="btn text-white btn-lg" name="submit" value="addtocard">Agregar al Carrito</button>
+                                        <div className="col d-grid">
+                                            <button
+                                                style={{ backgroundColor: '#938E87' }}
+                                                onClick={() => addToCart(producto)}
+                                                className="btn text-white btn-lg"
+                                                name="submit"
+                                                value="addtocart"
+                                            >
+                                                Agregar al Carrito
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -124,6 +166,7 @@ export const ProductoView = ({ addToCart }) => {
                     </div>
                 </div>
             </section>
+
         </>
     )
 }

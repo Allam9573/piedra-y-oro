@@ -29,12 +29,10 @@ const useFavorites = () => {
         }
     };
 
-
     const [favorites, setFavorites] = useState(initialStateFavorites);
 
     const addFavorite = (producto) => {
         if (favorites.some((pro) => pro.id === producto.id)) return;
-
         setFavorites([...favorites, producto]);
         notifyAdd(producto)
     };

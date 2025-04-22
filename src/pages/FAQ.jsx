@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 export const FAQ = () => {
     const { pathname } = useLocation();
-
+    document.title = 'P & O | Home'
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [pathname]);
@@ -46,7 +46,7 @@ export const FAQ = () => {
                     </h2>
                     <div id="faq3" class="accordion-collapse collapse" aria-labelledby="faq3-heading" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            Nuestro equipo estará encantado de asistirte. Comunícate al teléfono +504 9496-9595.
+                            Nuestro equipo estará encantado de asistirte. Comunícate al teléfono +504 9999-9999.
                         </div>
                     </div>
                 </div>

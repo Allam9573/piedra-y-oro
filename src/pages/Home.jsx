@@ -7,7 +7,7 @@ import { HomeMedallones } from '../components/categorias/HomeMedallones'
 import { useLocation } from 'react-router-dom'
 
 export const Home = () => {
-    document.title = 'Lionettas | Home'
+    document.title = 'P & O | Home'
 
     const { pathname } = useLocation()
 

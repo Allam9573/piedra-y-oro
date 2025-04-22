@@ -76,7 +76,7 @@ export const Header = () => {
                                 autoplay={{ delay: 5000, disableOnInteraction: false }}
                                 loop={true}
                                 modules={[Pagination, Autoplay]}
-                                className="w-100 min-vh-100 position-relative"
+                                className="w-100 m-0 p-0 min-vh-100 position-relative"
                             >
                                 {promociones.map((promo, index) => (
                                     <SwiperSlide key={index} className="promo-con w-100">
@@ -84,10 +84,11 @@ export const Header = () => {
                                             <div className="row w-100 flex-column-reverse flex-md-row">
                                                 <div
                                                     className="col-12 col-lg-6 text-start d-flex flex-column justify-content-center align-items-start px-4 px-lg-5 py-5 pb-5 pb-lg-4"
-                                                    style={{ backgroundColor: "#343A36" }}
+                                                    style={{ backgroundColor: "#fff" }}
                                                 >
                                                     <img src={logoRosa} className="mb-3 img-fluid w-50 w-md-25" alt="Logo" />
-                                                    <div className="text-start w-100">
+                                                    <div className="text-start w-100 px-3">
+                                                        <h2 className='title-promo'>Joyeria Piedra & Oro</h2>
                                                         <p className="title-promocion mt-4">{promo.titulo}</p>
                                                         <p className="descripcion-promocion mb-5">{promo.descripcion}</p>
                                                         <Link to={`/promociones/${promo.id}`} className="btn-call my-5">Inspírate</Link>

@@ -18,7 +18,9 @@ body {
 .shadow-img {
     filter: drop-shadow(0, 0, 10px rgba(0, 0, 0.0.8));
 }
-
+.text-coffee{
+    color: #938E87;
+}
 .title {
     font-family: 'Bodoni Moda';
     font-size: 3em;
@@ -29,7 +31,7 @@ body {
 .title-promocion {
     font-size: 2.5em !important;
     font-weight: lighter;
-    color: white;
+    color: #BDB395;
     /* margin: 0 auto; */
     font-family: 'Bodoni Moda';
 }
@@ -51,11 +53,15 @@ body {
     padding: 0 20px;
     text-align: justify;
 }
+.title-promo{
+    color: #BDB395;
+    font-size: 4rem;
+}
 
 .descripcion-promocion {
     margin-bottom: 10px !important;
     font-size: 1.5rem !important;
-    color: white;
+    color: #BDB395;
 }
 
 .btn-home-anillos {
@@ -88,7 +94,7 @@ body {
     background-color: #E7D7C9;
     padding: 20px 50px;
     text-decoration: none;
-    color: black;
+    color: #fff;
     border: 1px solid #E7D7C9;
     margin-top: 2400px !important;
     transition: 0.5s;
@@ -101,9 +107,8 @@ body {
 }
 
 .btn-call:hover {
-    background-color: transparent;
-    color: white;
-    border: 1px solid white;
+    background-color: #8e847b;
+    border: 1px solid #8e847b;
     border-radius: 10px;
 }
 
@@ -221,7 +226,10 @@ body {
 
 .container-carousel {}
 
-.desktop-header {}
+.desktop-header {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
 
 /* vista PC */
 @media (min-width:769px) {

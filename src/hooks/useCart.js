@@ -3,7 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 const useCart = () => {
     const notifyAdd = (producto) => toast.success(`"${producto.nombre}" agregado al carrito de compras!`);
-
+    const EXPIRATION_TIME = 3 * 24 * 60 * 60 * 1000;
     const initialCartState = () => {
         try {
             const localData = localStorage.getItem("cart");
@@ -14,12 +14,12 @@ const useCart = () => {
 
             const { items, timestamp } = parsedData;
 
-            if (!Array.isArray(items)) return []; // Evita errores si no es un array
+            if (!Array.isArray(items)) return [];
 
-            // if (Date.now() - timestamp > EXPIRATION_TIME) {
-            //     localStorage.removeItem("cart");
-            //     return [];
-            // }
+            if (Date.now() - timestamp > EXPIRATION_TIME) {
+                localStorage.removeItem("cart");
+                return [];
+            }
             return items;
         } catch (error) {
             console.error("Error al leer carrito:", error);
@@ -80,8 +80,13 @@ const useCart = () => {
     };
 
     useEffect(() => {
-        localStorage.setItem('cart', JSON.stringify(cart))
-    }, [cart])
+        const dataToStore = {
+            items: cart,
+            timestamp: Date.now()
+        };
+        localStorage.setItem('cart', JSON.stringify(dataToStore));
+    }, [cart]);
+
 
     return {
         cart,

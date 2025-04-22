@@ -52,7 +52,7 @@ const App = () => {
         <Route path="/*" element={<Error404 />} />
       </Routes>
       <Footer />
-      <a href="https://wa.me/+50494969595" target="_blank" class="whatsapp-btn">
+      <a href="https://wa.me/+50499999999" target="_blank" class="whatsapp-btn">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
       </a>
       <ToastContainer />

@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import categories from '../assets/img/categories.png'
-import products from '../assets/img/product.png'
-import promocion from '../assets/img/promocion.png'
+// import categories from '../assets/img/categories.png'
+// import products from '../assets/img/product.png'
+// import promocion from '../assets/img/promocion.png'
 
 export const Admin = () => {
     document.title = 'Lionettas | Panel Administrativo'

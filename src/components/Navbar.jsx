@@ -3,7 +3,7 @@ import { IoBagCheckOutline } from 'react-icons/io5'
 import { MdAddShoppingCart } from 'react-icons/md'
 import { Link } from 'react-router-dom'
 import { MdFavoriteBorder } from "react-icons/md";
-import logo from '../assets/img/logo_lionettas.png'
+import logo from '../assets/img/other/logo.png'
 import logo_blanco from '../assets/img/logo_blanco.png'
 
 //css import
@@ -26,13 +26,13 @@ export const Navbar = ({ quantity, quantityFavorites }) => {
     };
     return (
         <>
-            <nav className="navbar-desktop navbar fixed-top navbar-expand-lg navbar-light shadow" style={{ backgroundColor: "#E7D7C9", width: "100%" }}>
+            <nav className="navbar-desktop navbar fixed-top navbar-expand-lg navbar-light shadow" style={{ backgroundColor: "#F6F0F0", width: "100%" }}>
                 <div className="container d-flex justify-content-between align-items-center">
                     {/* Contenedor para el logo y el botón hamburguesa */}
                     <div className="d-flex align-items-center">
                         {/* Logo alineado a la izquierda */}
                         <Link className="navbar-brand text-success logo h1" to={'/'}>
-                            <img src={logo} className="img-fluid" width={'15%'} alt="Logo" />
+                            <img src={logo} className="img-fluid" width={'17%'} alt="Logo" />
                         </Link>
 
                         {/* Botón hamburguesa alineado a la derecha en móvil */}

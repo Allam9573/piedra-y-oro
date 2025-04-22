@@ -7,7 +7,7 @@ import { GrView } from 'react-icons/gr';
 import { ToastContainer, toast } from 'react-toastify';
 
 export const ProductosPage = ({ addToCart, addFavorite }) => {
-    document.title = 'Lionettas | Productos';
+    document.title = 'P & O | Productos';
 
     const [busqueda, setBusqueda] = useState('');
     const [subcategoriasSeleccionadas, setSubcategoriasSeleccionadas] = useState([]);
@@ -52,24 +52,24 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
                 <div className="col-lg-3">
                     <h1 className="h2 pb-4">Categorias</h1>
                     <ul className="list-unstyled templatemo-accordion">
-                        {subcategorias.map(({ id, nombre }) => (
-                            <li key={id} className="pb-3">
-                                <input
-                                    type="checkbox"
-                                    id={`subcategoria-${id}`}
-                                    onChange={() => handleSubcategoriaChange(nombre)}
-                                    checked={subcategoriasSeleccionadas.includes(nombre)}
-                                />
-                                <label htmlFor={`subcategoria-${id}`} className="ms-2">
-                                    {nombre}
-                                </label>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-                <div className="col-lg-9">
-                    <div className="row">
-                        <div className="col-md-6 pb-4">
+                            {subcategorias.map(({ id, nombre }) => (
+                                <li key={id} className="pb-3">
+                                    <input
+                                        type="checkbox"
+                                        id={`subcategoria-${id}`}
+                                        onChange={() => handleSubcategoriaChange(nombre)}
+                                        checked={subcategoriasSeleccionadas.includes(nombre)}
+                                    />
+                                    <label htmlFor={`subcategoria-${id}`} className="ms-2">
+                                        {nombre}
+                                    </label>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className="col-lg-9">
+                        <div className="row">
+                            <div className="col-md-6 pb-4">
                             <input
                                 type="search"
                                 placeholder="Buscar un producto..."
@@ -80,16 +80,16 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
                         </div>
                     </div>
                     <div className="row">
-                        {resultados.length > 0 ? (
+                        {resultados !== null ? (
                             resultados.map(producto => (
                                 <>
                                     {
                                         producto.campana_titulo === 'Sin promocion' ?
                                             <>
                                                 <div key={producto.id} className="col-md-4">
-                                                    <div className="card mb-4 product-wap rounded-0" style={{ height: '380px' }}>
-                                                        <div className="card rounded-0">
-                                                            <div style={{ width: '100%', height: '200px', overflow: 'hidden' }}>
+                                                    <div className="card product-wap" style={{ height: '5000px' }}>
+                                                        <div className="card rounded-0" style={{ height: '5000px' }}>
+                                                            <div style={{ width: '100%', height: '250px' }}>
                                                                 <img
                                                                     className="card-img-top img-fluid" // Usar card-img-top si estás usando Bootstrap Cards
                                                                     style={{ objectFit: 'cover', width: '100%', height: '100%' }} // Ajustar height al 100% del contenedor
@@ -98,7 +98,7 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
                                                                 />
                                                             </div>
 
-                                                            <div className="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                                            <div className="card-img-overlay product-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                                                 <ul className="list-unstyled">
                                                                     <li>
                                                                         <a style={{ backgroundColor: '#938E87' }} onClick={() => addFavorite(producto)} className="btn text-white">
@@ -118,7 +118,7 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
                                                                 </ul>
                                                             </div>
                                                         </div>
-                                                        <div className="card-body">
+                                                        <div className="card-body" style={{ height: "5000px" }}>
                                                             <h4 className='text-secondary'>{producto.nombre}</h4>
                                                             <span style={{ backgroundColor: '#938E87' }} className='badge'>{producto.subcategoria_nombre}</span>
                                                             <p className="text-center mb-0">
@@ -131,9 +131,9 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
                                             // aplica promocion
                                             <>
                                                 <div key={producto.id} className="col-md-4">
-                                                    <div className="card rounded-bottom mb-4 product-wap">
+                                                    <div className="card rounded-bottom mb-4 product-wap" style={{ height: '100px' }}>
                                                         <div className="card">
-                                                            <div style={{ width: '100%', height: '200px', overflow: 'hidden' }}>
+                                                            <div style={{ width: '100%', height: '250px', overflow: 'hidden' }}>
                                                                 <img
                                                                     className="card-img-top img-fluid" // Usar card-img-top si estás usando Bootstrap Cards
                                                                     style={{ objectFit: 'cover', width: '100%', height: '100%' }} // Ajustar height al 100% del contenedor
@@ -190,7 +190,6 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
                                 </>
                             ))
                         ) : (
-
                             <>
                                 <div className="d-flex">
 

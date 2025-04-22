@@ -7,7 +7,7 @@ import { GrView } from 'react-icons/gr';
 import { useFavorites } from '../hooks/useFavorites';
 
 export const Favorites = ({ favorites, deleteItem, addToCart }) => {
-    document.title = 'Lionettas | Lista de deseos'
+    document.title = 'P & O | Lista de deseos'
     const { pathname } = useLocation();
 
     useEffect(() => {
@@ -19,7 +19,7 @@ export const Favorites = ({ favorites, deleteItem, addToCart }) => {
             {
                 favorites.length === 0 ? (
                     <div className="text-center my-5">
-                        <img src={imagen} className="img-fluid" style={{ maxWidth: '200px' }} alt="No hay productos" />
+                        <img src={imagen} className="img-fluid mx-auto" style={{ maxWidth: '200px' }} alt="No hay productos" />
                         <h3 className="text-secondary mb-3">No hay productos en tu lista de deseos.</h3>
                         <Link to="/productos" className="btn btn-outline-success rounded-pill">Explorar Productos</Link>
                     </div>

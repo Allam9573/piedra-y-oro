@@ -9,13 +9,10 @@ import '../../assets/css/carousel-productos.css'
 
 export const ProductoView = ({ addToCart }) => {
 
-
     const { id } = useParams()
     const { verProducto, producto } = useProductos()
-    // const primeraImagen = producto.imagenes.length > 0 ? producto.imagenes[0] : ''
     console.log(producto)
     const [firstImage, setFirstImage] = useState('')
-
 
     useEffect(() => {
         verProducto(id)
@@ -23,7 +20,7 @@ export const ProductoView = ({ addToCart }) => {
 
     useEffect(() => {
         if (producto && producto.imagenes && producto.imagenes.length > 0) {
-            setFirstImage(producto.imagenes[0].imagen); // Establece la primera imagen al cargar el producto
+            setFirstImage(producto.imagenes[0].imagen);
         }
     }, [producto]);
 
@@ -59,41 +56,39 @@ export const ProductoView = ({ addToCart }) => {
                                         {/* <FaChevronLeft size={20} /> */}
                                     </a>
                                 </div>
-
                                 <div
                                     id="multi-item-example"
                                     className="col-12 overflow-hidden carousel slide carousel-multi-item"
                                     data-bs-ride="carousel"
                                 >
-                                    <div className="carousel-inner product-links-wap" role="listbox">
-                                        <div className="carousel-item active">
-                                            <div className="row gx-3 gy-2"> {/* Ajuste de espacio entre miniaturas */}
-                                                {producto.imagenes ? (
-                                                    producto.imagenes.map((imagen, index) => (
-                                                        <div className="col-3 col-md-2" key={index}> {/* Espaciado ajustado */}
-                                                            <a href="#" className="d-block">
-                                                                <img
-                                                                    style={{
-                                                                        maxWidth: '100%',
-                                                                        maxHeight: '80px',
-                                                                        objectFit: 'contain',
-                                                                        cursor: 'pointer',
-                                                                        border: 'none',
-                                                                    }}
-                                                                    onClick={() => setFirstImage(imagen.imagen)}
-                                                                    className="card-img img-fluid mx-1 mb-2"
-                                                                    src={imagen.imagen}
-                                                                    alt={`Product Image ${index + 1}`}
-                                                                />
-                                                            </a>
-                                                        </div>
-                                                    ))
-                                                ) : (
-                                                    <span>Producto sin imagen</span>
-                                                )}
-                                            </div>
+                                    <div className="col-12">
+                                        <div className="row gx-3 gy-2">
+                                            {producto.imagenes ? (
+                                                producto.imagenes.map((imagen, index) => (
+                                                    <div className="col-3 col-md-2" key={index}>
+                                                        <a href="#" className="d-block">
+                                                            <img
+                                                                style={{
+                                                                    maxWidth: '100%',
+                                                                    maxHeight: '80px',
+                                                                    objectFit: 'contain',
+                                                                    cursor: 'pointer',
+                                                                    border: 'none',
+                                                                }}
+                                                                onClick={() => setFirstImage(imagen.imagen)}
+                                                                className="card-img img-fluid mx-1 mb-2"
+                                                                src={imagen.imagen}
+                                                                alt={`Product Image ${index + 1}`}
+                                                            />
+                                                        </a>
+                                                    </div>
+                                                ))
+                                            ) : (
+                                                <span>Producto sin imagen</span>
+                                            )}
                                         </div>
                                     </div>
+
                                 </div>
 
                                 <div className="col-auto ps-2">
@@ -114,12 +109,21 @@ export const ProductoView = ({ addToCart }) => {
                                 <div className="card-body">
                                     <h1 className="h2">{producto.nombre}</h1>
                                     <p className="h3 py-2">
-                                        Precio:{' '}
-                                        {new Intl.NumberFormat('es-HN', {
-                                            style: 'currency',
-                                            currency: 'HNL',
-                                            minimumFractionDigits: 2,
-                                        }).format(producto.precio)}
+                                        Precio: {' '}
+                                        {
+                                            producto.nombre == null ?
+                                                <>
+                                                    <div class="spinner-border spinner-border-sm" role="status">
+                                                        <span class="visually-hidden">Loading...</span>
+                                                    </div>
+                                                </> : <>
+                                                    {new Intl.NumberFormat('es-HN', {
+                                                        style: 'currency',
+                                                        currency: 'HNL',
+                                                        minimumFractionDigits: 2,
+                                                    }).format(producto.precio)}
+                                                </>
+                                        }
                                     </p>
                                     <span className={badgeClass(producto.categoria_nombre)}>
                                         {producto.categoria_nombre}
@@ -130,12 +134,35 @@ export const ProductoView = ({ addToCart }) => {
                                         </li>
                                         <li className="list-inline-item">
                                             <p className="text-muted">
-                                                <strong>{producto.stock} unidades</strong>
+                                                <strong>
+                                                    {
+                                                        producto.stock == null ?
+                                                            <>
+
+                                                                <div class="spinner-border spinner-border-sm" role="status">
+                                                                    <span class="visually-hidden">Loading...</span>
+                                                                </div>
+                                                            </> :
+                                                            <>
+                                                                {producto.stock} unidades
+                                                            </>
+                                                    }
+                                                </strong>
                                             </p>
                                         </li>
                                     </ul>
                                     <h6>Descripcion:</h6>
-                                    <p>{producto.descripcion}</p>
+                                    <p>
+                                        {
+                                            producto.descripcion == null ?
+                                                <>
+                                                    <div class="spinner-border me-2 spinner-border-sm" role="status">
+                                                        <span class="visually-hidden">Loading...</span>
+                                                    </div>
+                                                    Cargando descripcion...</> :
+                                                <>{producto.descripcion}</>
+                                        }
+                                    </p>
                                     <div className="row pb-3">
                                         <div className="col d-grid">
                                             <Link

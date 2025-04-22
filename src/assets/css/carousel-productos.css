@@ -1,0 +1,22 @@
+.carousel-inner {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+  
+  .carousel {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+  
+  .card,
+  .card-body,
+  .row,
+  .container {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible;
+  }
+  img {
+    display: block;
+    vertical-align: middle;
+  }

@@ -9,7 +9,7 @@ import { useCart } from '../../hooks/useCart';
 
 export const Cart = ({ cart, eliminarItemCarrito, incrementar, decrementar }) => {
 
-    document.title = 'Lionettas | Mi Carrito'
+    document.title = 'P & O | Mi carrito'
 
     const [cliente, setCliente] = useState('')
     const [selectLugar, setSelectLugar] = useState('Tegucigalpa')
@@ -18,7 +18,7 @@ export const Cart = ({ cart, eliminarItemCarrito, incrementar, decrementar }) =>
     const { vaciarCarrito } = useCart();
 
     const handlePay = () => {
-        const telefono = '+50494969595'
+        const telefono = '+50499999999'
         const mensaje = cart.map(
             (producto) =>
                 `Producto: ${producto.nombre}\nCodigo Producto: ${producto.codigo_producto}\nCantidad: ${producto.cantidad}\nLugar compra: ${selectLugar}\n\n`
@@ -64,7 +64,7 @@ export const Cart = ({ cart, eliminarItemCarrito, incrementar, decrementar }) =>
                 (!cart || cart.length === 0) ?
                     <div className='text-center my-5'>
                         <h1 className='text-secondary'>Mi Cesta:</h1>
-                        <img src={imagen} width={'30%'} alt="" />
+                        <img src={imagen} className='mx-auto' width={'30%'} alt="" />
                         <h3 className='text-secondary mb-3'>No hay productos en tu cesta.</h3>
                         <Link to={'/productos'} className='btn btn-outline-success rounded-pill'>Explorar Productos</Link>
                     </div> :

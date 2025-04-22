@@ -8,7 +8,6 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
 export const Promociones = ({ promociones }) => {
-
     return (
         <div className="container">
             <Swiper

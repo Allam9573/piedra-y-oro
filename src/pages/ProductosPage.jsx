@@ -87,9 +87,9 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
                                         producto.campana_titulo === 'Sin promocion' ?
                                             <>
                                                 <div key={producto.id} className="col-md-4">
-                                                    <div className="card mb-3 product-wap" style={{ height: '5000px' }}>
+                                                    <div className="card mb-4 product-wap" style={{ height: '5000px' }}>
                                                         <div className="card rounded-0" style={{ height: '5000px' }}>
-                                                            <div style={{ width: '100%', height: '250px' }}>
+                                                            <div style={{ width: '100%', height: '300px' }}>
                                                                 <img
                                                                     className="card-img-top img-fluid" // Usar card-img-top si estás usando Bootstrap Cards
                                                                     style={{ objectFit: 'cover', width: '100%', height: '100%' }} // Ajustar height al 100% del contenedor

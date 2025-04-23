@@ -21,7 +21,7 @@ export const Promocion = () => {
             {
                 promocion != null ?
                     <>
-                        <h2 className='text-coffee text-center title mb-5'>{promocion.titulo}</h2>
+                        <h2 className='text-coffee text-center title mb-5'>{promocion.titulo} - {promocion.descuento}%</h2>
                         {/* <div className="row mb-4"> 
                             <div className="col-lg-12">
                                 <div className="row">

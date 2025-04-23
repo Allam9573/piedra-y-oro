@@ -4,7 +4,6 @@ import { MdAddShoppingCart } from 'react-icons/md'
 import { Link } from 'react-router-dom'
 import { MdFavoriteBorder } from "react-icons/md";
 import logo from '../assets/img/other/logo.png'
-import logo_blanco from '../assets/img/logo_blanco.png'
 
 //css import
 import '../assets/css/bootstrap.min.css'
@@ -90,7 +89,7 @@ export const Navbar = ({ quantity, quantityFavorites }) => {
                             <span className="navbar-toggler-icon"></span>
                         </button>
                         <Link className="navbar-brand text-success text-center logo h1" to={'/'}>
-                            <img src={logo_blanco} className="img-fluid ms-4" style={{ maxWidth: '90%' }} alt="Logo" />
+                            <img src={logo} className="img-fluid" style={{ maxWidth: '30%' }} alt="Logo" />
                         </Link>
                         <div className="mx-3 align-self-center flex-row d-flex">
                             <Link className="nav-icon position-relative text-decoration-none" to={'/my-cart'} onClick={closeMenu}>

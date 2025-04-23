@@ -87,7 +87,7 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
                                         producto.campana_titulo === 'Sin promocion' ?
                                             <>
                                                 <div key={producto.id} className="col-md-4">
-                                                    <div className="card product-wap" style={{ height: '5000px' }}>
+                                                    <div className="card mb-3 product-wap" style={{ height: '5000px' }}>
                                                         <div className="card rounded-0" style={{ height: '5000px' }}>
                                                             <div style={{ width: '100%', height: '250px' }}>
                                                                 <img
@@ -122,7 +122,7 @@ export const ProductosPage = ({ addToCart, addFavorite }) => {
                                                             <h4 className='text-secondary'>{producto.nombre}</h4>
                                                             <span style={{ backgroundColor: '#938E87' }} className='badge'>{producto.subcategoria_nombre}</span>
                                                             <p className="text-center mb-0">
-                                                                Precio: <span className="fw-bold">{producto.precio}</span>
+                                                                Precio: <span className="fw-bold">L. {producto.precio}</span>
                                                             </p>
                                                         </div>
                                                     </div>

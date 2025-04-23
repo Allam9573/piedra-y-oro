@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
-import medallon from '../../assets/img/image2.png'
 import { Link } from 'react-router-dom'
 import { useHomeCategorias } from '../../hooks/useHomeCategorias'
-import anillo1 from '../../assets/img/image1.png'
+import medallon from '../../assets/img/other/medallon.jpg'
+import medallon1 from '../../assets/img/other/medallon1.jpg'
 import anillo2 from '../../assets/img/modelo1.jpg'
 import { useHomeInfo } from '../../hooks/useHomeInfo'
 
 export const HomeMedallones = () => {
 
     const { infoMedallones } = useHomeInfo();
-    const imagenesAnillos = [anillo1, anillo2];
+    const imagenesAnillos = [medallon, medallon1];
     console.log(infoMedallones)
     return (
         <>
@@ -55,8 +55,8 @@ export const HomeMedallones = () => {
                             <>
                                 <h2 className='title-home-anillos '>{info.titulo}</h2>
                                 <div className='d-flex justify-content-center mt-4'>
-                                    <img className='home-anillos-home-imagen' src={anillo1} alt="" />
-                                    <img className='home-anillos-home-imagen' src={anillo2} alt="" />
+                                    <img className='home-anillos-home-imagen' src={medallon} alt="" />
+                                    <img className='home-anillos-home-imagen' src={medallon1} alt="" />
                                 </div>
                                 <p className='text-secondary descripcion-home-anillos mx-2 my-3'>{info.descripcion}</p>
                                 <Link to={"/productos?categoria=Medallones"} className='btn-inspirate'>Comprar Ahora</Link>

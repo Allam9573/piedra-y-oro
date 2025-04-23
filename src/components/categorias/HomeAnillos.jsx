@@ -1,6 +1,6 @@
 import React from 'react'
-import anillo1 from '../../assets/img/image1.png'
-import anillo2 from '../../assets/img/modelo1.jpg'
+import anillo1 from '../../assets/img/other/anillo.jpg'
+import anillo2 from '../../assets/img/other/anillo1.jpg'
 import anillo3 from '../../assets/img/image1.png'
 import { Link } from 'react-router-dom'
 import { useHomeCategorias } from '../../hooks/useHomeCategorias'

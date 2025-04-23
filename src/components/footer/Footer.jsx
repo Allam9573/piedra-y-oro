@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { FaFacebook } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import logo from '../../assets/img/other/logo.png'
-import logo_blanco from '../../assets/img/other/logo2.png'
+import logo2 from '../../assets/img/other/logo2.png'
 import { useFooter } from '../../hooks/useFooter';
 import { Link } from 'react-router-dom';
 import { useRegistroClientes } from '../../hooks/useRegistroClientes';
@@ -29,7 +29,7 @@ export const Footer = () => {
             <footer class="footer-desktop" style={{ backgroundColor: '#BDB395' }} id="tempaltemo_footer">
                 <div class="container">
                     <div class="col-md-4 pt-5">
-                        <img src={logo_blanco} width={'20%'} alt="" />
+                        <img src={logo2} width={'20%'} alt="" />
                         <ul class="list-unstyled footer-link-list" style={{ color: 'white' }}>
                             <li>
                                 <i class="fas fa-map-marker-alt fa-fw"></i>
@@ -93,21 +93,21 @@ export const Footer = () => {
                     </div>
                 </div>
             </footer>
-            <footer class="footer-mobile" style={{ backgroundColor: '#343A36' }} id="tempaltemo_footer">
+            <footer class="footer-mobile" style={{ backgroundColor: '#BDB395' }} id="tempaltemo_footer">
                 <div class="container">
                     <div class="col-md-4 pt-5">
-                        <img src={logo} width={'20%'} alt="" />
+                        <img src={logo2} width={'20%'} alt="" />
                         <ul class="list-unstyled text-light mt-3">
                             <li>
                                 <i class="fas fa-map-marker-alt fa-fw"></i>
                             </li>
                             <li>
                                 <i class="fa fa-phone fa-fw"></i>
-                                <a class="text-number-mobile text-decoration-none" href="https://wa.me/+50494969595">Tel: +504 9496-9595</a>
+                                <a class="text-number-mobile text-decoration-none" href="https://wa.me/+50499999999">Tel: +504 9999-9999</a>
                             </li>
                             <li>
                                 <i class="fa fa-envelope fa-fw"></i>
-                                <a class="text-email-mobile text-decoration-none" href="mailto:lionettashn@gmail.com">lionettashn@gmail.com</a>
+                                <a class="text-email-mobile text-decoration-none" href="mailto:lionettashn@gmail.com">piedrayoro@gmail.com</a>
                             </li>
                         </ul>
                     </div>
@@ -158,7 +158,7 @@ export const Footer = () => {
                         <div class="row pt-2">
                             <div class="col-12">
                                 <p class="text-left text-light">
-                                    Copyright &copy; 2025 Lionettas | Todos los derechos reservados
+                                    Copyright &copy; 2025 Joyeria Piedra & Oro | Todos los derechos reservados
                                 </p>
                             </div>
                         </div>

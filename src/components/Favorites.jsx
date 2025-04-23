@@ -25,11 +25,11 @@ export const Favorites = ({ favorites, deleteItem, addToCart }) => {
                     </div>
                 ) : (
                     <div className="container">
-                        <div className="col-12 col-lg-6 mx-auto">
+                        {/* <div className="col-12 col-lg-6 mx-auto">
                             <div className="alert alert-danger mx-3">
                                 <h6 className='text-center'>Los productos que marques como favoritos, seran removidos automaticamente en un plazo de 3 dias</h6>
                             </div>
-                        </div>
+                        </div> */}
                         <div className="row">
 
                             {

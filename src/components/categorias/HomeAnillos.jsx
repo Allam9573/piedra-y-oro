@@ -63,8 +63,8 @@ export const HomeAnillos = () => {
                             <>
                                 <h2 className='title-categories-mobile'>{info.titulo}</h2>
                                 <div className='d-flex justify-content-center mt-3'>
-                                    <img className='home-anillos-home-imagen' src={anillo1} alt="" />
-                                    <img className='home-anillos-home-imagen' src={anillo2} alt="" />
+                                    <img className='home-anillos-home-imagen' width={'45%'} src={anillo1} alt="" />
+                                    <img className='home-anillos-home-imagen' width={'45%'} src={anillo2} alt="" />
                                 </div>
                                 <p className='mt-4 descripcion-home-anillos'>{info.descripcion}</p>
                                 <Link to={`/productos?categoria=Anillos`} className='btn-home-mobile'>Explora el amor y el compromiso</Link>

@@ -55,8 +55,8 @@ export const HomeMedallones = () => {
                             <>
                                 <h2 className='title-home-anillos '>{info.titulo}</h2>
                                 <div className='d-flex justify-content-center mt-4'>
-                                    <img className='home-anillos-home-imagen' src={medallon} alt="" />
-                                    <img className='home-anillos-home-imagen' src={medallon1} alt="" />
+                                    <img className='home-anillos-home-imagen' width={'40%'} src={medallon} alt="" />
+                                    <img className='home-anillos-home-imagen' width={'40%'} src={medallon1} alt="" />
                                 </div>
                                 <p className='text-secondary descripcion-home-anillos mx-2 my-3'>{info.descripcion}</p>
                                 <Link to={"/productos?categoria=Medallones"} className='btn-inspirate'>Comprar Ahora</Link>
